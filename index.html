@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Index</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        
+        .file-list {
+            list-style: none;
+        }
+        
+        .file-item {
+            margin-bottom: 15px;
+        }
+        
+        .file-link {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+        
+        .file-link:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+            border-left-color: #764ba2;
+        }
+        
+        .file-icon {
+            margin-right: 15px;
+            font-size: 1.5em;
+        }
+        
+        .file-name {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .json-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+        }
+        
+        .json-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .json-output {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #333;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📑 Project Files</h1>
+        <ul class="file-list">
+           
+        </ul>
+    </div>
+
+  
+
+    <script type="application/json" id="filesData">
+    {
+      "project": "Project Files Index",
+      "files": [
+        {
+          "name": "car-wash-tailwind.html",
+          "path": "car-wash-tailwind.html",
+          "type": "HTML",
+          "icon": "🚗",
+          "description": "Car wash website built with Tailwind CSS"
+        },
+        {
+          "name": "construction-website.html",
+          "path": "construction-website.html",
+          "type": "HTML",
+          "icon": "🏗️",
+          "description": "Construction website"
+        },
+        {
+          "name": "construction-website-arabic.html",
+          "path": "construction-website-arabic.html",
+          "type": "HTML",
+          "icon": "🏗️",
+          "description": "Construction website in Arabic"
+        },
+        {
+          "name": "index.html",
+          "path": "index.html",
+          "type": "HTML",
+          "icon": "📑",
+          "description": "Project index page"
+        }
+      ],
+      "totalFiles": 4
+    }
+    </script>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const fileList = document.querySelector('.file-list');
+			const filesDataScript = document.getElementById('filesData');
+			const filesData = JSON.parse(filesDataScript.textContent).files;
+			
+			// Populate file list
+			filesData.forEach(file => {
+				const listItem = document.createElement('li');
+				listItem.className = 'file-item';
+
+				const link = document.createElement('a');
+				link.href = file.path;
+				link.className = 'file-link';
+
+				const iconSpan = document.createElement('span');
+				iconSpan.className = 'file-icon';
+				iconSpan.textContent = file.icon;
+
+				const nameSpan = document.createElement('span');
+				nameSpan.className = 'file-name';
+				nameSpan.textContent = file.name;
+
+				link.appendChild(iconSpan);
+				link.appendChild(nameSpan);
+				listItem.appendChild(link);
+				fileList.appendChild(listItem);
+			});
+			
+			// Display JSON data
+			const jsonDisplay = document.getElementById('jsonDisplay');
+			const allData = JSON.parse(filesDataScript.textContent);
+			jsonDisplay.textContent = JSON.stringify(allData, null, 2);
+		});
+	</script>
+
+</body>
+</html>
