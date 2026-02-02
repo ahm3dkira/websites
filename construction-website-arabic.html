@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قمة البناء - نبني معالم الغد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --concrete-gray: #2a2a2a;
+            --steel-blue: #1a3a52;
+            --safety-orange: #ff6b35;
+            --warning-yellow: #ffc857;
+            --concrete-light: #e8e8e8;
+            --text-dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: var(--concrete-light);
+            direction: rtl;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(42, 42, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            border-bottom: 3px solid var(--safety-orange);
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cairo', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--safety-orange);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateY(-50%) scale(1); opacity: 1; }
+            50% { transform: translateY(-50%) scale(1.5); opacity: 0.7; }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--safety-orange);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--safety-orange);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Language Switch */
+        .lang-switch {
+            background: var(--safety-orange);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s, transform 0.3s;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .lang-switch:hover {
+            background: var(--warning-yellow);
+            color: var(--text-dark);
+            transform: scale(1.05);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(42, 42, 42, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: right 0.3s;
+                align-items: flex-start;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: right;
+            }
+
+            nav a {
+                font-size: 1.2rem;
+                display: block;
+                padding: 1rem 0;
+            }
+
+            .lang-switch {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--steel-blue) 0%, var(--concrete-gray) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px
+                );
+            opacity: 0.5;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 107, 53, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 53, 0.1) 1px, transparent 1px);
+            background-size: 100px 100px;
+            animation: gridSlide 20s linear infinite;
+        }
+
+        @keyframes gridSlide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 900;
+            letter-spacing: 3px;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            animation: slideUp 1s ease-out 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 4rem;
+            animation: slideUp 1s ease-out 0.4s both;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cairo', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--warning-yellow);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--safety-orange);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: right 0.5s;
+        }
+
+        .cta-button:hover::before {
+            right: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: white;
+            position: relative;
+        }
+
+        .services::before {
+            content: 'خدماتنا';
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-family: 'Cairo', sans-serif;
+            font-size: 10rem;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.02);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--safety-orange);
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 4rem;
+            font-weight: 400;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--concrete-light);
+            padding: 3rem 2rem;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-right: 5px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-right-color: var(--safety-orange);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--steel-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            width: 30px;
+            height: 30px;
+            background: var(--safety-orange);
+            opacity: 0.3;
+        }
+
+        .service-card h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.9;
+            font-size: 1rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 8rem 2rem;
+            background: var(--concrete-gray);
+            color: white;
+        }
+
+        .project-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            background: var(--steel-blue);
+            cursor: pointer;
+        }
+
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            padding: 2rem;
+            z-index: 2;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+            text-align: right;
+        }
+
+        .project-item:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        .project-overlay h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: var(--safety-orange);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 8rem 2rem;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-number {
+            font-family: 'Cairo', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--safety-orange);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .feature h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.9;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 2rem;
+            background: var(--steel-blue);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .contact p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--warning-yellow);
+            font-weight: 700;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--concrete-gray);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .project-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .services::before {
+                font-size: 5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">قمة البناء</div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="القائمة">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#projects">مشاريعنا</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+                <li><button class="lang-switch" onclick="switchLanguage()">English</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <h1>نبني مستقبل أفضل</h1>
+            <p class="hero-subtitle">دقة | قوة | تميز</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">+500</span>
+                    <span class="stat-label">مشروع مكتمل</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">+25</span>
+                    <span class="stat-label">عام من الخبرة</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">رضا العملاء</span>
+                </div>
+            </div>
+            <a href="#contact" class="cta-button">ابدأ مشروعك الآن</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا المتكاملة</h2>
+            <p class="section-subtitle">حلول إنشائية شاملة لتلبية جميع احتياجاتكم</p>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>المباني التجارية</h3>
+                    <p>من المكاتب إلى المجمعات التجارية، نقدم مشاريع تجارية عالية المستوى تلبي أعلى معايير الجودة والكفاءة.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏘️</div>
+                    <h3>المشاريع السكنية</h3>
+                    <p>بناء منازل الأحلام والمجمعات السكنية مع الاهتمام بالتفاصيل والاستدامة ومتطلبات الحياة العصرية.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>المنشآت الصناعية</h3>
+                    <p>بناء متخصص للمستودعات ومصانع التصنيع والمجمعات الصناعية المصممة للأداء الأمثل.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>الترميم والتجديد</h3>
+                    <p>تحويل المساحات الحالية بخدمات الترميم المتخصصة، مع إضفاء حياة جديدة مع الحفاظ على طابعها الأصلي.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>التصميم والبناء</h3>
+                    <p>خدمات التصميم والبناء المتكاملة التي تبسط مشروعك من المفهوم إلى الإنجاز النهائي.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>إدارة المشاريع</h3>
+                    <p>إشراف احترافي يضمن بقاء مشروعك في الموعد المحدد وضمن الميزانية ويتجاوز التوقعات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">مشاريعنا المميزة</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">معالم نفخر ببنائها</p>
+            
+            <div class="project-showcase">
+                <div class="project-item">
+                    <div class="project-overlay">
+                        <h3>برج الأفق</h3>
+                        <p>مبنى متعدد الاستخدامات من 45 طابقاً في وسط المدينة</p>
+                        <span class="project-tag">تجاري</span>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-overlay">
+                        <h3>حي الوادي الأخضر</h3>
+                        <p>مجتمع سكني مستدام يضم أكثر من 200 منزل</p>
+                        <span class="project-tag">سكني</span>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-overlay">
+                        <h3>المدينة الصناعية</h3>
+                        <p>منشأة تصنيع متقدمة بمساحة 500,000 قدم مربع</p>
+                        <span class="project-tag">صناعي</span>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-overlay">
+                        <h3>ترميم المركز التراثي</h3>
+                        <p>ترميم وتحديث مبنى تاريخي عريق</p>
+                        <span class="project-tag">ترميم</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="about">
+        <div class="container">
+            <h2 class="section-title">لماذا قمة البناء؟</h2>
+            <p class="section-subtitle">مبني على أساس من التميز والجودة</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-number">01</div>
+                    <h3>فريق خبراء</h3>
+                    <p>متخصصون معتمدون يجلبون عقوداً من الخبرة المشتركة لكل مشروع، مما يضمن براعة فائقة في التنفيذ.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">02</div>
+                    <h3>السلامة أولاً</h3>
+                    <p>بروتوكولات سلامة صارمة والامتثال الكامل لمعايير السلامة في كل موقع عمل، لحماية فريقنا واستثماركم.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">03</div>
+                    <h3>التسليم في الوقت المحدد</h3>
+                    <p>إدارة متقدمة للمشاريع والجدولة تضمن الوفاء بالمواعيد النهائية دون التضحية بالجودة.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">04</div>
+                    <h3>مواد عالية الجودة</h3>
+                    <p>نحصل فقط على مواد ممتازة من موردين موثوقين لضمان المتانة والأداء طويل الأمد.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">05</div>
+                    <h3>البناء المستدام</h3>
+                    <p>ممارسات البناء الأخضر والخبرة في الشهادات البيئية للبناء المسؤول بيئياً.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">06</div>
+                    <h3>أسعار تنافسية</h3>
+                    <p>تقديرات شفافة وحلول فعالة من حيث التكلفة تعظم القيمة دون رسوم مخفية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>لنبني شيئاً عظيماً معاً</h2>
+            <p>هل أنت مستعد لبدء مشروعك الإنشائي؟ فريقنا هنا لتحويل رؤيتك إلى واقع ملموس.</p>
+            <a href="mailto:info@apexconstruction.com" class="cta-button">احصل على عرض سعر مجاني</a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>الهاتف</strong>
+                    <a href="tel:+966501234567">+966 50 123 4567</a>
+                </div>
+                <div class="contact-item">
+                    <strong>البريد الإلكتروني</strong>
+                    <a href="mailto:info@apexconstruction.com">info@apexconstruction.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>الموقع</strong>
+                    <span>شارع البناء، مدينة الإنشاءات، المملكة العربية السعودية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 قمة البناء. جميع الحقوق محفوظة. مرخص ومؤمن.</p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                const menuToggle = document.querySelector('.menu-toggle');
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Language switch
+        function switchLanguage() {
+            // Create the English version filename
+            const currentUrl = window.location.href;
+            if (currentUrl.includes('arabic')) {
+                // Switch to English version
+                window.location.href = currentUrl.replace('construction-website-arabic.html', 'construction-website.html');
+            } else {
+                alert('النسخة الإنجليزية متوفرة في الملف: construction-website.html');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

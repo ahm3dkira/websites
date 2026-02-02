@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكوا شاين - غسيل وتلميع السيارات الفاخر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#00d4ff',
+                        secondary: '#0066ff',
+                        accent: '#00ffaa',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'fade-in-down': 'fadeInDown 0.8s ease-out forwards',
+                        'glow': 'glow 3s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-100%)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        glow: {
+                            '0%, 100%': { filter: 'drop-shadow(0 0 10px rgba(0, 212, 255, 0.3))' },
+                            '50%': { filter: 'drop-shadow(0 0 20px rgba(0, 212, 255, 0.6))' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+        .water-drop {
+            position: absolute;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, #00d4ff);
+            animation: fall linear infinite;
+            opacity: 0.3;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #00d4ff, #0066ff);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff, #00d4ff, #00ffaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .text-gradient-dark {
+            background: linear-gradient(135deg, #0a0e27, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-cairo bg-gray-950 text-white transition-colors duration-300 dark:bg-gray-950">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-gray-900/95 dark:bg-gray-900/95 backdrop-blur-lg border-b border-primary/10 animate-fade-in-down">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-4xl font-black text-gradient animate-glow">أكوا شاين</div>
+            
+            <div class="flex items-center gap-8">
+                <ul class="hidden md:flex gap-8 text-sm font-semibold">
+                    <li><a href="#home" class="text-gray-400 hover:text-primary transition-colors duration-300 relative group">
+                        الرئيسية
+                        <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-primary transition-colors duration-300 relative group">
+                        الخدمات
+                        <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a></li>
+                    <li><a href="#gallery" class="text-gray-400 hover:text-primary transition-colors duration-300 relative group">
+                        المعرض
+                        <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a></li>
+                    <li><a href="#pricing" class="text-gray-400 hover:text-primary transition-colors duration-300 relative group">
+                        الأسعار
+                        <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors duration-300 relative group">
+                        اتصل بنا
+                        <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a></li>
+                </ul>
+                
+                <!-- Language Switcher -->
+                <button id="langToggle" class="px-4 py-2 rounded-full bg-accent/10 border-2 border-accent text-accent font-bold hover:bg-accent hover:text-white transition-all duration-300">
+                    <span id="langText">EN</span>
+                </button>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle" class="w-12 h-12 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center text-2xl hover:bg-primary hover:rotate-180 transition-all duration-300">
+                    <span id="themeIcon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 animate-pulse"></div>
+        
+        <!-- Water Drops Container -->
+        <div id="waterDrops" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-7xl md:text-8xl lg:text-9xl font-black text-gradient mb-6 animate-fade-in-up">
+                غسيل سيارات<br>فاخر
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.2s;">
+                اختبر اللمعان النهائي مع خدمات التلميع الاحترافية. سيارتك تستحق الأفضل
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center animate-fade-in-up" style="animation-delay: 0.4s;">
+                <a href="#services" class="px-8 py-4 bg-gradient-primary text-white font-bold rounded hover:shadow-2xl hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300">
+                    خدماتنا
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-transparent border-2 border-primary text-primary font-bold rounded hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300">
+                    احجز الآن
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-900 relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-black text-gradient mb-4">خدماتنا</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">حلول احترافية للعناية بالسيارات مصممة خصيصاً لاحتياجات سيارتك</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-white/5 backdrop-blur border border-primary/10 p-8 rounded-lg hover:border-primary hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="text-5xl mb-6 text-primary">💧</div>
+                        <h3 class="text-2xl font-bold mb-4">الغسيل السريع</h3>
+                        <p class="text-gray-400 mb-6">تنظيف خارجي سريع وفعال مثالي للجداول المزدحمة</p>
+                        <div class="text-4xl font-bold text-accent mb-6">٢٥ ر.س</div>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                غسيل خارجي يدوي
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                تنظيف العجلات
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                تلميع الإطارات
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                تجفيف سريع
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-white/5 backdrop-blur border border-primary/10 p-8 rounded-lg hover:border-primary hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="text-5xl mb-6 text-primary">✨</div>
+                        <h3 class="text-2xl font-bold mb-4">التلميع الفاخر</h3>
+                        <p class="text-gray-400 mb-6">تنظيف شامل للداخل والخارج لتجديد كامل</p>
+                        <div class="text-4xl font-bold text-accent mb-6">٧٥ ر.س</div>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                غسيل وتشميع خارجي كامل
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                تنظيف وتلميع داخلي
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                تنظيف النوافذ
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                معالجة لوحة القيادة
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                معطر جو
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-white/5 backdrop-blur border border-primary/10 p-8 rounded-lg hover:border-primary hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="text-5xl mb-6 text-primary">💎</div>
+                        <h3 class="text-2xl font-bold mb-4">اللمعان المثالي</h3>
+                        <p class="text-gray-400 mb-6">خدمة تلميع متميزة لمن يطلبون الكمال</p>
+                        <div class="text-4xl font-bold text-accent mb-6">١٥٠ ر.س</div>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                تصحيح الطلاء
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                طلاء سيراميك
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                تنظيف داخلي عميق
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                تنظيف المحرك
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                ترميم المصابيح
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                معالجة حماية
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-gray-950 relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-black text-gradient mb-4">أعمالنا</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">شاهد الفرق الذي تحدثه خدماتنا الاحترافية</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-lg border border-primary/10 aspect-[4/3] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&q=80" 
+                         alt="سيارة فاخرة يتم غسلها" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">غسيل خارجي فاخر</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-lg border border-primary/10 aspect-[4/3] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800&q=80" 
+                         alt="تلميع داخلي للسيارة" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">تلميع داخلي</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-lg border border-primary/10 aspect-[4/3] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" 
+                         alt="سيارة نظيفة لامعة" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">لمسة نهائية مثالية</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-lg border border-primary/10 aspect-[4/3] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800&q=80" 
+                         alt="خدمة غسيل سيارات احترافية" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">خدمة احترافية</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-lg border border-primary/10 aspect-[4/3] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" 
+                         alt="منشأة غسيل سيارات" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">منشأة حديثة</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gradient-to-b from-gray-900 to-gray-950 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-black text-gradient mb-4">باقات العضوية</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">وفر أكثر مع عضويات الغسيل غير المحدودة</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Pricing Card 1 -->
+                <div class="bg-gray-800/50 backdrop-blur border border-primary/20 p-8 rounded-lg text-center hover:border-primary hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+                    <h3 class="text-2xl font-bold mb-4">الأساسية</h3>
+                    <div class="text-5xl font-black text-primary my-8">
+                        ٢٩ ر.س
+                        <span class="text-xl text-gray-400">/شهرياً</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-gray-400">
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            غسيل سريع غير محدود
+                        </li>
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            تلميع الإطارات
+                        </li>
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            مكانس مجانية
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block px-6 py-3 bg-transparent border-2 border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all duration-300">
+                        ابدأ الآن
+                    </a>
+                </div>
+
+                <!-- Pricing Card 2 (Featured) -->
+                <div class="relative bg-primary/10 backdrop-blur border-2 border-primary p-8 rounded-lg text-center scale-105 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-primary px-6 py-2 rounded-full text-sm font-bold text-white">
+                        الأكثر شعبية
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">المتميزة</h3>
+                    <div class="text-5xl font-black text-primary my-8">
+                        ٥٩ ر.س
+                        <span class="text-xl text-gray-400">/شهرياً</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-gray-400">
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            غسيل فاخر غير محدود
+                        </li>
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            تنظيف داخلي
+                        </li>
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            حماية بالشمع
+                        </li>
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            خدمة ذات أولوية
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block px-6 py-3 bg-gradient-primary text-white font-bold rounded hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300">
+                        ابدأ الآن
+                    </a>
+                </div>
+
+                <!-- Pricing Card 3 -->
+                <div class="bg-gray-800/50 backdrop-blur border border-primary/20 p-8 rounded-lg text-center hover:border-primary hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+                    <h3 class="text-2xl font-bold mb-4">النخبة</h3>
+                    <div class="text-5xl font-black text-primary my-8">
+                        ٩٩ ر.س
+                        <span class="text-xl text-gray-400">/شهرياً</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-gray-400">
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            غسيل مثالي غير محدود
+                        </li>
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            تعزيز سيراميك شهري
+                        </li>
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            ممر VIP سريع
+                        </li>
+                        <li class="flex items-center justify-center gap-3">
+                            <span class="text-primary font-bold">✓</span>
+                            خدمة كونسيرج
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block px-6 py-3 bg-transparent border-2 border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all duration-300">
+                        ابدأ الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-900 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-black text-gradient mb-4">تواصل معنا</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">هل أنت مستعد لمنح سيارتك العناية التي تستحقها؟</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-3xl font-bold text-gradient mb-6">قم بزيارتنا اليوم</h3>
+                    <p class="text-gray-400 text-lg mb-12">تفضل بزيارة موقعنا أو احجز موعداً عبر الإنترنت. فريقنا جاهز لتقديم خدمة استثنائية لك</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-gradient-primary rounded flex items-center justify-center text-2xl flex-shrink-0">
+                                📍
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">الموقع</h4>
+                                <p class="text-gray-400">١٢٣ شارع اللمعان، مدينة السيارات، ١٢٣٤٥</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-gradient-primary rounded flex items-center justify-center text-2xl flex-shrink-0">
+                                📞
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">الهاتف</h4>
+                                <p class="text-gray-400">٠٥٥٥-١٢٣-٤٥٦٧</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-gradient-primary rounded flex items-center justify-center text-2xl flex-shrink-0">
+                                🕐
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">ساعات العمل</h4>
+                                <p class="text-gray-400">الإثنين-السبت: ٨ص-٦م | الأحد: ٩ص-٥م</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white/5 backdrop-blur border border-primary/10 p-8 rounded-lg">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="name">الاسم</label>
+                            <input type="text" id="name" 
+                                   class="w-full px-4 py-3 bg-white/5 border border-primary/20 rounded text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" 
+                                   class="w-full px-4 py-3 bg-white/5 border border-primary/20 rounded text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" 
+                                   class="w-full px-4 py-3 bg-white/5 border border-primary/20 rounded text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-2" for="message">الرسالة</label>
+                            <textarea id="message" rows="4" 
+                                      class="w-full px-4 py-3 bg-white/5 border border-primary/20 rounded text-white focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full px-6 py-4 bg-gradient-primary text-white font-bold rounded hover:shadow-2xl hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-primary/10 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; ٢٠٢٦ أكوا شاين لغسيل السيارات الفاخر. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        // Translations
+        const translations = {
+            ar: {
+                // Navigation
+                home: 'الرئيسية',
+                services: 'الخدمات',
+                gallery: 'المعرض',
+                pricing: 'الأسعار',
+                contact: 'اتصل بنا',
+                
+                // Hero
+                heroTitle: 'غسيل سيارات<br>فاخر',
+                heroSubtitle: 'اختبر اللمعان النهائي مع خدمات التلميع الاحترافية. سيارتك تستحق الأفضل',
+                ourServices: 'خدماتنا',
+                bookNow: 'احجز الآن',
+                
+                // Services Section
+                servicesTitle: 'خدماتنا',
+                servicesSubtitle: 'حلول احترافية للعناية بالسيارات مصممة خصيصاً لاحتياجات سيارتك',
+                
+                // Service 1
+                service1Title: 'الغسيل السريع',
+                service1Desc: 'تنظيف خارجي سريع وفعال مثالي للجداول المزدحمة',
+                service1Feature1: 'غسيل خارجي يدوي',
+                service1Feature2: 'تنظيف العجلات',
+                service1Feature3: 'تلميع الإطارات',
+                service1Feature4: 'تجفيف سريع',
+                
+                // Service 2
+                service2Title: 'التلميع الفاخر',
+                service2Desc: 'تنظيف شامل للداخل والخارج لتجديد كامل',
+                service2Feature1: 'غسيل وتشميع خارجي كامل',
+                service2Feature2: 'تنظيف وتلميع داخلي',
+                service2Feature3: 'تنظيف النوافذ',
+                service2Feature4: 'معالجة لوحة القيادة',
+                service2Feature5: 'معطر جو',
+                
+                // Service 3
+                service3Title: 'اللمعان المثالي',
+                service3Desc: 'خدمة تلميع متميزة لمن يطلبون الكمال',
+                service3Feature1: 'تصحيح الطلاء',
+                service3Feature2: 'طلاء سيراميك',
+                service3Feature3: 'تنظيف داخلي عميق',
+                service3Feature4: 'تنظيف المحرك',
+                service3Feature5: 'ترميم المصابيح',
+                service3Feature6: 'معالجة حماية',
+                
+                // Gallery
+                galleryTitle: 'أعمالنا',
+                gallerySubtitle: 'شاهد الفرق الذي تحدثه خدماتنا الاحترافية',
+                gallery1: 'غسيل خارجي فاخر',
+                gallery2: 'تلميع داخلي',
+                gallery3: 'لمسة نهائية مثالية',
+                gallery4: 'خدمة احترافية',
+                gallery5: 'منشأة حديثة',
+                
+                // Pricing
+                pricingTitle: 'باقات العضوية',
+                pricingSubtitle: 'وفر أكثر مع عضويات الغسيل غير المحدودة',
+                mostPopular: 'الأكثر شعبية',
+                
+                // Pricing Plans
+                plan1Title: 'الأساسية',
+                plan1Price: '٢٩ ر.س',
+                plan1Period: '/شهرياً',
+                plan1Feature1: 'غسيل سريع غير محدود',
+                plan1Feature2: 'تلميع الإطارات',
+                plan1Feature3: 'مكانس مجانية',
+                
+                plan2Title: 'المتميزة',
+                plan2Price: '٥٩ ر.س',
+                plan2Period: '/شهرياً',
+                plan2Feature1: 'غسيل فاخر غير محدود',
+                plan2Feature2: 'تنظيف داخلي',
+                plan2Feature3: 'حماية بالشمع',
+                plan2Feature4: 'خدمة ذات أولوية',
+                
+                plan3Title: 'النخبة',
+                plan3Price: '٩٩ ر.س',
+                plan3Period: '/شهرياً',
+                plan3Feature1: 'غسيل مثالي غير محدود',
+                plan3Feature2: 'تعزيز سيراميك شهري',
+                plan3Feature3: 'ممر VIP سريع',
+                plan3Feature4: 'خدمة كونسيرج',
+                
+                startNow: 'ابدأ الآن',
+                
+                // Contact
+                contactTitle: 'تواصل معنا',
+                contactSubtitle: 'هل أنت مستعد لمنح سيارتك العناية التي تستحقها؟',
+                visitToday: 'قم بزيارتنا اليوم',
+                visitDesc: 'تفضل بزيارة موقعنا أو احجز موعداً عبر الإنترنت. فريقنا جاهز لتقديم خدمة استثنائية لك',
+                
+                location: 'الموقع',
+                locationText: '١٢٣ شارع اللمعان، مدينة السيارات، ١٢٣٤٥',
+                phone: 'الهاتف',
+                phoneText: '٠٥٥٥-١٢٣-٤٥٦٧',
+                hours: 'ساعات العمل',
+                hoursText: 'الإثنين-السبت: ٨ص-٦م | الأحد: ٩ص-٥م',
+                
+                // Form
+                name: 'الاسم',
+                email: 'البريد الإلكتروني',
+                phoneLabel: 'رقم الهاتف',
+                message: 'الرسالة',
+                sendMessage: 'إرسال الرسالة',
+                
+                // Footer
+                footer: '© ٢٠٢٦ أكوا شاين لغسيل السيارات الفاخر. جميع الحقوق محفوظة',
+                
+                // Alert
+                thankYou: 'شكراً لك على رسالتك! سنتواصل معك قريباً'
+            },
+            en: {
+                // Navigation
+                home: 'Home',
+                services: 'Services',
+                gallery: 'Gallery',
+                pricing: 'Pricing',
+                contact: 'Contact',
+                
+                // Hero
+                heroTitle: 'Premium<br>Car Wash',
+                heroSubtitle: 'Experience the ultimate shine with our professional detailing services. Your vehicle deserves the best',
+                ourServices: 'Our Services',
+                bookNow: 'Book Now',
+                
+                // Services Section
+                servicesTitle: 'Our Services',
+                servicesSubtitle: 'Professional car care solutions tailored to your vehicle\'s needs',
+                
+                // Service 1
+                service1Title: 'Express Wash',
+                service1Desc: 'Quick and efficient exterior cleaning perfect for busy schedules',
+                service1Feature1: 'Exterior hand wash',
+                service1Feature2: 'Wheel cleaning',
+                service1Feature3: 'Tire shine',
+                service1Feature4: 'Quick dry',
+                
+                // Service 2
+                service2Title: 'Deluxe Detail',
+                service2Desc: 'Comprehensive interior and exterior cleaning for a complete refresh',
+                service2Feature1: 'Full exterior wash & wax',
+                service2Feature2: 'Interior vacuum & wipe',
+                service2Feature3: 'Window cleaning',
+                service2Feature4: 'Dashboard treatment',
+                service2Feature5: 'Air freshener',
+                
+                // Service 3
+                service3Title: 'Ultimate Shine',
+                service3Desc: 'Premium detailing service for those who demand perfection',
+                service3Feature1: 'Paint correction',
+                service3Feature2: 'Ceramic coating',
+                service3Feature3: 'Deep interior detail',
+                service3Feature4: 'Engine bay cleaning',
+                service3Feature5: 'Headlight restoration',
+                service3Feature6: 'Protection treatment',
+                
+                // Gallery
+                galleryTitle: 'Our Work',
+                gallerySubtitle: 'See the difference our professional service makes',
+                gallery1: 'Premium Exterior Wash',
+                gallery2: 'Interior Detailing',
+                gallery3: 'Perfect Finish',
+                gallery4: 'Professional Service',
+                gallery5: 'Modern Facility',
+                
+                // Pricing
+                pricingTitle: 'Membership Plans',
+                pricingSubtitle: 'Save more with our unlimited wash memberships',
+                mostPopular: 'Most Popular',
+                
+                // Pricing Plans
+                plan1Title: 'Basic',
+                plan1Price: '$29',
+                plan1Period: '/month',
+                plan1Feature1: 'Unlimited express washes',
+                plan1Feature2: 'Tire shine',
+                plan1Feature3: 'Free vacuums',
+                
+                plan2Title: 'Premium',
+                plan2Price: '$59',
+                plan2Period: '/month',
+                plan2Feature1: 'Unlimited deluxe washes',
+                plan2Feature2: 'Interior cleaning',
+                plan2Feature3: 'Wax protection',
+                plan2Feature4: 'Priority service',
+                
+                plan3Title: 'Elite',
+                plan3Price: '$99',
+                plan3Period: '/month',
+                plan3Feature1: 'Unlimited ultimate washes',
+                plan3Feature2: 'Monthly ceramic boost',
+                plan3Feature3: 'VIP express lane',
+                plan3Feature4: 'Concierge service',
+                
+                startNow: 'Get Started',
+                
+                // Contact
+                contactTitle: 'Get In Touch',
+                contactSubtitle: 'Ready to give your vehicle the care it deserves?',
+                visitToday: 'Visit Us Today',
+                visitDesc: 'Stop by our location or book an appointment online. Our team is ready to provide you with exceptional service',
+                
+                location: 'Location',
+                locationText: '123 Shine Boulevard, Auto City, AC 12345',
+                phone: 'Phone',
+                phoneText: '(555) 123-4567',
+                hours: 'Hours',
+                hoursText: 'Mon-Sat: 8AM-6PM | Sun: 9AM-5PM',
+                
+                // Form
+                name: 'Name',
+                email: 'Email',
+                phoneLabel: 'Phone',
+                message: 'Message',
+                sendMessage: 'Send Message',
+                
+                // Footer
+                footer: '© 2026 AquaShine Premium Car Wash. All rights reserved',
+                
+                // Alert
+                thankYou: 'Thank you for your message! We will get back to you soon'
+            }
+        };
+
+        // Language Switcher
+        let currentLang = localStorage.getItem('language') || 'ar';
+        const langToggle = document.getElementById('langToggle');
+        const langText = document.getElementById('langText');
+        const html = document.documentElement;
+
+        function updateContent(lang) {
+            const t = translations[lang];
+            
+            // Update direction
+            html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            html.setAttribute('lang', lang);
+            
+            // Navigation
+            document.querySelector('a[href="#home"]').textContent = t.home;
+            document.querySelector('a[href="#services"]').textContent = t.services;
+            document.querySelector('a[href="#gallery"]').textContent = t.gallery;
+            document.querySelector('a[href="#pricing"]').textContent = t.pricing;
+            document.querySelector('a[href="#contact"]').textContent = t.contact;
+            
+            // Hero
+            document.querySelector('#home h1').innerHTML = t.heroTitle;
+            document.querySelector('#home p').textContent = t.heroSubtitle;
+            document.querySelectorAll('#home .btn')[0].textContent = t.ourServices;
+            document.querySelectorAll('#home .btn')[1].textContent = t.bookNow;
+            
+            // Services
+            document.querySelector('#services h2').textContent = t.servicesTitle;
+            document.querySelector('#services .text-center p').textContent = t.servicesSubtitle;
+            
+            const serviceCards = document.querySelectorAll('#services .group');
+            
+            // Service 1
+            serviceCards[0].querySelector('h3').textContent = t.service1Title;
+            serviceCards[0].querySelector('p').textContent = t.service1Desc;
+            const s1Features = serviceCards[0].querySelectorAll('li');
+            s1Features[0].childNodes[1].textContent = t.service1Feature1;
+            s1Features[1].childNodes[1].textContent = t.service1Feature2;
+            s1Features[2].childNodes[1].textContent = t.service1Feature3;
+            s1Features[3].childNodes[1].textContent = t.service1Feature4;
+            
+            // Service 2
+            serviceCards[1].querySelector('h3').textContent = t.service2Title;
+            serviceCards[1].querySelector('p').textContent = t.service2Desc;
+            const s2Features = serviceCards[1].querySelectorAll('li');
+            s2Features[0].childNodes[1].textContent = t.service2Feature1;
+            s2Features[1].childNodes[1].textContent = t.service2Feature2;
+            s2Features[2].childNodes[1].textContent = t.service2Feature3;
+            s2Features[3].childNodes[1].textContent = t.service2Feature4;
+            s2Features[4].childNodes[1].textContent = t.service2Feature5;
+            
+            // Service 3
+            serviceCards[2].querySelector('h3').textContent = t.service3Title;
+            serviceCards[2].querySelector('p').textContent = t.service3Desc;
+            const s3Features = serviceCards[2].querySelectorAll('li');
+            s3Features[0].childNodes[1].textContent = t.service3Feature1;
+            s3Features[1].childNodes[1].textContent = t.service3Feature2;
+            s3Features[2].childNodes[1].textContent = t.service3Feature3;
+            s3Features[3].childNodes[1].textContent = t.service3Feature4;
+            s3Features[4].childNodes[1].textContent = t.service3Feature5;
+            s3Features[5].childNodes[1].textContent = t.service3Feature6;
+            
+            // Gallery
+            document.querySelector('#gallery h2').textContent = t.galleryTitle;
+            document.querySelector('#gallery .text-center p').textContent = t.gallerySubtitle;
+            const galleryItems = document.querySelectorAll('#gallery .group h3');
+            galleryItems[0].textContent = t.gallery1;
+            galleryItems[1].textContent = t.gallery2;
+            galleryItems[2].textContent = t.gallery3;
+            galleryItems[3].textContent = t.gallery4;
+            galleryItems[4].textContent = t.gallery5;
+            
+            // Pricing
+            document.querySelector('#pricing h2').textContent = t.pricingTitle;
+            document.querySelector('#pricing .text-center p').textContent = t.pricingSubtitle;
+            document.querySelector('#pricing .absolute').textContent = t.mostPopular;
+            
+            const pricingCards = document.querySelectorAll('#pricing > div > div > div');
+            
+            // Plan 1
+            pricingCards[0].querySelector('h3').textContent = t.plan1Title;
+            pricingCards[0].querySelector('.text-5xl').childNodes[0].textContent = t.plan1Price;
+            pricingCards[0].querySelector('.text-5xl span').textContent = t.plan1Period;
+            const p1Features = pricingCards[0].querySelectorAll('li');
+            p1Features[0].childNodes[1].textContent = t.plan1Feature1;
+            p1Features[1].childNodes[1].textContent = t.plan1Feature2;
+            p1Features[2].childNodes[1].textContent = t.plan1Feature3;
+            pricingCards[0].querySelector('a').textContent = t.startNow;
+            
+            // Plan 2
+            pricingCards[1].querySelector('h3').textContent = t.plan2Title;
+            pricingCards[1].querySelector('.text-5xl').childNodes[0].textContent = t.plan2Price;
+            pricingCards[1].querySelector('.text-5xl span').textContent = t.plan2Period;
+            const p2Features = pricingCards[1].querySelectorAll('li');
+            p2Features[0].childNodes[1].textContent = t.plan2Feature1;
+            p2Features[1].childNodes[1].textContent = t.plan2Feature2;
+            p2Features[2].childNodes[1].textContent = t.plan2Feature3;
+            p2Features[3].childNodes[1].textContent = t.plan2Feature4;
+            pricingCards[1].querySelector('a').textContent = t.startNow;
+            
+            // Plan 3
+            pricingCards[2].querySelector('h3').textContent = t.plan3Title;
+            pricingCards[2].querySelector('.text-5xl').childNodes[0].textContent = t.plan3Price;
+            pricingCards[2].querySelector('.text-5xl span').textContent = t.plan3Period;
+            const p3Features = pricingCards[2].querySelectorAll('li');
+            p3Features[0].childNodes[1].textContent = t.plan3Feature1;
+            p3Features[1].childNodes[1].textContent = t.plan3Feature2;
+            p3Features[2].childNodes[1].textContent = t.plan3Feature3;
+            p3Features[3].childNodes[1].textContent = t.plan3Feature4;
+            pricingCards[2].querySelector('a').textContent = t.startNow;
+            
+            // Contact
+            document.querySelector('#contact h2').textContent = t.contactTitle;
+            document.querySelector('#contact .text-center p').textContent = t.contactSubtitle;
+            document.querySelector('#contact h3').textContent = t.visitToday;
+            document.querySelector('#contact > div > div > div:first-child > p').textContent = t.visitDesc;
+            
+            const contactItems = document.querySelectorAll('#contact .flex.items-center.gap-4');
+            contactItems[0].querySelector('h4').textContent = t.location;
+            contactItems[0].querySelector('p').textContent = t.locationText;
+            contactItems[1].querySelector('h4').textContent = t.phone;
+            contactItems[1].querySelector('p').textContent = t.phoneText;
+            contactItems[2].querySelector('h4').textContent = t.hours;
+            contactItems[2].querySelector('p').textContent = t.hoursText;
+            
+            // Form
+            document.querySelector('label[for="name"]').textContent = t.name;
+            document.querySelector('label[for="email"]').textContent = t.email;
+            document.querySelector('label[for="phone"]').textContent = t.phoneLabel;
+            document.querySelector('label[for="message"]').textContent = t.message;
+            document.querySelector('form button[type="submit"]').textContent = t.sendMessage;
+            
+            // Footer
+            document.querySelector('footer p').textContent = t.footer;
+            
+            // Update button text
+            langText.textContent = lang === 'ar' ? 'EN' : 'AR';
+        }
+
+        // Initialize with saved language
+        updateContent(currentLang);
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            updateContent(currentLang);
+            localStorage.setItem('language', currentLang);
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            html.classList.add('light');
+            document.body.classList.add('bg-gray-50', 'text-gray-900');
+            document.body.classList.remove('bg-gray-950', 'text-white');
+            themeIcon.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('light');
+            const isLight = html.classList.contains('light');
+            
+            if (isLight) {
+                document.body.classList.add('bg-gray-50', 'text-gray-900');
+                document.body.classList.remove('bg-gray-950', 'text-white');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.body.classList.add('bg-gray-950', 'text-white');
+                document.body.classList.remove('bg-gray-50', 'text-gray-900');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Animated water drops
+        const waterDropsContainer = document.getElementById('waterDrops');
+        function createDrop() {
+            const drop = document.createElement('div');
+            drop.className = 'water-drop';
+            drop.style.left = Math.random() * 100 + '%';
+            drop.style.animationDuration = (Math.random() * 1 + 0.5) + 's';
+            drop.style.animationDelay = Math.random() * 2 + 's';
+            waterDropsContainer.appendChild(drop);
+
+            setTimeout(() => {
+                drop.remove();
+            }, 3000);
+        }
+
+        for (let i = 0; i < 20; i++) {
+            createDrop();
+        }
+        setInterval(createDrop, 300);
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const t = translations[currentLang];
+            alert(t.thankYou);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
