@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Gym - Transform Your Fitness Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gym {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L60,112C120,128,240,160,360,149.3C480,139,600,85,720,80C840,75,960,117,1080,122.7C1200,128,1320,96,1380,80L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-gym {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .card-gym:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+        }
+        
+        .pricing-featured {
+            transform: scale(1.05);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #3b82f6 0%, #1e3a8a 100%);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-white inter">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold text-blue-900">POWERFIT</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition font-medium">Services</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-blue-600 transition font-medium">Pricing</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition font-medium">Contact</a>
+                    <button class="btn-secondary text-white px-6 py-2 rounded-lg font-semibold">Free Trial</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gym pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-blue-200 text-lg font-semibold mb-4 uppercase tracking-widest">Your Fitness Transformation Starts Here</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Transform Your Body, Transform Your Life</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-blue-100 font-light max-w-3xl mx-auto">Join thousands of members who've achieved their fitness goals at PowerFit. Expert training, state-of-the-art equipment, and a supportive community.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-secondary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Start Free Trial</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition">View Classes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <p class="stat-number">15K+</p>
+                    <p class="text-gray-400 text-lg font-medium">Active Members</p>
+                </div>
+                <div class="text-center">
+                    <p class="stat-number">200+</p>
+                    <p class="text-gray-400 text-lg font-medium">Classes Weekly</p>
+                </div>
+                <div class="text-center">
+                    <p class="stat-number">50+</p>
+                    <p class="text-gray-400 text-lg font-medium">Expert Trainers</p>
+                </div>
+                <div class="text-center">
+                    <p class="stat-number">98%</p>
+                    <p class="text-gray-400 text-lg font-medium">Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Services</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Comprehensive fitness solutions tailored to your goals</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Weight Training -->
+                <div class="card-gym bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="text-6xl mb-4">🏋️‍♂️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Weight Training</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Access to state-of-the-art equipment with expert guidance from certified trainers. Build strength and muscle mass with personalized programs.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>✓ Free weight area</li>
+                        <li>✓ Weight machines</li>
+                        <li>✓ Form coaching</li>
+                    </ul>
+                </div>
+
+                <!-- Cardio Programs -->
+                <div class="card-gym bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="text-6xl mb-4">🏃‍♀️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Cardio Programs</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">High-energy classes including HIIT, spinning, running, and more. Improve cardiovascular health and stamina with dynamic workouts.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>✓ Treadmills & bikes</li>
+                        <li>✓ Group classes</li>
+                        <li>✓ Virtual training</li>
+                    </ul>
+                </div>
+
+                <!-- Yoga & Flexibility -->
+                <div class="card-gym bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="text-6xl mb-4">🧘‍♂️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Yoga & Pilates</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Enhance flexibility, core strength, and mental wellness. Classes for all levels from beginners to advanced practitioners.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>✓ Multiple styles</li>
+                        <li>✓ All skill levels</li>
+                        <li>✓ Mindfulness focus</li>
+                    </ul>
+                </div>
+
+                <!-- Personal Training -->
+                <div class="card-gym bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-xl md:col-start-1">
+                    <div class="text-6xl mb-4">👨‍🏫</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Personal Training</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">One-on-one coaching with certified trainers. Customized workouts, nutrition guidance, and accountability to reach your goals faster.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>✓ Custom programs</li>
+                        <li>✓ Nutrition plans</li>
+                        <li>✓ Progress tracking</li>
+                    </ul>
+                </div>
+
+                <!-- Nutrition Coaching -->
+                <div class="card-gym bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-xl">
+                    <div class="text-6xl mb-4">🥗</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Nutrition Coaching</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Professional guidance from registered dietitians. Meal planning, nutritional assessment, and lifestyle coaching included with elite plans.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>✓ Meal plans</li>
+                        <li>✓ Supplement advice</li>
+                        <li>✓ Body composition</li>
+                    </ul>
+                </div>
+
+                <!-- Wellness Programs -->
+                <div class="card-gym bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-xl">
+                    <div class="text-6xl mb-4">💆‍♀️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Wellness Programs</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Holistic approach to health including massage therapy, recovery sessions, and mental wellness support for members.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>✓ Massage therapy</li>
+                        <li>✓ Sauna & steam</li>
+                        <li>✓ Recovery tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Membership Plans</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Choose the perfect plan for your fitness journey</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="card-gym bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Basic</h3>
+                    <p class="text-gray-500 mb-6">Perfect for starters</p>
+                    <p class="text-4xl font-bold text-blue-600 mb-6">$29<span class="text-lg text-gray-600">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            Gym access 24/7
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            Equipment use
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            Locker rooms & showers
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            WiFi access
+                        </li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-3 rounded-lg font-bold hover:shadow-lg">Get Started</button>
+                </div>
+
+                <!-- Pro Plan (Featured) -->
+                <div class="card-gym bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 rounded-xl shadow-lg pricing-featured">
+                    <div class="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full w-fit mb-4 font-bold">Most Popular</div>
+                    <h3 class="playfair text-2xl font-bold mb-2">Pro</h3>
+                    <p class="text-blue-200 mb-6">Best value for results</p>
+                    <p class="text-4xl font-bold mb-6">$59<span class="text-lg text-blue-200">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-yellow-400 font-bold mr-3">✓</span>
+                            All Basic features
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-400 font-bold mr-3">✓</span>
+                            Unlimited classes
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-400 font-bold mr-3">✓</span>
+                            Personal trainer (4/month)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-400 font-bold mr-3">✓</span>
+                            Fitness assessment
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-400 font-bold mr-3">✓</span>
+                            Recovery equipment
+                        </li>
+                    </ul>
+                    <button class="btn-secondary text-white w-full py-3 rounded-lg font-bold hover:shadow-lg">Join Now</button>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="card-gym bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Elite</h3>
+                    <p class="text-gray-500 mb-6">Premium experience</p>
+                    <p class="text-4xl font-bold text-blue-600 mb-6">$99<span class="text-lg text-gray-600">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            All Pro features
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            Unlimited personal training
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            Nutrition coaching
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            Priority class booking
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-blue-600 font-bold mr-3">✓</span>
+                            Massage therapy included
+                        </li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-3 rounded-lg font-bold hover:shadow-lg">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Member Success Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Lost 50 lbs in 6 months! The trainers at PowerFit are amazing and truly care about your progress."</p>
+                    <p class="font-bold text-gray-900">Marcus Johnson</p>
+                    <p class="text-gray-500 text-sm">Member for 1 year</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Best gym I've ever been to. The facilities are top-notch and the community is so supportive!"</p>
+                    <p class="font-bold text-gray-900">Sarah Williams</p>
+                    <p class="text-gray-500 text-sm">Member for 2 years</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"The personal trainers helped me achieve goals I thought were impossible. Highly recommend!"</p>
+                    <p class="font-bold text-gray-900">David Chen</p>
+                    <p class="text-gray-500 text-sm">Member for 8 months</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Ready to Transform?</h2>
+            <p class="text-xl mb-8 text-blue-100">Start your free trial today and join thousands of members achieving their goals</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-secondary text-white px-8 py-4 rounded-lg font-bold text-lg">Start Free Trial</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition">Schedule Tour</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">POWERFIT</h3>
+                    <p class="text-gray-400">Transform your fitness journey with us.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition">Services</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-400 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-gray-400">Mon-Fri: 6am - 11pm</p>
+                    <p class="text-gray-400">Sat-Sun: 8am - 10pm</p>
+                    <p class="text-gray-400">24/7 Member Access</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 345-6789</p>
+                    <p class="text-gray-400">📧 info@powerfit.com</p>
+                    <p class="text-gray-400">📍 456 Fitness Avenue</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 PowerFit Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

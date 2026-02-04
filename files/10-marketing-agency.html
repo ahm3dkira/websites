@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Growth - Premium Digital Marketing Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-marketing {
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.9) 0%, rgba(236, 72, 153, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-service {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(109, 40, 217, 0.1);
+        }
+        
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(109, 40, 217, 0.15);
+            border-color: rgba(109, 40, 217, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #6d28d9 0%, #ec4899 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(109, 40, 217, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f5e6ff 0%, #fce7f3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
+            border: 1px solid rgba(109, 40, 217, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .portfolio-item {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(109, 40, 217, 0.1);
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(109, 40, 217, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-white inter">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-purple-700 to-pink-500 bg-clip-text text-transparent">DIGITAL GROWTH</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-purple-600 transition font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-purple-600 transition font-medium">Services</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-purple-600 transition font-medium">Portfolio</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-marketing pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-pink-200 text-lg font-semibold mb-4 uppercase tracking-widest">Digital Marketing Excellence</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Grow Your Business Online</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-pink-100 font-light max-w-3xl mx-auto">Strategic digital marketing solutions that drive real results and transform your brand</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Get Your Free Strategy</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-purple-700 transition">Watch Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-purple-700 to-pink-500 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">📱</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About Digital Growth</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Since 2014, Digital Growth has been helping businesses transform their online presence and scale their revenue. We combine creativity with data-driven strategies to deliver measurable results.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">Our team of digital marketing experts works closely with each client to develop customized strategies that align with their unique business goals and target audience.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-purple-700">10+</p>
+                            <p class="text-gray-600 font-medium">Years Service</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-purple-700">250+</p>
+                            <p class="text-gray-600 font-medium">Clients Served</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-purple-700">$50M+</p>
+                            <p class="text-gray-600 font-medium">Revenue Generated</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Services</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Comprehensive digital marketing solutions tailored to your business</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- SEO Optimization -->
+                <div class="card-service bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl">
+                    <div class="service-icon">🔍</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">SEO Optimization</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Keyword Research & Strategy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>On-Page & Technical SEO</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Link Building & Authority</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Monthly Performance Reports</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Marketing -->
+                <div class="card-service bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl">
+                    <div class="service-icon">📱</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Social Media Marketing</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Social Strategy Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Content Creation & Scheduling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Community Engagement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Social Paid Advertising</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content Marketing -->
+                <div class="card-service bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl">
+                    <div class="service-icon">✍️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Content Marketing</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Content Strategy & Planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Blog Posts & Articles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Video Content Production</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Email Newsletters</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- PPC Advertising -->
+                <div class="card-service bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl">
+                    <div class="service-icon">💰</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">PPC Advertising</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Google Ads Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Bing & Yahoo Advertising</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Campaign Optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>ROI Tracking & Analysis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Email Marketing -->
+                <div class="card-service bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl">
+                    <div class="service-icon">📧</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Email Marketing</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Email List Building</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Campaign Design & Setup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Automation & Workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>A/B Testing & Optimization</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Web Design & Development -->
+                <div class="card-service bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Web Design & Development</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Custom Website Design</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Responsive Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>E-Commerce Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-3 font-bold">✓</span>
+                            <span>Landing Page Optimization</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-50 to-pink-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Proven Results</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Data-driven strategies that deliver measurable growth</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-purple-700">250+</p>
+                    <p class="text-gray-600 font-medium mt-2">Clients Served</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-purple-700">50%</p>
+                    <p class="text-gray-600 font-medium mt-2">Avg. Traffic Increase</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-purple-700">300%</p>
+                    <p class="text-gray-600 font-medium mt-2">Avg. Lead Growth</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-purple-700">$50M+</p>
+                    <p class="text-gray-600 font-medium mt-2">Revenue Generated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Featured Projects</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Recent client successes across diverse industries</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="portfolio-item bg-gradient-to-br from-purple-100 to-pink-100 p-8 rounded-xl">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">E-Commerce Growth</h3>
+                    <p class="text-gray-700 mb-4">Increased online sales by 280% through SEO and PPC optimization</p>
+                    <p class="text-sm text-purple-600 font-semibold">Retail Company</p>
+                </div>
+                <div class="portfolio-item bg-gradient-to-br from-purple-100 to-pink-100 p-8 rounded-xl">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Social Media Success</h3>
+                    <p class="text-gray-700 mb-4">Built engaged community of 50K followers with consistent engagement</p>
+                    <p class="text-sm text-purple-600 font-semibold">Tech Startup</p>
+                </div>
+                <div class="portfolio-item bg-gradient-to-br from-purple-100 to-pink-100 p-8 rounded-xl">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Lead Generation</h3>
+                    <p class="text-gray-700 mb-4">Generated 500+ qualified leads monthly for B2B services</p>
+                    <p class="text-sm text-purple-600 font-semibold">Service Company</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Meet Our Team</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Digital marketing experts with proven track records</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-400 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍💼</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Marcus Johnson</h3>
+                    <p class="text-gray-600">CEO & Founder</p>
+                    <p class="text-sm text-purple-600">12+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-400 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👩‍💼</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Elena Rodriguez</h3>
+                    <p class="text-gray-600">Social Media Director</p>
+                    <p class="text-sm text-purple-600">8+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-400 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍💻</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">David Kim</h3>
+                    <p class="text-gray-600">SEO Specialist</p>
+                    <p class="text-sm text-purple-600">10+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-400 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👩‍🎨</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Sarah Williams</h3>
+                    <p class="text-gray-600">Content & Design Lead</p>
+                    <p class="text-sm text-purple-600">7+ years experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Client Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Digital Growth transformed our online presence. Our traffic increased 250% in 6 months and leads are pouring in. Best investment we've made!"</p>
+                    <p class="font-bold text-gray-900">Victoria Chen</p>
+                    <p class="text-gray-500 text-sm">E-Commerce Business Owner</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"The team at Digital Growth is incredible. They understood our business goals and delivered results beyond expectations. Highly recommend!"</p>
+                    <p class="font-bold text-gray-900">James Mitchell</p>
+                    <p class="text-gray-500 text-sm">Tech Startup Founder</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Professional, responsive, and results-driven. Digital Growth helped us generate 500+ qualified leads per month. Worth every penny!"</p>
+                    <p class="font-bold text-gray-900">Susan Parker</p>
+                    <p class="text-gray-500 text-sm">Service Company Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why Choose Digital Growth?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🎯</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Data-Driven</h3>
+                    <p class="text-gray-600">Every strategy backed by analytics and testing</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">📈</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Results-Focused</h3>
+                    <p class="text-gray-600">Proven track record of client success</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🤝</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Partnership Approach</h3>
+                    <p class="text-gray-600">We're invested in your growth</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🚀</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Innovative Solutions</h3>
+                    <p class="text-gray-600">Latest tools and strategies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-700 to-pink-500 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Ready to Transform Your Business?</h2>
+            <p class="text-xl mb-8 text-pink-100">Let's create a customized growth strategy for your brand</p>
+            <button class="bg-white text-purple-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-pink-50 transition">Start Your Free Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">DIGITAL GROWTH</h3>
+                    <p class="text-gray-400">Transforming businesses through digital marketing.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-pink-400 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-pink-400 transition">Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-pink-400 transition">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-pink-400 transition">SEO</a></li>
+                        <li><a href="#services" class="hover:text-pink-400 transition">Social Media</a></li>
+                        <li><a href="#services" class="hover:text-pink-400 transition">PPC Ads</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 901-2345</p>
+                    <p class="text-gray-400">📧 hello@digitalgrowth.com</p>
+                    <p class="text-gray-400">📍 Tech Hub District</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Digital Growth Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

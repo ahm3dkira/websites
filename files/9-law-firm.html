@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice & Associates - Premier Legal Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .sourcesans {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        .hero-law {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.03)" fill-opacity="1" d="M0,192L120,208C240,224,480,256,720,256C960,256,1200,224,1320,208L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-practice {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .card-practice:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.12);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .practice-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #dbeafe 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 197, 253, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-white sourcesans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">JUSTICE</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
+                    <a href="#practices" class="text-gray-700 hover:text-blue-600 transition font-medium">Practice Areas</a>
+                    <a href="#team" class="text-gray-700 hover:text-blue-600 transition font-medium">Team</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Free Consultation</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-law pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-blue-200 text-lg font-semibold mb-4 uppercase tracking-widest">Legal Excellence Since 1995</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Expert Legal Representation</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-blue-100 font-light max-w-3xl mx-auto">Protecting your rights and pursuing justice with integrity, expertise, and unwavering dedication</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Schedule Free Consultation</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-blue-900 to-blue-600 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">⚖️</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About Justice & Associates</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Founded in 1995, Justice & Associates has been a beacon of legal excellence and client advocacy. Our firm has built a reputation for winning cases, protecting rights, and delivering results that matter.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">With 12 experienced attorneys specializing in diverse practice areas, we provide comprehensive legal solutions tailored to each client's unique circumstances. Our commitment to excellence and justice drives everything we do.</p>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="stat-box">
+                            <p class="playfair text-4xl font-bold text-blue-900">500+</p>
+                            <p class="text-gray-600 font-medium">Cases Won</p>
+                        </div>
+                        <div class="stat-box">
+                            <p class="playfair text-4xl font-bold text-blue-900">29+</p>
+                            <p class="text-gray-600 font-medium">Years Service</p>
+                        </div>
+                        <div class="stat-box">
+                            <p class="playfair text-4xl font-bold text-blue-900">12</p>
+                            <p class="text-gray-600 font-medium">Expert Lawyers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="practices" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Practice Areas</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Comprehensive legal expertise across multiple disciplines</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Criminal Defense -->
+                <div class="card-practice bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="practice-icon">🚨</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Criminal Defense</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>DUI & Traffic Defense</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Felony & Misdemeanor Defense</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>White-Collar Crime</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Drug Charges</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Family Law -->
+                <div class="card-practice bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="practice-icon">👨‍👩‍👧‍👦</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Family Law</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Divorce & Separation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Custody & Guardianship</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Adoption Proceedings</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Child Support & Alimony</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Personal Injury -->
+                <div class="card-practice bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="practice-icon">🏥</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Personal Injury</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Auto Accident Claims</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Medical Malpractice</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Slip & Fall Injuries</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Product Liability</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Corporate Law -->
+                <div class="card-practice bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="practice-icon">💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Corporate Law</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Business Formation & Structuring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Contract Drafting & Negotiation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Mergers & Acquisitions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Intellectual Property</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="card-practice bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="practice-icon">🏠</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Real Estate Law</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Property Transactions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Title Disputes & Litigation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Landlord & Tenant Law</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Commercial Leases</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Estate Planning -->
+                <div class="card-practice bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="practice-icon">📋</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Estate Planning</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Wills & Trusts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Probate Administration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Estate Tax Planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Power of Attorney</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Legal Team</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Board-certified attorneys with decades of combined experience</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍⚖️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Robert J. Sullivan</h3>
+                    <p class="text-gray-600">Senior Partner</p>
+                    <p class="text-sm text-blue-600">30+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👩‍⚖️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Jennifer M. Chen</h3>
+                    <p class="text-gray-600">Family Law Specialist</p>
+                    <p class="text-sm text-blue-600">18+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍⚖️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">David R. Martinez</h3>
+                    <p class="text-gray-600">Criminal Defense</p>
+                    <p class="text-sm text-blue-600">22+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👩‍⚖️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Sarah K. Thompson</h3>
+                    <p class="text-gray-600">Corporate Law</p>
+                    <p class="text-sm text-blue-600">15+ years experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Client Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Robert Sullivan handled my difficult case with professionalism and won big for me. Justice & Associates truly delivers results. Highly recommended!"</p>
+                    <p class="font-bold text-gray-900">Michael J. Davis</p>
+                    <p class="text-gray-500 text-sm">Criminal Defense Client</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Jennifer guided me through my divorce with compassion and expertise. She negotiated better terms than I expected. Very grateful!"</p>
+                    <p class="font-bold text-gray-900">Patricia M. Wilson</p>
+                    <p class="text-gray-500 text-sm">Family Law Client</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Sarah helped structure our company acquisition perfectly. Her legal expertise saved us thousands. Outstanding service!"</p>
+                    <p class="font-bold text-gray-900">Thomas & Elizabeth Brooks</p>
+                    <p class="text-gray-500 text-sm">Corporate Law Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why Choose Justice & Associates?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Proven Track Record</h3>
+                    <p class="text-gray-600">500+ cases won with excellent results</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">👥</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Expert Team</h3>
+                    <p class="text-gray-600">12 board-certified attorneys</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⚖️</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Legal Excellence</h3>
+                    <p class="text-gray-600">29 years of dedication to justice</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">💡</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Client Focused</h3>
+                    <p class="text-gray-600">Your interests are our priority</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Ready to Protect Your Rights?</h2>
+            <p class="text-xl mb-8 text-blue-100">Schedule your free confidential consultation today</p>
+            <button class="bg-white text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition">Get Free Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">JUSTICE & ASSOCIATES</h3>
+                    <p class="text-gray-400">Fighting for your rights since 1995.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#practices" class="hover:text-blue-400 transition">Practice Areas</a></li>
+                        <li><a href="#team" class="hover:text-blue-400 transition">Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Practice Areas</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#practices" class="hover:text-blue-400 transition">Criminal Defense</a></li>
+                        <li><a href="#practices" class="hover:text-blue-400 transition">Family Law</a></li>
+                        <li><a href="#practices" class="hover:text-blue-400 transition">Personal Injury</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 890-1234</p>
+                    <p class="text-gray-400">📧 hello@justicelaw.com</p>
+                    <p class="text-gray-400">📍 Legal Building, Downtown</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Justice & Associates. All rights reserved. Confidentiality Protected.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

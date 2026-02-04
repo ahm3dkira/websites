@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Premium E-commerce Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .lato {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .hero-ecommerce {
+            background: linear-gradient(135deg, rgba(67, 56, 202, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-product {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(67, 56, 202, 0.1);
+        }
+        
+        .card-product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(67, 56, 202, 0.15);
+            border-color: rgba(67, 56, 202, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4338ca 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(67, 56, 202, 0.3);
+        }
+        
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #dbeafe 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(67, 56, 202, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border: 1px solid rgba(67, 56, 202, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .category-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(67, 56, 202, 0.1);
+        }
+        
+        .category-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(67, 56, 202, 0.15);
+            border-color: rgba(67, 56, 202, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white lato">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-indigo-700 to-blue-600 bg-clip-text text-transparent">SHOPHUB</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition font-medium">Home</a>
+                    <a href="#shop" class="text-gray-700 hover:text-indigo-600 transition font-medium">Shop</a>
+                    <a href="#categories" class="text-gray-700 hover:text-indigo-600 transition font-medium">Categories</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Cart</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-ecommerce pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-blue-200 text-lg font-semibold mb-4 uppercase tracking-widest">Premium Shopping Experience</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Shop the Best Collections</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-blue-100 font-light max-w-3xl mx-auto">Curated products with quality you can trust and prices you'll love</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Start Shopping Now</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-indigo-700 transition">View New Arrivals</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-indigo-700 to-blue-600 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">🛍️</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About ShopHub</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Since 2015, ShopHub has been your trusted destination for premium products at unbeatable prices. We carefully curate every item to ensure quality and value.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">Our mission is to make shopping convenient, affordable, and enjoyable for millions of customers worldwide through innovative technology and exceptional service.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-indigo-700">9+</p>
+                            <p class="text-gray-600 font-medium">Years Online</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-indigo-700">2M+</p>
+                            <p class="text-gray-600 font-medium">Happy Customers</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-indigo-700">50K+</p>
+                            <p class="text-gray-600 font-medium">Product Range</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="shop" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Featured Products</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Best sellers handpicked for quality and value</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Fashion & Apparel -->
+                <div class="card-product bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-xl">
+                    <div class="product-icon">👕</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Fashion & Apparel</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Premium Clothing & Accessories</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Designer Brands & Styles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Seasonal Collections</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Price Range: $15-$199</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Electronics & Gadgets -->
+                <div class="card-product bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-xl">
+                    <div class="product-icon">📱</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Electronics & Gadgets</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Latest Tech Devices</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Smart Home Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Audio & Video Equipment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Price Range: $25-$999</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Home & Garden -->
+                <div class="card-product bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-xl">
+                    <div class="product-icon">🏠</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Home & Garden</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Furniture & Decor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Kitchen & Dining Essentials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Bedding & Bath</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Price Range: $10-$500</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sports & Outdoors -->
+                <div class="card-product bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-xl">
+                    <div class="product-icon">⚽</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Sports & Outdoors</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Sports Equipment & Gear</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Athletic Footwear</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Fitness & Wellness</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Price Range: $15-$400</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Beauty & Personal Care -->
+                <div class="card-product bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-xl">
+                    <div class="product-icon">💄</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Beauty & Personal Care</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Skincare & Cosmetics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Hair Care Products</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Wellness Supplements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Price Range: $5-$150</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Books & Entertainment -->
+                <div class="card-product bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-xl">
+                    <div class="product-icon">📚</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Books & Entertainment</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Books & E-Books</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Movies & TV Series</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Gaming & Toys</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3 font-bold">✓</span>
+                            <span>Price Range: $5-$200</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="py-20 bg-gradient-to-r from-indigo-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Shop by Category</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Explore our diverse selection of products</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="category-card bg-white p-8 rounded-xl text-center">
+                    <div class="text-6xl mb-4">👗</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-2">Fashion & Apparel</h3>
+                    <p class="text-gray-600 mb-4">Trending styles and classic pieces</p>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Browse</button>
+                </div>
+                <div class="category-card bg-white p-8 rounded-xl text-center">
+                    <div class="text-6xl mb-4">🏠</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-2">Home & Garden</h3>
+                    <p class="text-gray-600 mb-4">Everything for your living space</p>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Browse</button>
+                </div>
+                <div class="category-card bg-white p-8 rounded-xl text-center">
+                    <div class="text-6xl mb-4">📱</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-2">Electronics</h3>
+                    <p class="text-gray-600 mb-4">Latest gadgets and technology</p>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Browse</button>
+                </div>
+                <div class="category-card bg-white p-8 rounded-xl text-center">
+                    <div class="text-6xl mb-4">⚽</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-2">Sports & Outdoors</h3>
+                    <p class="text-gray-600 mb-4">Gear for active lifestyles</p>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Browse</button>
+                </div>
+                <div class="category-card bg-white p-8 rounded-xl text-center">
+                    <div class="text-6xl mb-4">💄</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-2">Beauty & Care</h3>
+                    <p class="text-gray-600 mb-4">Self-care and wellness products</p>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Browse</button>
+                </div>
+                <div class="category-card bg-white p-8 rounded-xl text-center">
+                    <div class="text-6xl mb-4">📚</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-2">Entertainment</h3>
+                    <p class="text-gray-600 mb-4">Books, movies, games & more</p>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Browse</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why ShopHub?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-indigo-700">2M+</p>
+                    <p class="text-gray-600 font-medium mt-2">Happy Customers</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-indigo-700">50K+</p>
+                    <p class="text-gray-600 font-medium mt-2">Product Selection</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-indigo-700">24/7</p>
+                    <p class="text-gray-600 font-medium mt-2">Customer Support</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-indigo-700">FREE</p>
+                    <p class="text-gray-600 font-medium mt-2">Shipping Over $50</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Excellent quality products at great prices. The entire shopping experience was smooth and delivery was fast. Will definitely shop again!"</p>
+                    <p class="font-bold text-gray-900">Lisa Anderson</p>
+                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"ShopHub has everything I need! Great selection, competitive prices, and reliable shipping. Customer service is super helpful too."</p>
+                    <p class="font-bold text-gray-900">Michael Rodriguez</p>
+                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Best online shopping experience ever. The product quality exceeded my expectations and the prices are unbeatable. Highly recommended!"</p>
+                    <p class="font-bold text-gray-900">Jennifer Watson</p>
+                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-indigo-700 to-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Discover Your Next Favorite Product</h2>
+            <p class="text-xl mb-8 text-blue-100">Explore thousands of items with exclusive deals and free shipping</p>
+            <button class="bg-white text-indigo-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition">Start Shopping Today</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">SHOPHUB</h3>
+                    <p class="text-gray-400">Your destination for quality products at unbeatable prices.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Shop</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#shop" class="hover:text-blue-400 transition">Featured Products</a></li>
+                        <li><a href="#categories" class="hover:text-blue-400 transition">All Categories</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Shipping Info</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Returns & Exchanges</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 1-800-SHOPHUB</p>
+                    <p class="text-gray-400">📧 support@shophub.com</p>
+                    <p class="text-gray-400">🕐 24/7 Customer Support</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ShopHub. All rights reserved. | Free Shipping on Orders Over $50</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

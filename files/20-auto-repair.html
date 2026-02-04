@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastFix Auto Repair - Premium Automotive Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-auto {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.9) 0%, rgba(55, 65, 81, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-service {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(31, 41, 55, 0.1);
+        }
+        
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(31, 41, 55, 0.15);
+            border-color: rgba(31, 41, 55, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(31, 41, 55, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.1) 0%, rgba(55, 65, 81, 0.05) 100%);
+            border: 1px solid rgba(31, 41, 55, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-white inter">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">FASTFIX AUTO</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-gray-900 transition font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-gray-900 transition font-medium">Services</a>
+                    <a href="#team" class="text-gray-700 hover:text-gray-900 transition font-medium">Team</a>
+                    <a href="#contact" class="text-gray-700 hover:text-gray-900 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Schedule Service</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-auto pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-gray-300 text-lg font-semibold mb-4 uppercase tracking-widest">Expert Automotive Care</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Premium Auto Repair & Maintenance</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-gray-200 font-light max-w-3xl mx-auto">Professional service from ASE-certified technicians you can trust</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Schedule Service</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-800 transition">Get Free Estimate</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-gray-800 to-gray-600 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">🔧</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About FastFix Auto</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">With over 18 years of dedicated service, FastFix Auto has earned a reputation as the premier automotive repair facility in the region. Our commitment to excellence and customer satisfaction drives everything we do.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">We employ only ASE-certified technicians who stay current with the latest automotive technology and repair techniques. From routine maintenance to complex diagnostics, we handle every job with precision and care.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-gray-800">18+</p>
+                            <p class="text-gray-600 font-medium">Years Experience</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-gray-800">8K+</p>
+                            <p class="text-gray-600 font-medium">Vehicles Serviced</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-gray-800">99%</p>
+                            <p class="text-gray-600 font-medium">Satisfaction Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Repair & Maintenance Services</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Complete automotive care from routine maintenance to major repairs</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Engine Service -->
+                <div class="card-service bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Engine Service & Diagnostics</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Complete oil & filter changes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Computer diagnostics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Engine rebuild & repair</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Cooling system service</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Brake Service -->
+                <div class="card-service bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl">
+                    <div class="service-icon">🛑</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Brake Service & Repair</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Brake pad replacement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Rotor resurfacing & replacement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>ABS system diagnostics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Master cylinder repair</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Transmission Service -->
+                <div class="card-service bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Transmission & Drivetrain</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Transmission fluid service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Complete transmission rebuild</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Clutch repair & replacement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Differential service</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Suspension & Alignment -->
+                <div class="card-service bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Suspension & Alignment</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Strut & shock replacement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Professional wheel alignment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Spring & sway bar service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Undercarriage inspection</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Electrical & Battery -->
+                <div class="card-service bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl">
+                    <div class="service-icon">🔋</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Electrical & Battery Service</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Battery testing & replacement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Alternator & starter service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Electrical diagnostics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Wiring & lighting repair</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tire & Wheel Service -->
+                <div class="card-service bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl">
+                    <div class="service-icon">🛞</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Tire & Wheel Services</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Premium tire sales & installation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Tire rotation & balancing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Patch & repair service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-800 mr-3 font-bold">✓</span>
+                            <span>Custom wheel selection</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Transparent Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-gray-800">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Oil Change</h3>
+                    <p class="text-gray-600 mb-4">Standard synthetic oil & filter</p>
+                    <p class="playfair text-4xl font-bold text-gray-800 mb-4">$39.99</p>
+                    <button class="w-full btn-primary text-white py-2 rounded-lg font-semibold">Book Service</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-gray-800">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Brake Pads</h3>
+                    <p class="text-gray-600 mb-4">Quality pads with rotor inspection</p>
+                    <p class="playfair text-4xl font-bold text-gray-800 mb-4">$149.99</p>
+                    <button class="w-full btn-primary text-white py-2 rounded-lg font-semibold">Book Service</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-gray-800">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Wheel Alignment</h3>
+                    <p class="text-gray-600 mb-4">4-wheel alignment with printout</p>
+                    <p class="playfair text-4xl font-bold text-gray-800 mb-4">$99.99</p>
+                    <button class="w-full btn-primary text-white py-2 rounded-lg font-semibold">Book Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Meet Our Technicians</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-t-4 border-gray-800">
+                    <div class="text-6xl mb-4">👨‍🔧</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Marcus Thompson</h3>
+                    <p class="text-gray-700 font-semibold mb-4">Master Technician & Manager</p>
+                    <p class="text-gray-600 mb-4">18 years of automotive expertise. Specializes in engine diagnostics and transmission repair with ASE Master Certification.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-t-4 border-gray-800">
+                    <div class="text-6xl mb-4">👨‍🔧</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">David Rodriguez</h3>
+                    <p class="text-gray-700 font-semibold mb-4">Senior Technician</p>
+                    <p class="text-gray-600 mb-4">14 years in automotive repair. Expert in brake systems and suspension work. ASE Certified in multiple specialties.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-t-4 border-gray-800">
+                    <div class="text-6xl mb-4">👨‍🔧</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">James Patterson</h3>
+                    <p class="text-gray-700 font-semibold mb-4">Certified Technician</p>
+                    <p class="text-gray-600 mb-4">10 years of hands-on experience. Skilled in electrical systems and computer diagnostics with ASE certification.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"FastFix saved my car! Their technicians diagnosed the issue quickly and the repair was done right. Great prices too!"</p>
+                    <p class="font-bold text-gray-900">Tom Mitchell</p>
+                    <p class="text-gray-500 text-sm">6-Year Regular Customer</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Professional, honest, and reliable. Marcus explained everything clearly. My truck runs better than it ever has!"</p>
+                    <p class="font-bold text-gray-900">Sarah Johnson</p>
+                    <p class="text-gray-500 text-sm">8-Year Regular Customer</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Best auto shop in town! Fair prices, quality work, and they always get me back on the road quickly."</p>
+                    <p class="font-bold text-gray-900">Robert Chen</p>
+                    <p class="text-gray-500 text-sm">5-Year Regular Customer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why Choose FastFix?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl shadow-lg border-l-4 border-gray-800">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">ASE Certified</h3>
+                    <p class="text-gray-600">All technicians hold current ASE certifications for expertise and quality</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl shadow-lg border-l-4 border-gray-800">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Fast Turnaround</h3>
+                    <p class="text-gray-600">Efficient service without compromising quality. Same-day service available</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl shadow-lg border-l-4 border-gray-800">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Transparent Pricing</h3>
+                    <p class="text-gray-600">No surprises! We provide detailed estimates before any work begins</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-xl shadow-lg border-l-4 border-gray-800">
+                    <div class="text-5xl mb-4">✅</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">2-Year Warranty</h3>
+                    <p class="text-gray-600">All repairs backed by our comprehensive 2-year guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-gray-800 to-gray-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Keep Your Vehicle Running Strong</h2>
+            <p class="text-xl mb-8 text-gray-200">Schedule your service appointment with FastFix Auto today</p>
+            <button class="bg-white text-gray-800 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">Schedule Service Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-gray-300">FASTFIX AUTO</h3>
+                    <p class="text-gray-400">Professional automotive repair and maintenance serving the community for 18 years.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-gray-300 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-gray-300 transition">Services</a></li>
+                        <li><a href="#team" class="hover:text-gray-300 transition">Our Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-gray-300 transition">Engine Service</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition">Brake Service</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition">Tire Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 890-1234</p>
+                    <p class="text-gray-400">📧 service@fastfixauto.com</p>
+                    <p class="text-gray-400">⏰ Mon-Fri: 8am-6pm</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 FastFix Auto Repair. All rights reserved. | Professional Service Since 2006</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

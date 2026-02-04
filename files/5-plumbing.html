@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProFix Plumbing - Expert 24/7 Plumbing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .lato {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .hero-plumbing {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-plumbing {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .card-plumbing:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-white lato">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">PROFIX</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition font-medium">Services</a>
+                    <a href="#team" class="text-gray-700 hover:text-blue-600 transition font-medium">Team</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Call Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-plumbing pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-blue-200 text-lg font-semibold mb-4 uppercase tracking-widest">24/7 Emergency Service</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Expert Plumbing Solutions</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-blue-100 font-light max-w-3xl mx-auto">Professional, reliable, and affordable plumbing services for residential and commercial needs</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Call Now: 1-800-PLUMBER</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-700 transition">Schedule Service</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-blue-700 to-blue-500 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">🔧</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About ProFix</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Since 2012, ProFix Plumbing has been the trusted choice for residential and commercial plumbing services. We pride ourselves on fast response times, quality workmanship, and customer satisfaction.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">Our team of certified plumbers is available around the clock to handle any plumbing emergency, from burst pipes to water heater installation and complete bathroom remodels.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center bg-white p-4 rounded-lg">
+                            <p class="playfair text-4xl font-bold text-blue-700">14+</p>
+                            <p class="text-gray-600 font-medium">Years Service</p>
+                        </div>
+                        <div class="text-center bg-white p-4 rounded-lg">
+                            <p class="playfair text-4xl font-bold text-blue-700">25+</p>
+                            <p class="text-gray-600 font-medium">Expert Plumbers</p>
+                        </div>
+                        <div class="text-center bg-white p-4 rounded-lg">
+                            <p class="playfair text-4xl font-bold text-blue-700">100K+</p>
+                            <p class="text-gray-600 font-medium">Jobs Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Services</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Comprehensive plumbing solutions for every situation</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Emergency Repairs -->
+                <div class="card-plumbing bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="service-icon">🚨</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Emergency Repairs</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Burst Pipe Repair & Replacement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Leak Detection & Repair</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Water Damage Mitigation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>24/7 Emergency Response</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Drain Services -->
+                <div class="card-plumbing bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="service-icon">🚰</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Drain Services</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Professional Drain Cleaning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Drain Unclogging Services</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Sewer Line Repair</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Video Inspection Services</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Water Heaters -->
+                <div class="card-plumbing bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="service-icon">♨️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Water Heater Services</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Water Heater Installation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Replacement & Upgrade</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Maintenance & Repair</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Tankless Water Systems</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Remodeling & Installation -->
+                <div class="card-plumbing bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="service-icon">🛁</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Remodeling Services</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Bathroom Plumbing Remodels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Kitchen Fixture Installation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Custom Plumbing Design</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>New Construction Plumbing</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Maintenance -->
+                <div class="card-plumbing bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="service-icon">🔍</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Maintenance Plans</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Preventive Maintenance Programs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Regular Inspections</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Pipe Cleaning & Care</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Priority Service Scheduling</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Commercial Services -->
+                <div class="card-plumbing bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="service-icon">🏢</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Commercial Services</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Commercial Pipe Installation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Grease Trap Maintenance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Backflow Prevention</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Large Scale Projects</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Service Pricing</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Transparent, competitive pricing for all services</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Call -->
+                <div class="card-plumbing bg-white p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Service Call</h3>
+                    <p class="text-gray-600 text-sm mb-4">Initial diagnosis</p>
+                    <p class="price-tag">$99</p>
+                </div>
+
+                <!-- Emergency Call -->
+                <div class="card-plumbing bg-white p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">🚨</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Emergency Call</h3>
+                    <p class="text-gray-600 text-sm mb-4">After hours service</p>
+                    <p class="price-tag">$150</p>
+                </div>
+
+                <!-- Drain Cleaning -->
+                <div class="card-plumbing bg-white p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">🚰</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Drain Cleaning</h3>
+                    <p class="text-gray-600 text-sm mb-4">Professional unclog</p>
+                    <p class="price-tag">$250</p>
+                </div>
+
+                <!-- Pipe Repair -->
+                <div class="card-plumbing bg-white p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">🔧</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Pipe Repair</h3>
+                    <p class="text-gray-600 text-sm mb-4">Leak & burst repair</p>
+                    <p class="price-tag">$300+</p>
+                </div>
+
+                <!-- Water Heater -->
+                <div class="card-plumbing bg-white p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">♨️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Water Heater</h3>
+                    <p class="text-gray-600 text-sm mb-4">Installation service</p>
+                    <p class="price-tag">$1200+</p>
+                </div>
+
+                <!-- Maintenance Plan -->
+                <div class="card-plumbing bg-white p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">🎁</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Maintenance Plan</h3>
+                    <p class="text-gray-600 text-sm mb-4">Annual service</p>
+                    <p class="price-tag">$199/yr</p>
+                </div>
+
+                <!-- Inspection -->
+                <div class="card-plumbing bg-white p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Video Inspection</h3>
+                    <p class="text-gray-600 text-sm mb-4">Full pipe diagnosis</p>
+                    <p class="price-tag">$350</p>
+                </div>
+
+                <!-- Remodel Consultation -->
+                <div class="card-plumbing bg-white p-6 rounded-xl text-center">
+                    <div class="text-4xl mb-4">🏗️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Remodel Quote</h3>
+                    <p class="text-gray-600 text-sm mb-4">Free consultation</p>
+                    <p class="price-tag">Free</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Expert Team</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Licensed, certified, and dedicated professionals</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-300 to-blue-200 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍🔧</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Jack Harrison</h3>
+                    <p class="text-gray-600">Master Plumber</p>
+                    <p class="text-sm text-blue-600">20+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-300 to-blue-200 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍💼</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">David Chen</h3>
+                    <p class="text-gray-600">Commercial Expert</p>
+                    <p class="text-sm text-blue-600">15+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-300 to-blue-200 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍🔨</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Robert Smith</h3>
+                    <p class="text-gray-600">Drain Specialist</p>
+                    <p class="text-sm text-blue-600">12+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-300 to-blue-200 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍⚙️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Michael Torres</h3>
+                    <p class="text-gray-600">Gas Line Tech</p>
+                    <p class="text-sm text-blue-600">10+ years experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"ProFix arrived in 30 minutes for our emergency. They fixed the burst pipe professionally and the price was fair. Highly recommended!"</p>
+                    <p class="font-bold text-gray-900">Jennifer Wallace</p>
+                    <p class="text-gray-500 text-sm">Emergency Service Customer</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Our bathroom remodel was seamless thanks to ProFix's team. Professional, clean, and finished on time. They're our go-to plumbers!"</p>
+                    <p class="font-bold text-gray-900">Thomas & Karen Lee</p>
+                    <p class="text-gray-500 text-sm">Remodeling Project Customer</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"We've been using ProFix's maintenance plan for 3 years. No major issues, great preventive care, and responsive team!"</p>
+                    <p class="font-bold text-gray-900">Marcus Johnson</p>
+                    <p class="text-gray-500 text-sm">Maintenance Plan Customer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why Choose ProFix?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Fast Response</h3>
+                    <p class="text-gray-600">30-minute response guarantee for emergency calls</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">💰</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Transparent Pricing</h3>
+                    <p class="text-gray-600">Upfront estimates with no hidden charges</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Licensed & Insured</h3>
+                    <p class="text-gray-600">All plumbers fully certified and insured</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">✅</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">1-Year Warranty</h3>
+                    <p class="text-gray-600">Satisfaction guarantee on all work</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Need Plumbing Help?</h2>
+            <p class="text-xl mb-8 text-blue-100">Call ProFix today for fast, professional service available 24/7</p>
+            <button class="bg-white text-blue-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition">Call 1-800-PLUMBER</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">PROFIX</h3>
+                    <p class="text-gray-400">Your trusted plumbing professionals available 24/7.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition">Services</a></li>
+                        <li><a href="#team" class="hover:text-blue-400 transition">Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-gray-400">Available 24/7</p>
+                    <p class="text-gray-400">Emergency Service</p>
+                    <p class="text-gray-400">No Holidays</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 1-800-PLUMBER</p>
+                    <p class="text-gray-400">📧 service@profix.com</p>
+                    <p class="text-gray-400">📍 Serving All Areas</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ProFix Plumbing. All rights reserved. Licensed & Insured.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Minds - Professional Consulting Firm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .opensans {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .hero-consulting {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-service {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(30, 41, 59, 0.1);
+        }
+        
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(30, 41, 59, 0.15);
+            border-color: rgba(30, 41, 59, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 41, 59, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.1) 0%, rgba(51, 65, 85, 0.05) 100%);
+            border: 1px solid rgba(30, 41, 59, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .case-study-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(30, 41, 59, 0.1);
+        }
+        
+        .case-study-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(30, 41, 59, 0.15);
+            border-color: rgba(30, 41, 59, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white opensans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">STRATEGIC MINDS</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-slate-800 transition font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-slate-800 transition font-medium">Services</a>
+                    <a href="#cases" class="text-gray-700 hover:text-slate-800 transition font-medium">Case Studies</a>
+                    <a href="#contact" class="text-gray-700 hover:text-slate-800 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Get Consultation</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-consulting pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-slate-300 text-lg font-semibold mb-4 uppercase tracking-widest">Strategic Business Transformation</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Transform Your Business</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-slate-200 font-light max-w-3xl mx-auto">Expert consulting strategies that drive growth, innovation, and competitive advantage</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Schedule Consultation</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-slate-800 transition">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-600 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">💼</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About Strategic Minds</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Since 2009, Strategic Minds has been the trusted partner for leading organizations seeking transformative business solutions. Our expert consultants have helped hundreds of companies achieve unprecedented growth and operational excellence.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">We combine deep industry expertise with innovative methodologies to deliver measurable results and sustainable competitive advantage for our clients.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-slate-800">15+</p>
+                            <p class="text-gray-600 font-medium">Years Established</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-slate-800">150+</p>
+                            <p class="text-gray-600 font-medium">Client Successes</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-slate-800">$2B+</p>
+                            <p class="text-gray-600 font-medium">Value Created</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Consulting Services</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Comprehensive solutions for every business challenge</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Strategy Consulting -->
+                <div class="card-service bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-xl">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Strategy Consulting</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Business strategy development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Market analysis & positioning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Competitive advantage planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Growth strategy roadmaps</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Digital Transformation -->
+                <div class="card-service bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-xl">
+                    <div class="service-icon">🚀</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Digital Transformation</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Technology assessment & planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Process digitization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Systems integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Innovation implementation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Operations Management -->
+                <div class="card-service bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-xl">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Operations Management</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Process optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Operational efficiency</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Supply chain optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Cost reduction strategies</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Change Management -->
+                <div class="card-service bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-xl">
+                    <div class="service-icon">🔄</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Change Management</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Organizational transformation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Change impact analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Stakeholder management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Implementation support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Financial Advisory -->
+                <div class="card-service bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-xl">
+                    <div class="service-icon">💰</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Financial Advisory</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Financial planning & analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Performance management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Risk management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Investment advisory</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Talent Management -->
+                <div class="card-service bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-xl">
+                    <div class="service-icon">👥</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Talent Management</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Talent strategy & planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Organizational design</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Leadership development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-800 mr-3 font-bold">✓</span>
+                            <span>Performance optimization</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-20 bg-gradient-to-r from-slate-50 to-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Impact</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Proven results across industries and geographies</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-slate-800">150+</p>
+                    <p class="text-gray-600 font-medium mt-2">Client Engagements</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-slate-800">25%</p>
+                    <p class="text-gray-600 font-medium mt-2">Avg. Revenue Growth</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-slate-800">40+</p>
+                    <p class="text-gray-600 font-medium mt-2">Expert Consultants</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-slate-800">$2B+</p>
+                    <p class="text-gray-600 font-medium mt-2">Value Created</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="cases" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Case Studies</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Real results from real clients</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="case-study-card bg-gray-50 p-8 rounded-xl">
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Fortune 500 Manufacturing</h3>
+                    <p class="text-gray-700 mb-4">Led digital transformation reducing operational costs by 30% and improving efficiency across 15 facilities.</p>
+                    <div class="border-t border-gray-200 pt-4">
+                        <p class="text-sm text-slate-800 font-semibold">Results: $45M savings | 18-month project</p>
+                    </div>
+                </div>
+                <div class="case-study-card bg-gray-50 p-8 rounded-xl">
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Mid-Market Tech Startup</h3>
+                    <p class="text-gray-700 mb-4">Developed go-to-market strategy enabling 150% revenue growth and successful Series B funding round.</p>
+                    <div class="border-t border-gray-200 pt-4">
+                        <p class="text-sm text-slate-800 font-semibold">Results: $12M+ revenue | 9-month project</p>
+                    </div>
+                </div>
+                <div class="case-study-card bg-gray-50 p-8 rounded-xl">
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-3">Global Financial Services</h3>
+                    <p class="text-gray-700 mb-4">Restructured operations and talent strategy improving profitability by 35% across all divisions.</p>
+                    <div class="border-t border-gray-200 pt-4">
+                        <p class="text-sm text-slate-800 font-semibold">Results: $80M+ profit increase | 12-month project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Client Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Strategic Minds transformed our organization. Their insights and implementation support were invaluable. We achieved our goals ahead of schedule and under budget."</p>
+                    <p class="font-bold text-gray-900">Jennifer Williams</p>
+                    <p class="text-gray-500 text-sm">CEO, Manufacturing Corp</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"The team brought world-class expertise and genuine partnership approach. They didn't just advise, they rolled up their sleeves and implemented solutions with us."</p>
+                    <p class="font-bold text-gray-900">Marcus Thompson</p>
+                    <p class="text-gray-500 text-sm">President, Tech Solutions Inc</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Exceptional results. Strategic Minds delivered measurable impact across every initiative. I recommend them to any organization serious about transformation."</p>
+                    <p class="font-bold text-gray-900">Michelle Garcia</p>
+                    <p class="text-gray-500 text-sm">CFO, Financial Services Group</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-slate-800 to-slate-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Ready to Transform Your Organization?</h2>
+            <p class="text-xl mb-8 text-slate-200">Let's discuss how Strategic Minds can help drive your success</p>
+            <button class="bg-white text-slate-800 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 transition">Schedule a Free Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">STRATEGIC MINDS</h3>
+                    <p class="text-gray-400">Transforming organizations through strategic consulting and expert guidance.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-slate-300 transition">Our Services</a></li>
+                        <li><a href="#cases" class="hover:text-slate-300 transition">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-slate-300 transition">Industries</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-slate-300 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-slate-300 transition">Our Team</a></li>
+                        <li><a href="#" class="hover:text-slate-300 transition">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 345-1234</p>
+                    <p class="text-gray-400">📧 info@strategicminds.com</p>
+                    <p class="text-gray-400">📍 Business District</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Strategic Minds Consulting. All rights reserved. | Excellence Since 2009</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

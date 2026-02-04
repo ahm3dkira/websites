@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drive Rental - Premium Car Rental Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-rental {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.9) 0%, rgba(239, 68, 68, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-vehicle {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(220, 38, 38, 0.1);
+        }
+        
+        .card-vehicle:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+        
+        .vehicle-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(220, 38, 38, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white poppins">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-red-700 to-red-500 bg-clip-text text-transparent">DRIVE RENTAL</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 transition font-medium">Home</a>
+                    <a href="#fleet" class="text-gray-700 hover:text-red-600 transition font-medium">Fleet</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-red-600 transition font-medium">Pricing</a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-rental pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-red-200 text-lg font-semibold mb-4 uppercase tracking-widest">Premium Car Rental</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Your Journey Starts Here</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-red-100 font-light max-w-3xl mx-auto">Quality vehicles, affordable rates, and exceptional service at your fingertips</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Reserve Your Vehicle</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-red-700 transition">Browse Fleet</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-red-700 to-red-500 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">🚗</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About Drive Rental</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Since 2010, Drive Rental has been the trusted choice for travelers and businesses needing reliable transportation. With a diverse fleet and unbeatable rates, we've served over 1 million satisfied customers.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">Our commitment to quality vehicles, transparent pricing, and 24/7 customer support makes us the premier car rental destination.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-red-700">14+</p>
+                            <p class="text-gray-600 font-medium">Years in Service</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-red-700">1M+</p>
+                            <p class="text-gray-600 font-medium">Happy Customers</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-red-700">500+</p>
+                            <p class="text-gray-600 font-medium">Vehicles Fleet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Fleet</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Wide selection of modern, well-maintained vehicles</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Economy Cars -->
+                <div class="card-vehicle bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-xl">
+                    <div class="vehicle-icon">🚙</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Economy Cars</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Fuel-efficient & comfortable</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Perfect for city travel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Automatic transmission</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Starting from $35/day</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Select</button>
+                </div>
+
+                <!-- Midsize Sedans -->
+                <div class="card-vehicle bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-xl">
+                    <div class="vehicle-icon">🚕</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Midsize Sedans</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Spacious & elegant</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Premium comfort seating</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Advanced safety features</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Starting from $45/day</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Select</button>
+                </div>
+
+                <!-- SUVs -->
+                <div class="card-vehicle bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-xl">
+                    <div class="vehicle-icon">🚐</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">SUVs & Crossovers</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Spacious cargo area</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>All-wheel drive available</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Great for families</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Starting from $65/day</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Select</button>
+                </div>
+
+                <!-- Premium Vehicles -->
+                <div class="card-vehicle bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-xl">
+                    <div class="vehicle-icon">💎</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Premium Vehicles</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Luxury sedan & coupe</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Premium interior & tech</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Enhanced performance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Starting from $95/day</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Select</button>
+                </div>
+
+                <!-- Passenger Vans -->
+                <div class="card-vehicle bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-xl">
+                    <div class="vehicle-icon">🚌</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Passenger Vans</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Seats 7-8 passengers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Ideal for group travel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Comfortable & spacious</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Starting from $85/day</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Select</button>
+                </div>
+
+                <!-- Pickup Trucks -->
+                <div class="card-vehicle bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-xl">
+                    <div class="vehicle-icon">🛻</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Pickup Trucks</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Heavy-duty cargo capacity</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Perfect for projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Reliable & powerful</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-3 font-bold">✓</span>
+                            <span>Starting from $75/day</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Select</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-gradient-to-r from-red-50 to-pink-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Pricing & Packages</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Transparent pricing with no hidden fees</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-xl">
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-4">Daily Rate</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li>✓ Per day rental</li>
+                        <li>✓ Unlimited mileage</li>
+                        <li>✓ Basic insurance</li>
+                        <li>✓ Free cancellation</li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Choose Plan</button>
+                </div>
+                <div class="feature-card bg-white p-8 rounded-xl border-2 border-red-600">
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-4">Weekly Rate</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li>✓ 20% discount on daily</li>
+                        <li>✓ Unlimited mileage</li>
+                        <li>✓ Premium insurance</li>
+                        <li>✓ Free upgrade option</li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Choose Plan</button>
+                </div>
+                <div class="feature-card bg-white p-8 rounded-xl">
+                    <h3 class="playfair text-xl font-bold text-gray-900 mb-4">Monthly Rate</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li>✓ 35% discount on daily</li>
+                        <li>✓ Unlimited mileage</li>
+                        <li>✓ Premium insurance</li>
+                        <li>✓ Roadside assistance</li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg font-semibold">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why Choose Drive Rental?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-red-700">500+</p>
+                    <p class="text-gray-600 font-medium mt-2">Modern Vehicles</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-red-700">$35</p>
+                    <p class="text-gray-600 font-medium mt-2">Lowest Daily Rate</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-red-700">24/7</p>
+                    <p class="text-gray-600 font-medium mt-2">Customer Support</p>
+                </div>
+                <div class="stat-card">
+                    <p class="playfair text-5xl font-bold text-red-700">98%</p>
+                    <p class="text-gray-600 font-medium mt-2">Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Best rental experience ever! The vehicle was spotless, the staff was friendly, and the prices were unbeatable. Rented multiple times and never disappointed!"</p>
+                    <p class="font-bold text-gray-900">David Martinez</p>
+                    <p class="text-gray-500 text-sm">Frequent Renter</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Excellent service with transparent pricing. No hidden charges and the booking process was incredibly smooth. Highly recommend to anyone!"</p>
+                    <p class="font-bold text-gray-900">Sarah Johnson</p>
+                    <p class="text-gray-500 text-sm">Business Traveler</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Great selection of vehicles and amazing customer support. When I had an issue, they solved it within minutes. Great company!"</p>
+                    <p class="font-bold text-gray-900">Robert Chen</p>
+                    <p class="text-gray-500 text-sm">Road Trip Enthusiast</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-red-700 to-red-500 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Ready to Hit the Road?</h2>
+            <p class="text-xl mb-8 text-red-100">Book your vehicle today and enjoy the freedom of the open road</p>
+            <button class="bg-white text-red-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-50 transition">Book Your Rental Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">DRIVE RENTAL</h3>
+                    <p class="text-gray-400">Your trusted partner for quality car rentals and exceptional service.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-red-400 transition">Home</a></li>
+                        <li><a href="#fleet" class="hover:text-red-400 transition">Fleet</a></li>
+                        <li><a href="#pricing" class="hover:text-red-400 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-red-400 transition">Vehicle Reservations</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition">Special Offers</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition">Corporate Program</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 234-1234</p>
+                    <p class="text-gray-400">📧 info@driverental.com</p>
+                    <p class="text-gray-400">📍 Multiple Locations</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Drive Rental. All rights reserved. | Premium Car Rental Since 2010</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

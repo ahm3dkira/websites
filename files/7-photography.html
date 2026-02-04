@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens & Light - Premium Photography Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .opensans {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .hero-photography {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(31, 41, 55, 0.8) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.02)" fill-opacity="1" d="M0,224L120,213.3C240,203,480,181,720,181.3C960,181,1200,203,1320,213.3L1440,224L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-portfolio {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card-portfolio:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #000 0%, #1f2937 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #444;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #000 0%, #1f2937 100%);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 1px solid #444;
+        }
+        
+        .portfolio-item {
+            height: 320px;
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(31, 41, 55, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card-portfolio:hover .portfolio-item::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-black text-white opensans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black shadow-xl z-50 top-0 border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">LENS</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-white transition font-medium">Home</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-white transition font-medium">Portfolio</a>
+                    <a href="#services" class="text-gray-300 hover:text-white transition font-medium">Services</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold border border-gray-700">Book Session</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-photography pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-gray-400 text-lg font-semibold mb-4 uppercase tracking-widest">Visual Storytelling</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Capture Your Story</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-gray-300 font-light max-w-3xl mx-auto">Timeless photography that celebrates your most precious moments with artistry and elegance</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg border border-gray-700">Book Your Session</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-black transition">View Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-950 border-y border-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-gray-800 to-gray-900 h-96 rounded-xl shadow-2xl flex items-center justify-center border border-gray-800">
+                        <span class="text-8xl">📸</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-white">About Lens & Light</h2>
+                    <p class="text-lg text-gray-300 mb-4 leading-relaxed">Since 2012, Lens & Light Studio has been creating extraordinary visual narratives that celebrate life's most significant moments. Our artistic approach combines technical excellence with genuine emotion.</p>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">We believe in the power of photography to tell stories that last a lifetime. Every session is tailored to capture the unique essence of our clients, creating images that become treasured memories.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center bg-gray-900 p-4 rounded-lg border border-gray-800">
+                            <p class="playfair text-4xl font-bold text-white">12+</p>
+                            <p class="text-gray-400 font-medium">Years Experience</p>
+                        </div>
+                        <div class="text-center bg-gray-900 p-4 rounded-lg border border-gray-800">
+                            <p class="playfair text-4xl font-bold text-white">3K+</p>
+                            <p class="text-gray-400 font-medium">Happy Clients</p>
+                        </div>
+                        <div class="text-center bg-gray-900 p-4 rounded-lg border border-gray-800">
+                            <p class="playfair text-4xl font-bold text-white">25+</p>
+                            <p class="text-gray-400 font-medium">Awards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-white">Our Portfolio</h2>
+            <p class="text-center text-gray-400 text-lg mb-16 max-w-2xl mx-auto">A curated selection of our most memorable work across all photography categories</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Wedding -->
+                <div class="card-portfolio group">
+                    <div class="portfolio-item flex items-center justify-center">
+                        <span class="text-7xl">💒</span>
+                    </div>
+                    <div class="p-6 bg-gray-900 border border-gray-800">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Wedding Photography</h3>
+                        <p class="text-gray-400 mb-4">Beautiful moments from your special day</p>
+                        <span class="text-sm text-gray-500">25+ weddings captured</span>
+                    </div>
+                </div>
+
+                <!-- Portraits -->
+                <div class="card-portfolio group">
+                    <div class="portfolio-item flex items-center justify-center">
+                        <span class="text-7xl">👥</span>
+                    </div>
+                    <div class="p-6 bg-gray-900 border border-gray-800">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Portrait Sessions</h3>
+                        <p class="text-gray-400 mb-4">Timeless portraits that capture character</p>
+                        <span class="text-sm text-gray-500">500+ portraits created</span>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="card-portfolio group">
+                    <div class="portfolio-item flex items-center justify-center">
+                        <span class="text-7xl">🎉</span>
+                    </div>
+                    <div class="p-6 bg-gray-900 border border-gray-800">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Event Coverage</h3>
+                        <p class="text-gray-400 mb-4">Professional coverage of your celebrations</p>
+                        <span class="text-sm text-gray-500">100+ events documented</span>
+                    </div>
+                </div>
+
+                <!-- Product -->
+                <div class="card-portfolio group">
+                    <div class="portfolio-item flex items-center justify-center">
+                        <span class="text-7xl">📦</span>
+                    </div>
+                    <div class="p-6 bg-gray-900 border border-gray-800">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Product Photography</h3>
+                        <p class="text-gray-400 mb-4">Showcase your products beautifully</p>
+                        <span class="text-sm text-gray-500">200+ product shoots</span>
+                    </div>
+                </div>
+
+                <!-- Corporate -->
+                <div class="card-portfolio group">
+                    <div class="portfolio-item flex items-center justify-center">
+                        <span class="text-7xl">💼</span>
+                    </div>
+                    <div class="p-6 bg-gray-900 border border-gray-800">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Corporate Portraits</h3>
+                        <p class="text-gray-400 mb-4">Professional headshots and team photos</p>
+                        <span class="text-sm text-gray-500">50+ companies served</span>
+                    </div>
+                </div>
+
+                <!-- Editorials -->
+                <div class="card-portfolio group">
+                    <div class="portfolio-item flex items-center justify-center">
+                        <span class="text-7xl">📖</span>
+                    </div>
+                    <div class="p-6 bg-gray-900 border border-gray-800">
+                        <h3 class="playfair text-2xl font-bold text-white mb-2">Editorial Work</h3>
+                        <p class="text-gray-400 mb-4">Featured in leading publications</p>
+                        <span class="text-sm text-gray-500">15+ magazine features</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-950 border-y border-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-white">Photography Services</h2>
+            <p class="text-center text-gray-400 text-lg mb-16 max-w-2xl mx-auto">Professional photography packages tailored to your needs</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Wedding Photography -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition">
+                    <div class="service-icon">💒</div>
+                    <h3 class="playfair text-2xl font-bold text-white mb-4">Wedding Photography</h3>
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Full Day Coverage (8-10 hours)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Pre-Wedding Consultation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Professional Editing & Album</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>500+ Digital Images</span>
+                        </li>
+                    </ul>
+                    <p class="price-tag text-lg">$1,800</p>
+                </div>
+
+                <!-- Portrait Sessions -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition">
+                    <div class="service-icon">👥</div>
+                    <h3 class="playfair text-2xl font-bold text-white mb-4">Portrait Sessions</h3>
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>2-Hour Studio Session</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Makeup Artist Coordination</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>100+ Edited Images</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Digital & Print Options</span>
+                        </li>
+                    </ul>
+                    <p class="price-tag text-lg">$400</p>
+                </div>
+
+                <!-- Event Coverage -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition">
+                    <div class="service-icon">🎉</div>
+                    <h3 class="playfair text-2xl font-bold text-white mb-4">Event Coverage</h3>
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Full Event Documentation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Candid & Posed Photography</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>300+ High Quality Images</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Quick Turnaround Delivery</span>
+                        </li>
+                    </ul>
+                    <p class="price-tag text-lg">$900</p>
+                </div>
+
+                <!-- Product Photography -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition">
+                    <div class="service-icon">📦</div>
+                    <h3 class="playfair text-2xl font-bold text-white mb-4">Product Photography</h3>
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Professional Product Shots</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Background & Styling Options</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Perfect for E-Commerce</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Hourly or Per-Product Rates</span>
+                        </li>
+                    </ul>
+                    <p class="price-tag text-lg">$250/hr</p>
+                </div>
+
+                <!-- Corporate Portraits -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition">
+                    <div class="service-icon">💼</div>
+                    <h3 class="playfair text-2xl font-bold text-white mb-4">Corporate Portraits</h3>
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Professional Headshots</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Team & Group Photos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>LinkedIn & Website Ready</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Rush Processing Available</span>
+                        </li>
+                    </ul>
+                    <p class="price-tag text-lg">$600</p>
+                </div>
+
+                <!-- Maternity & Family -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <h3 class="playfair text-2xl font-bold text-white mb-4">Maternity & Family</h3>
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Maternity Portrait Sessions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Newborn & Baby Sessions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Family Reunion Photography</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-white mr-3 font-bold">✓</span>
+                            <span>Milestone Celebrations</span>
+                        </li>
+                    </ul>
+                    <p class="price-tag text-lg">$500</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-white">Our Team</h2>
+            <p class="text-center text-gray-400 text-lg mb-16 max-w-2xl mx-auto">Award-winning photographers and creative professionals</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-gray-700 to-gray-800 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl border border-gray-700">📸</div>
+                    <h3 class="playfair text-xl font-bold text-white">Sarah Mitchell</h3>
+                    <p class="text-gray-400">Creative Director & Founder</p>
+                    <p class="text-sm text-gray-500">15+ years in photography</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-gray-700 to-gray-800 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl border border-gray-700">📷</div>
+                    <h3 class="playfair text-xl font-bold text-white">Marcus Foster</h3>
+                    <p class="text-gray-400">Senior Photographer</p>
+                    <p class="text-sm text-gray-500">12+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-gray-700 to-gray-800 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl border border-gray-700">🎨</div>
+                    <h3 class="playfair text-xl font-bold text-white">Elena Rodriguez</h3>
+                    <p class="text-gray-400">Photo Editor & Designer</p>
+                    <p class="text-sm text-gray-500">10+ years in design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-950 border-y border-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-white">Client Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-300 mb-4 italic">"Sarah captured our wedding day perfectly. The photos are absolutely stunning and tell our love story beautifully. Worth every penny!"</p>
+                    <p class="font-bold text-white">Emma & James</p>
+                    <p class="text-gray-500 text-sm">Wedding Photography Clients</p>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-300 mb-4 italic">"Marcus is an absolute professional. The portraits turned out incredible and the editing was impeccable. Highly recommended!"</p>
+                    <p class="font-bold text-white">David Chen</p>
+                    <p class="text-gray-500 text-sm">Corporate Portrait Client</p>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-300 mb-4 italic">"Our event coverage was exceptional. They captured moments we didn't even know existed. Elena's editing made everything look magazine-quality!"</p>
+                    <p class="font-bold text-white">Sophie Laurent</p>
+                    <p class="text-gray-500 text-sm">Event Photography Client</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-white">Why Choose Lens & Light?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🎨</div>
+                    <h3 class="font-bold text-lg mb-3 text-white">Artistic Vision</h3>
+                    <p class="text-gray-400">Creative storytelling with a unique aesthetic</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="font-bold text-lg mb-3 text-white">Professional Quality</h3>
+                    <p class="text-gray-400">Award-winning photography and editing</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">💎</div>
+                    <h3 class="font-bold text-lg mb-3 text-white">Attention to Detail</h3>
+                    <p class="text-gray-400">Meticulous care in every shot</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🤝</div>
+                    <h3 class="font-bold text-lg mb-3 text-white">Client Focused</h3>
+                    <p class="text-gray-400">Your vision is our priority</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-black to-gray-900 border-y border-gray-900">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4 text-white">Ready to Capture Your Story?</h2>
+            <p class="text-xl mb-8 text-gray-300">Let's create timeless images together</p>
+            <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg border border-gray-700">Schedule a Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black border-t border-gray-900 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-white">LENS & LIGHT</h3>
+                    <p class="text-gray-400">Timeless photography celebrating life's moments.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-white">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition">Weddings</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Portraits</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-white">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 678-9012</p>
+                    <p class="text-gray-400">📧 hello@lensandlight.com</p>
+                    <p class="text-gray-400">📍 Creative District</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Lens & Light Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

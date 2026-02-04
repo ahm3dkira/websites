@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literary Haven - Premium Independent Bookstore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .lora {
+            font-family: 'Lora', serif;
+        }
+        
+        .hero-bookstore {
+            background: linear-gradient(135deg, rgba(120, 53, 15, 0.9) 0%, rgba(180, 83, 9, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-category {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(120, 53, 15, 0.1);
+        }
+        
+        .card-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(120, 53, 15, 0.15);
+            border-color: rgba(120, 53, 15, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #78350f 0%, #b45309 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(120, 53, 15, 0.3);
+        }
+        
+        .book-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(120, 53, 15, 0.1) 0%, rgba(180, 83, 9, 0.05) 100%);
+            border: 1px solid rgba(120, 53, 15, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .book-card {
+            transition: all 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(120, 53, 15, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white lora">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-amber-900 to-amber-700 bg-clip-text text-transparent">LITERARY HAVEN</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-amber-700 transition font-medium">Home</a>
+                    <a href="#books" class="text-gray-700 hover:text-amber-700 transition font-medium">Books</a>
+                    <a href="#categories" class="text-gray-700 hover:text-amber-700 transition font-medium">Categories</a>
+                    <a href="#contact" class="text-gray-700 hover:text-amber-700 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bookstore pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-amber-200 text-lg font-semibold mb-4 uppercase tracking-widest">Gateway to Worlds</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Discover Stories That Inspire</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-amber-100 font-light max-w-3xl mx-auto">A curated collection of literature from classic masterpieces to contemporary bestsellers</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Browse Collection</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-amber-700 transition">View Events</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-amber-900 to-amber-700 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">📚</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About Literary Haven</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">For over 20 years, Literary Haven has been a beloved sanctuary for book lovers and readers of all kinds. Our carefully curated collection spans every genre, from timeless classics to the latest contemporary releases.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">We are more than just a bookstore—we are a community hub where readers gather to discover, discuss, and celebrate the transformative power of literature. Our expert staff is passionate about matching readers with their next favorite book.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-amber-900">20+</p>
+                            <p class="text-gray-600 font-medium">Years in Business</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-amber-900">50K+</p>
+                            <p class="text-gray-600 font-medium">Titles in Stock</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-amber-900">100K+</p>
+                            <p class="text-gray-600 font-medium">Active Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books -->
+    <section id="books" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Featured Selections</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Handpicked titles from our award-winning collection</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Mystery & Thriller -->
+                <div class="card-category bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl">
+                    <div class="service-icon book-icon">🔍</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Mystery & Thriller</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The Silent Patient" by Alex Michaelides</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The Thursday Murder Club" by Richard Osman</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Verity" by Colleen Hoover</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The Midnight Library" by Matt Haig</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Fiction & Literature -->
+                <div class="card-category bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl">
+                    <div class="service-icon book-icon">✍️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Fiction & Literature</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Lessons in Chemistry" by Bonnie Garmus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The Seven Husbands of Evelyn Hugo" by Taylor Jenkins Reid</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Tomorrow, and Tomorrow, and Tomorrow" by Gabrielle Zevin</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The House in the Cerulean Sea" by TJ Klune</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Non-Fiction & Biography -->
+                <div class="card-category bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl">
+                    <div class="service-icon book-icon">📖</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Non-Fiction & Biography</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Educated" by Tara Westover</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Sapiens" by Yuval Noah Harari</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Atomic Habits" by James Clear</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Becoming" by Michelle Obama</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Science Fiction & Fantasy -->
+                <div class="card-category bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl">
+                    <div class="service-icon book-icon">🚀</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Science Fiction & Fantasy</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Project Hail Mary" by Andy Weir</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The Poppy War" by R.F. Kuang</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Dune" by Frank Herbert</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Fourth Wing" by Rebecca Yarros</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Children & Young Adult -->
+                <div class="card-category bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl">
+                    <div class="service-icon book-icon">🎈</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Children & Young Adult</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Percy Jackson Series" by Rick Riordan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"A Court of Thorns and Roses" by Sarah J. Maas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The Hate U Give" by Angie Thomas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Wings of Fire Series" by Tui T. Sutherland</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Self-Help & Personal Development -->
+                <div class="card-category bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl">
+                    <div class="service-icon book-icon">💡</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Self-Help & Development</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The 7 Habits of Highly Effective People" by Stephen Covey</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Mindset" by Carol S. Dweck</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"The Power of Now" by Eckhart Tolle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-700 mr-3 font-bold">✓</span>
+                            <span>"Emotional Intelligence" by Daniel Goleman</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Categories -->
+    <section id="categories" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Browse Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Fiction</h3>
+                    <p class="text-amber-700 font-bold text-2xl mb-2">2,500+</p>
+                    <p class="text-gray-600">Novels, classics, contemporary literature</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Non-Fiction</h3>
+                    <p class="text-amber-700 font-bold text-2xl mb-2">1,800+</p>
+                    <p class="text-gray-600">History, biography, science, philosophy</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Young Adult</h3>
+                    <p class="text-amber-700 font-bold text-2xl mb-2">1,200+</p>
+                    <p class="text-gray-600">Fantasy, romance, coming-of-age</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Children</h3>
+                    <p class="text-amber-700 font-bold text-2xl mb-2">3,000+</p>
+                    <p class="text-gray-600">Picture books, early readers, chapter</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Upcoming Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Author Signing</h3>
+                    <p class="text-gray-600 mb-3">Meet bestselling author Rebecca Yarros as she signs copies of "Fourth Wing" and discusses her writing process.</p>
+                    <p class="text-amber-700 font-bold text-lg">Saturday, March 15 @ 2 PM</p>
+                </div>
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Book Club Discussion</h3>
+                    <p class="text-gray-600 mb-3">Join our monthly book club as we discuss "Lessons in Chemistry" by Bonnie Garmus. New members always welcome!</p>
+                    <p class="text-amber-700 font-bold text-lg">Wednesday, March 20 @ 6 PM</p>
+                </div>
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-3">Children's Story Hour</h3>
+                    <p class="text-gray-600 mb-3">Interactive storytelling and activities for children ages 4-8. Build a love of reading in a fun, engaging environment.</p>
+                    <p class="text-amber-700 font-bold text-lg">Sunday, March 10 @ 11 AM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Meet Our Book Experts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-700">
+                    <div class="text-6xl mb-4">👩‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Margaret Chen</h3>
+                    <p class="text-amber-700 font-semibold mb-4">Owner & Chief Curator</p>
+                    <p class="text-gray-600 mb-4">20+ years of literary expertise. Margaret personally curates our collection and hosts author events.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-700">
+                    <div class="text-6xl mb-4">👨‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">David Park</h3>
+                    <p class="text-amber-700 font-semibold mb-4">Fiction Specialist</p>
+                    <p class="text-gray-600 mb-4">Expert in contemporary and classic fiction. David helps readers discover their next great read.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-700">
+                    <div class="text-6xl mb-4">👩‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Sophie Williams</h3>
+                    <p class="text-amber-700 font-semibold mb-4">Children's & YA Specialist</p>
+                    <p class="text-gray-600 mb-4">Passionate about young readers. Sophie leads our story hours and curates selections for all ages.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gradient-to-r from-amber-50 to-yellow-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why Literary Haven?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Expert Curation</h3>
+                    <p class="text-gray-600">Thoughtfully selected titles across all genres and reading levels</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Community Focus</h3>
+                    <p class="text-gray-600">Regular events, book clubs, and author signings for all readers</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <div class="text-5xl mb-4">💬</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Personal Service</h3>
+                    <p class="text-gray-600">Expert recommendations from passionate book lovers</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <div class="text-5xl mb-4">📚</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Vast Selection</h3>
+                    <p class="text-gray-600">50,000+ titles spanning every genre and interest</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-amber-900 to-amber-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Start Your Literary Journey</h2>
+            <p class="text-xl mb-8 text-amber-100">Explore our collection and discover your next favorite book</p>
+            <button class="bg-white text-amber-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-50 transition">Visit Us Today</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-amber-400">LITERARY HAVEN</h3>
+                    <p class="text-gray-400">Your sanctuary for discovering extraordinary stories and connecting with fellow book lovers.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="#books" class="hover:text-amber-400 transition">Featured Books</a></li>
+                        <li><a href="#categories" class="hover:text-amber-400 transition">Categories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-amber-400 transition">Fiction</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition">Non-Fiction</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition">Young Adult</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 789-1234</p>
+                    <p class="text-gray-400">📧 hello@literaryhaven.com</p>
+                    <p class="text-gray-400">📍 Downtown Literary District</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Literary Haven. All rights reserved. | Premier Independent Bookstore Since 2004</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

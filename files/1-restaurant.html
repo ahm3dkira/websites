@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavors Restaurant - Fine Dining Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-pattern {
+            background: linear-gradient(135deg, rgba(237, 78, 14, 0.9) 0%, rgba(220, 38, 38, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ed4e0e 0%, #dc2626 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(237, 78, 14, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white font-lato">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">FLAVORS</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#home" class="text-gray-700 hover:text-orange-600 transition font-medium">Home</a>
+                    <a href="#menu" class="text-gray-700 hover:text-orange-600 transition font-medium">Menu</a>
+                    <a href="#about" class="text-gray-700 hover:text-orange-600 transition font-medium">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-orange-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Reserve</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Exquisite Culinary Excellence</h1>
+            <p class="text-xl md:text-2xl mb-8 text-orange-100 font-light">Experience the pinnacle of fine dining in an elegant atmosphere</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Reserve a Table</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-orange-600 transition">View Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-orange-600 to-red-600 h-96 rounded-lg shadow-2xl"></div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About Flavors</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Since 1995, Flavors has been the destination for discerning diners seeking an unforgettable culinary journey. Our commitment to excellence is reflected in every dish we serve.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">Chef Marcus and his award-winning team craft each plate with passion, using only the finest local and imported ingredients sourced from trusted artisans around the world.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <p class="playfair text-4xl font-bold text-orange-600">29+</p>
+                            <p class="text-gray-600 font-medium">Years</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="playfair text-4xl font-bold text-orange-600">3★</p>
+                            <p class="text-gray-600 font-medium">Michelin</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="playfair text-4xl font-bold text-orange-600">50K+</p>
+                            <p class="text-gray-600 font-medium">Guests</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Why Choose Flavors</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Discover what sets us apart from other fine dining establishments</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-xl border border-orange-100">
+                    <div class="text-5xl mb-4">👨‍🍳</div>
+                    <h3 class="playfair text-2xl font-bold mb-3 text-gray-900">World-Class Chefs</h3>
+                    <p class="text-gray-700 leading-relaxed">Our team of Michelin-trained chefs brings decades of international experience to create dishes that are true masterpieces.</p>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-xl border border-orange-100">
+                    <div class="text-5xl mb-4">🌾</div>
+                    <h3 class="playfair text-2xl font-bold mb-3 text-gray-900">Premium Ingredients</h3>
+                    <p class="text-gray-700 leading-relaxed">We partner with local farmers and international suppliers to source the finest, freshest ingredients available.</p>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-xl border border-orange-100">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="playfair text-2xl font-bold mb-3 text-gray-900">Elegant Ambiance</h3>
+                    <p class="text-gray-700 leading-relaxed">Our beautifully designed dining rooms create the perfect setting for memorable celebrations and special occasions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu -->
+    <section id="menu" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Signature Dishes</h2>
+            <p class="text-center text-gray-600 text-lg mb-16">Taste our most celebrated creations</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card-hover bg-white p-8 rounded-xl shadow-md border-l-4 border-orange-600">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="playfair text-2xl font-bold text-gray-900 mb-1">Pan-Seared Sea Bass</h3>
+                            <p class="text-gray-500 text-sm">Market Fresh Preparation</p>
+                        </div>
+                        <span class="playfair text-2xl font-bold text-orange-600">$48</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">Pacific sea bass with seasonal vegetables, lemon beurre blanc, and microgreens. A light yet satisfying masterpiece.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Gluten-Free</span>
+                        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Dairy-Free</span>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white p-8 rounded-xl shadow-md border-l-4 border-orange-600">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="playfair text-2xl font-bold text-gray-900 mb-1">Wagyu Beef Steak</h3>
+                            <p class="text-gray-500 text-sm">Japanese A5 Grade</p>
+                        </div>
+                        <span class="playfair text-2xl font-bold text-orange-600">$72</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">Perfectly marbled A5 Wagyu beef with truffle mash, wild mushroom sauce, and crispy shallots. Pure indulgence.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Premium</span>
+                        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Gluten-Free</span>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white p-8 rounded-xl shadow-md border-l-4 border-orange-600">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="playfair text-2xl font-bold text-gray-900 mb-1">Duck Confit</h3>
+                            <p class="text-gray-500 text-sm">36-Hour Slow Cook</p>
+                        </div>
+                        <span class="playfair text-2xl font-bold text-orange-600">$58</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">Tender duck leg slow-cooked for 36 hours, served with cherry gastrique, roasted vegetables, and potato fondant.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Chef's Special</span>
+                        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Gluten-Free</span>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white p-8 rounded-xl shadow-md border-l-4 border-orange-600">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="playfair text-2xl font-bold text-gray-900 mb-1">Lobster Thermidor</h3>
+                            <p class="text-gray-500 text-sm">Classic French Preparation</p>
+                        </div>
+                        <span class="playfair text-2xl font-bold text-orange-600">$65</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">Fresh Atlantic lobster in a luxurious champagne cream sauce with gruyère cheese, presented in the shell.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Signature</span>
+                        <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Premium</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="btn-primary text-white px-8 py-3 rounded-lg font-bold text-lg">View Full Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Guest Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"An absolutely unforgettable dining experience. Every course was a work of art. The service was impeccable."</p>
+                    <p class="font-bold text-gray-900">Sarah Mitchell</p>
+                    <p class="text-gray-500 text-sm">New York, NY</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"The Wagyu was literally the best steak I've ever had. Worth every penny. We'll be back!"</p>
+                    <p class="font-bold text-gray-900">James Rodriguez</p>
+                    <p class="text-gray-500 text-sm">Los Angeles, CA</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Perfect for our anniversary. The atmosphere, the food, the wine pairing—everything was exceptional."</p>
+                    <p class="font-bold text-gray-900">Emma & David Chen</p>
+                    <p class="text-gray-500 text-sm">San Francisco, CA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation CTA -->
+    <section class="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Ready to Dine With Us?</h2>
+            <p class="text-xl mb-8 text-orange-100">Reserve your table for an evening of culinary excellence</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <input type="email" placeholder="Your Email" class="px-6 py-3 rounded-lg text-gray-900 font-medium">
+                <button class="bg-white text-orange-600 px-8 py-3 rounded-lg font-bold hover:bg-orange-50 transition">Reserve Now</button>
+            </div>
+            <p class="text-orange-100 text-sm mt-4">Or call us at (555) 123-4567</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">FLAVORS</h3>
+                    <p class="text-gray-400">Experience fine dining at its finest.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-orange-600 transition">Home</a></li>
+                        <li><a href="#menu" class="hover:text-orange-600 transition">Menu</a></li>
+                        <li><a href="#about" class="hover:text-orange-600 transition">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-gray-400">Mon-Thu: 5pm - 11pm</p>
+                    <p class="text-gray-400">Fri-Sat: 5pm - 12am</p>
+                    <p class="text-gray-400">Sunday: 5pm - 10pm</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 123-4567</p>
+                    <p class="text-gray-400">📍 123 Main Street, City</p>
+                    <p class="text-gray-400">📧 hello@flavors.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Flavors Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pampered Paws - Premium Pet Grooming & Spa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-grooming {
+            background: linear-gradient(135deg, rgba(234, 88, 12, 0.9) 0%, rgba(249, 115, 22, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-service {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(234, 88, 12, 0.1);
+        }
+        
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(234, 88, 12, 0.15);
+            border-color: rgba(234, 88, 12, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #fed7aa 0%, #ffedd5 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(234, 88, 12, 0.1) 0%, rgba(249, 115, 22, 0.05) 100%);
+            border: 1px solid rgba(234, 88, 12, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-white poppins">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">PAMPERED PAWS</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-orange-600 transition font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-orange-600 transition font-medium">Services</a>
+                    <a href="#team" class="text-gray-700 hover:text-orange-600 transition font-medium">Team</a>
+                    <a href="#contact" class="text-gray-700 hover:text-orange-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-grooming pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-amber-200 text-lg font-semibold mb-4 uppercase tracking-widest">Professional Pet Care</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Your Pet Deserves Luxury</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-amber-100 font-light max-w-3xl mx-auto">Premium grooming and spa services tailored to your beloved pet's unique needs</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Book Appointment</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-orange-600 transition">View Gallery</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-orange-600 to-amber-500 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">🐾</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About Pampered Paws</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Since 2009, Pampered Paws has been the premier destination for luxury pet grooming and wellness. Our certified groomers combine expertise with genuine love for animals, ensuring every pet receives the highest standard of care.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">We believe every pet deserves to feel pampered and loved. From basic grooming to full spa treatments, our state-of-the-art facility offers comprehensive services in a calm, stress-free environment.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-orange-600">15+</p>
+                            <p class="text-gray-600 font-medium">Years Excellence</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-orange-600">5K+</p>
+                            <p class="text-gray-600 font-medium">Happy Pets</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-orange-600">98%</p>
+                            <p class="text-gray-600 font-medium">Owner Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Grooming Services</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Tailored care for every breed and fur type</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Full Bath & Groom -->
+                <div class="card-service bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl">
+                    <div class="service-icon">🛁</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Full Bath & Groom</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Complete wash and dry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Nail trimming & filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Ear cleaning service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Sanitary trim included</span>
+                        </li>
+                    </ul>
+                    <p class="text-orange-600 font-bold mt-6 text-lg">$75</p>
+                </div>
+
+                <!-- Hair Cutting & Styling -->
+                <div class="card-service bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl">
+                    <div class="service-icon">✂️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Hair Cutting & Styling</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Breed-specific cuts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Creative styling options</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Matted fur management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Professional finishing</span>
+                        </li>
+                    </ul>
+                    <p class="text-orange-600 font-bold mt-6 text-lg">$50</p>
+                </div>
+
+                <!-- Nail & Paw Care -->
+                <div class="card-service bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl">
+                    <div class="service-icon">💅</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Nail & Paw Care</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Professional nail trimming</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Nail smoothing & filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Paw pad conditioning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Gentle handling technique</span>
+                        </li>
+                    </ul>
+                    <p class="text-orange-600 font-bold mt-6 text-lg">$25</p>
+                </div>
+
+                <!-- Dental Cleaning -->
+                <div class="card-service bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl">
+                    <div class="service-icon">🦷</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Dental Cleaning</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Professional tooth brushing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Pet-safe dental products</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Breath freshening</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Oral health education</span>
+                        </li>
+                    </ul>
+                    <p class="text-orange-600 font-bold mt-6 text-lg">$30</p>
+                </div>
+
+                <!-- Spa & Treatments -->
+                <div class="card-service bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl">
+                    <div class="service-icon">🧴</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Spa & Special Treatments</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Aromatherapy treatments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Oat-based spa baths</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Conditioning treatments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Relaxation massage</span>
+                        </li>
+                    </ul>
+                    <p class="text-orange-600 font-bold mt-6 text-lg">$40</p>
+                </div>
+
+                <!-- Ear Cleaning & Care -->
+                <div class="card-service bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl">
+                    <div class="service-icon">👂</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Ear Cleaning & Care</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Deep ear cleaning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Infection prevention</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Tear stain removal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-orange-600 mr-3 font-bold">✓</span>
+                            <span>Natural cleansing solutions</span>
+                        </li>
+                    </ul>
+                    <p class="text-orange-600 font-bold mt-6 text-lg">$20</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Our Expert Groomers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-orange-600">
+                    <div class="text-6xl mb-4">👩‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Sarah Mitchell</h3>
+                    <p class="text-orange-600 font-semibold mb-4">Lead Grooming Specialist</p>
+                    <p class="text-gray-600 mb-4">12+ years of grooming experience with expertise in show-quality cuts and special handling for anxious pets.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-orange-600">
+                    <div class="text-6xl mb-4">👨‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Michael Chen</h3>
+                    <p class="text-orange-600 font-semibold mb-4">Senior Groomer & Spa Specialist</p>
+                    <p class="text-gray-600 mb-4">8 years specializing in spa treatments, skincare solutions, and creative styling for all breeds.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-orange-600">
+                    <div class="text-6xl mb-4">👩‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Jessica Rodriguez</h3>
+                    <p class="text-orange-600 font-semibold mb-4">Grooming Technician & Handler</p>
+                    <p class="text-gray-600 mb-4">6 years devoted to gentle handling, health screenings, and making every pet feel safe and comfortable.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">What Pet Owners Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"My golden retriever comes home looking and feeling amazing! The team at Pampered Paws truly cares for each pet. Highly recommended!"</p>
+                    <p class="font-bold text-gray-900">David Thompson</p>
+                    <p class="text-gray-500 text-sm">Regular Customer Since 2020</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Best grooming experience ever! Sarah understood exactly what I wanted for my poodle. The facility is immaculate and the staff is genuinely loving."</p>
+                    <p class="font-bold text-gray-900">Margaret Lewis</p>
+                    <p class="text-gray-500 text-sm">Regular Customer Since 2019</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"My anxious rescue dog has finally found a safe place. Michael's gentle approach worked wonders. She's actually excited for grooming day now!"</p>
+                    <p class="font-bold text-gray-900">Emily Watson</p>
+                    <p class="text-gray-500 text-sm">Regular Customer Since 2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gradient-to-r from-orange-50 to-amber-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why Choose Pampered Paws?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-orange-600">
+                    <div class="text-5xl mb-4">❤️</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Pet Lovers First</h3>
+                    <p class="text-gray-600">Our team genuinely loves animals and treats every pet like family</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-orange-600">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Expert Team</h3>
+                    <p class="text-gray-600">Certified groomers with 15+ years combined professional experience</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-orange-600">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Premium Facilities</h3>
+                    <p class="text-gray-600">State-of-the-art grooming facility with luxury amenities</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-orange-600">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Personalized Care</h3>
+                    <p class="text-gray-600">Customized grooming plans tailored to each pet's unique needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-orange-600 to-amber-500 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Treat Your Pet to Luxury Today</h2>
+            <p class="text-xl mb-8 text-orange-100">Book an appointment and see why pet owners trust us</p>
+            <button class="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-50 transition">Schedule Appointment</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-orange-400">PAMPERED PAWS</h3>
+                    <p class="text-gray-400">Luxury grooming and spa services for your beloved pets since 2009.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-orange-400 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-orange-400 transition">Services</a></li>
+                        <li><a href="#team" class="hover:text-orange-400 transition">Our Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-orange-400 transition">Full Grooming</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition">Spa Treatments</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition">Specialty Care</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 678-1234</p>
+                    <p class="text-gray-400">📧 hello@pamperedpaws.com</p>
+                    <p class="text-gray-400">🐾 Your Pet's Happy Place</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Pampered Paws. All rights reserved. | Luxury Pet Care Since 2009</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

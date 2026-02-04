@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureLife Insurance - Comprehensive Coverage Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .source-sans {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        .hero-insurance {
+            background: linear-gradient(135deg, rgba(20, 83, 45, 0.9) 0%, rgba(34, 197, 94, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-product {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(20, 83, 45, 0.1);
+        }
+        
+        .card-product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(20, 83, 45, 0.15);
+            border-color: rgba(20, 83, 45, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #165330 0%, #22c55e 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(20, 83, 45, 0.3);
+        }
+        
+        .insurance-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(20, 83, 45, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+            border: 1px solid rgba(20, 83, 45, 0.2);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-white source-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent">SECURELIFE</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-green-700 transition font-medium">Home</a>
+                    <a href="#products" class="text-gray-700 hover:text-green-700 transition font-medium">Products</a>
+                    <a href="#team" class="text-gray-700 hover:text-green-700 transition font-medium">Our Team</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-700 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Get Quote</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-insurance pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-green-200 text-lg font-semibold mb-4 uppercase tracking-widest">Complete Peace of Mind</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Protect What Matters Most</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-green-100 font-light max-w-3xl mx-auto">Comprehensive insurance solutions designed to safeguard your family, home, and future</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Get Free Quote</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-green-700 transition">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-green-800 to-green-600 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">🛡️</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About SecureLife Insurance</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">For over 20 years, SecureLife has been a trusted partner in protecting what matters most to our clients. We provide comprehensive insurance solutions that adapt to your unique needs and life circumstances.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">Our team of experienced insurance professionals is committed to delivering exceptional service, competitive rates, and reliable coverage. We believe insurance should be simple, transparent, and accessible to everyone.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-green-700">20+</p>
+                            <p class="text-gray-600 font-medium">Years Trusted</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-green-700">250K+</p>
+                            <p class="text-gray-600 font-medium">Clients Served</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="playfair text-4xl font-bold text-green-700">$1B+</p>
+                            <p class="text-gray-600 font-medium">Claims Paid</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Insurance Products</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Complete coverage options for every aspect of your life</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Auto Insurance -->
+                <div class="card-product bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl">
+                    <div class="insurance-icon">🚗</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Auto Insurance</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Collision & comprehensive coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Liability protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Uninsured motorist coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>24/7 roadside assistance</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Home Insurance -->
+                <div class="card-product bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl">
+                    <div class="insurance-icon">🏠</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Home Insurance</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Dwelling coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Personal property protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Liability protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Additional living expenses</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Life Insurance -->
+                <div class="card-product bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl">
+                    <div class="insurance-icon">❤️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Life Insurance</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Term & whole life options</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Flexible coverage amounts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Competitive premiums</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Family financial protection</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Health Insurance -->
+                <div class="card-product bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl">
+                    <div class="insurance-icon">⚕️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Health Insurance</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Medical & hospital coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Prescription drug benefits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Preventive wellness care</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Network provider access</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Travel Insurance -->
+                <div class="card-product bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl">
+                    <div class="insurance-icon">✈️</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Travel Insurance</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Trip cancellation coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Emergency medical abroad</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Luggage & baggage protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Travel delay coverage</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Business Insurance -->
+                <div class="card-product bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl">
+                    <div class="insurance-icon">💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Business Insurance</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>General liability coverage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Property & equipment protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Workers compensation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-700 mr-3 font-bold">✓</span>
+                            <span>Professional liability</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Our Insurance Experts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-700">
+                    <div class="text-6xl mb-4">👨‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Robert Kingsley</h3>
+                    <p class="text-green-700 font-semibold mb-4">Chief Insurance Officer</p>
+                    <p class="text-gray-600 mb-4">20+ years of insurance industry experience with expertise in portfolio management and client relations.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-700">
+                    <div class="text-6xl mb-4">👩‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Jennifer Martinez</h3>
+                    <p class="text-green-700 font-semibold mb-4">Claims Director & Advocate</p>
+                    <p class="text-gray-600 mb-4">15 years processing and managing claims with a 98% satisfaction rate in expediting settlements.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-700">
+                    <div class="text-6xl mb-4">👨‍💼</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-2">Michael Thompson</h3>
+                    <p class="text-green-700 font-semibold mb-4">Financial Planning Specialist</p>
+                    <p class="text-gray-600 mb-4">12 years helping clients customize coverage plans aligned with their unique financial goals.</p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Client Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"SecureLife made insurance simple and affordable. Their team explained everything clearly and found coverage that fits my budget perfectly."</p>
+                    <p class="font-bold text-gray-900">David Williams</p>
+                    <p class="text-gray-500 text-sm">5-Year Customer</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"When I had to file a claim, the entire process was seamless. Jennifer's team handled everything with professionalism and care."</p>
+                    <p class="font-bold text-gray-900">Patricia Anderson</p>
+                    <p class="text-gray-500 text-sm">8-Year Customer</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Excellent customer service! They took time to review all my coverage needs and saved me money on my policy. Highly recommended!"</p>
+                    <p class="font-bold text-gray-900">Christopher Lee</p>
+                    <p class="text-gray-500 text-sm">3-Year Customer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gradient-to-r from-green-50 to-emerald-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why SecureLife?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-green-700">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">20+ Years Trusted</h3>
+                    <p class="text-gray-600">Proven track record of reliability and excellence in insurance services</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-green-700">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Competitive Rates</h3>
+                    <p class="text-gray-600">Affordable coverage with discounts for bundling and loyalty</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-green-700">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Fast Claims</h3>
+                    <p class="text-gray-600">Quick claim processing with average settlement in 7-10 business days</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-green-700">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-gray-900">Expert Team</h3>
+                    <p class="text-gray-600">Dedicated agents providing personalized guidance and support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-green-800 to-green-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Protect Your Future Today</h2>
+            <p class="text-xl mb-8 text-green-100">Get a free quote and discover the SecureLife difference</p>
+            <button class="bg-white text-green-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition">Get Your Free Quote</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-green-400">SECURELIFE</h3>
+                    <p class="text-gray-400">Comprehensive insurance solutions protecting 250,000+ families and businesses since 2004.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-green-400 transition">Home</a></li>
+                        <li><a href="#products" class="hover:text-green-400 transition">Products</a></li>
+                        <li><a href="#team" class="hover:text-green-400 transition">Our Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Products</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-green-400 transition">Auto Insurance</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition">Home Insurance</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition">Life Insurance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 1-800-SECURE-1</p>
+                    <p class="text-gray-400">📧 quotes@securelife.com</p>
+                    <p class="text-gray-400">💬 Available 24/7</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 SecureLife Insurance. All rights reserved. | Protecting Families Since 2004</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Smile Dental - Premier Dental Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .raleway {
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .hero-dental {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.9) 0%, rgba(0, 180, 216, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,128L120,144C240,160,480,192,720,192C960,192,1200,160,1320,144L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-service {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 123, 255, 0.1);
+        }
+        
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.15);
+            border-color: rgba(0, 123, 255, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #007bff 0%, #00b4d8 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e7f5ff 0%, #cfe9ff 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #007bff 0%, #00b4d8 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-white raleway">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent">BRIGHT SMILE</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition font-medium">Services</a>
+                    <a href="#team" class="text-gray-700 hover:text-blue-600 transition font-medium">Team</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Schedule</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-dental pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-cyan-100 text-lg font-semibold mb-4 uppercase tracking-widest">Premier Dental Care</p>
+            <h1 class="playfair text-6xl md:text-7xl font-bold mb-6 leading-tight">Your Healthy Smile Starts Here</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-cyan-50 font-light max-w-3xl mx-auto">Comprehensive dental care for the entire family in a comfortable, modern environment</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg">Schedule Appointment</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-blue-600 to-cyan-500 h-96 rounded-xl shadow-2xl flex items-center justify-center">
+                        <span class="text-8xl">😁</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">About Bright Smile</h2>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">Since 2010, Bright Smile Dental has been dedicated to providing exceptional dental care to patients of all ages. Our commitment is to create healthy, beautiful smiles that last a lifetime.</p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">We combine the latest dental technology with compassionate care to ensure every patient feels comfortable and confident in our hands. Your smile is our priority.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center bg-white p-4 rounded-lg">
+                            <p class="playfair text-4xl font-bold text-blue-600">14+</p>
+                            <p class="text-gray-600 font-medium">Years Service</p>
+                        </div>
+                        <div class="text-center bg-white p-4 rounded-lg">
+                            <p class="playfair text-4xl font-bold text-blue-600">12+</p>
+                            <p class="text-gray-600 font-medium">Dentists</p>
+                        </div>
+                        <div class="text-center bg-white p-4 rounded-lg">
+                            <p class="playfair text-4xl font-bold text-blue-600">15K+</p>
+                            <p class="text-gray-600 font-medium">Smiles Created</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Services</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Comprehensive dental solutions for your entire family</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- General Dentistry -->
+                <div class="card-service bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+                    <div class="service-icon">🦷</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">General Dentistry</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Professional Cleanings & Exams</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Digital X-rays & Diagnosis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Preventive Care Plans</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Gum Disease Treatment</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Cosmetic Dentistry -->
+                <div class="card-service bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+                    <div class="service-icon">✨</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Cosmetic Dentistry</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Professional Teeth Whitening</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Porcelain Veneers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Smile Makeovers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Bonding & Reshaping</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Restorative Dentistry -->
+                <div class="card-service bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Restorative Dentistry</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Composite Fillings</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Crowns & Bridges</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Dental Implants</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Root Canal Therapy</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pediatric Dentistry -->
+                <div class="card-service bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+                    <div class="service-icon">👶</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Pediatric Dentistry</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Children's Cleanings & Exams</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Fluoride Treatments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Sealants & Prevention</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Cavity Treatment</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Orthodontics -->
+                <div class="card-service bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+                    <div class="service-icon">🧬</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Orthodontics</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Traditional Braces</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Clear Aligners</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Bite Correction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Retention Plans</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Oral Surgery -->
+                <div class="card-service bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+                    <div class="service-icon">🏥</div>
+                    <h3 class="playfair text-2xl font-bold text-gray-900 mb-4">Oral Surgery</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Tooth Extractions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Wisdom Teeth Removal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Implant Placement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 font-bold">✓</span>
+                            <span>Bone Grafting</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-4 text-gray-900">Our Expert Team</h2>
+            <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">Experienced, compassionate dental professionals</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-cyan-400 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍⚕️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Dr. Michael Chen</h3>
+                    <p class="text-gray-600">General Dentist & Founder</p>
+                    <p class="text-sm text-blue-600">20+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-cyan-400 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👩‍⚕️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Dr. Sarah Williams</h3>
+                    <p class="text-gray-600">Cosmetic Specialist</p>
+                    <p class="text-sm text-blue-600">15+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-cyan-400 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👨‍⚕️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Dr. James Rodriguez</h3>
+                    <p class="text-gray-600">Orthodontist</p>
+                    <p class="text-sm text-blue-600">12+ years experience</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-cyan-400 h-40 rounded-lg mb-4 flex items-center justify-center text-5xl">👩‍⚕️</div>
+                    <h3 class="playfair text-xl font-bold text-gray-900">Dr. Emily Foster</h3>
+                    <p class="text-gray-600">Pediatric Dentist</p>
+                    <p class="text-sm text-blue-600">10+ years experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Patient Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-blue-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Dr. Chen and his team made me feel completely comfortable. The whitening results were amazing! Highly recommend Bright Smile."</p>
+                    <p class="font-bold text-gray-900">Lisa Thompson</p>
+                    <p class="text-gray-500 text-sm">Cosmetic Patient</p>
+                </div>
+                <div class="bg-blue-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"My kids actually enjoy going to the dentist now! Dr. Foster is so patient and gentle. We're so grateful to have found Bright Smile."</p>
+                    <p class="font-bold text-gray-900">Robert & Jennifer Lee</p>
+                    <p class="text-gray-500 text-sm">Family Patients</p>
+                </div>
+                <div class="bg-blue-50 p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"The implant procedure was seamless. Dr. Chen's expertise and the team's care made it painless. Worth every penny!"</p>
+                    <p class="font-bold text-gray-900">David Martinez</p>
+                    <p class="text-gray-500 text-sm">Implant Patient</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why Choose Bright Smile?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">👨‍⚕️</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Expert Dentists</h3>
+                    <p class="text-gray-600">12+ highly trained, experienced professionals</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⏰</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Convenient Hours</h3>
+                    <p class="text-gray-600">Mon-Sat with early & evening appointments</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">💳</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Flexible Payments</h3>
+                    <p class="text-gray-600">Insurance & payment plans available</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🏥</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-900">Modern Facility</h3>
+                    <p class="text-gray-600">Latest dental technology & equipment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="playfair text-5xl font-bold mb-4">Schedule Your Smile Today</h2>
+            <p class="text-xl mb-8 text-cyan-100">Join thousands of satisfied patients at Bright Smile Dental</p>
+            <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition">Book Appointment</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">BRIGHT SMILE</h3>
+                    <p class="text-gray-400">Creating beautiful, healthy smiles since 2010.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition">Services</a></li>
+                        <li><a href="#team" class="hover:text-blue-400 transition">Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-gray-400">Mon-Fri: 8am - 7pm</p>
+                    <p class="text-gray-400">Sat: 9am - 3pm</p>
+                    <p class="text-gray-400">Sun: Closed</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📞 (555) 789-0123</p>
+                    <p class="text-gray-400">📧 hello@brightsmile.com</p>
+                    <p class="text-gray-400">📍 Medical Center, Suite 200</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Bright Smile Dental. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
