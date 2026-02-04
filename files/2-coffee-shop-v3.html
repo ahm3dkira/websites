@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Roastery v3 - Specialty Coffee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Space+Mono:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-dark-roast {
+            background: linear-gradient(135deg, rgba(23, 23, 23, 0.95) 0%, rgba(45, 28, 20, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(217, 119, 6, 0.15)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-space-mono">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-950 shadow-2xl z-50 top-0 border-b border-amber-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold text-amber-500">ARTISAN ROASTERY</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#" class="text-gray-300 hover:text-amber-500 transition">HOME</a>
+                    <a href="#" class="text-gray-300 hover:text-amber-500 transition">ROASTS</a>
+                    <a href="#" class="text-gray-300 hover:text-amber-500 transition">PROCESS</a>
+                    <a href="#" class="text-gray-300 hover:text-amber-500 transition">CONTACT</a>
+                    <button class="bg-amber-600 text-gray-900 px-6 py-2 rounded hover:bg-amber-500">Shop</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-dark-roast pt-32 pb-20 text-gray-100 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <h1 class="playfair text-8xl font-bold mb-6 text-amber-400">ARTISAN ROASTERY</h1>
+            <p class="text-2xl mb-10 text-gray-400">Specialty coffee roasted with precision and passion</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-amber-600 text-gray-900 px-8 py-3 rounded font-bold hover:bg-amber-500">Shop Now</button>
+                <button class="border-2 border-amber-600 text-amber-500 px-8 py-3 rounded font-bold hover:bg-amber-600 hover:text-gray-900">Our Story</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roasting Process -->
+    <section class="py-24 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-amber-400">Our Roasting Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-gray-750 p-8 rounded-lg border-l-4 border-amber-600">
+                    <div class="text-4xl mb-4">🌱</div>
+                    <h3 class="playfair text-xl font-bold mb-4 text-amber-400">Selection</h3>
+                    <p class="text-gray-300">Hand-picked beans from sustainable farms worldwide</p>
+                </div>
+                <div class="bg-gray-750 p-8 rounded-lg border-l-4 border-amber-600">
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h3 class="playfair text-xl font-bold mb-4 text-amber-400">Roasting</h3>
+                    <p class="text-gray-300">Small-batch roasting for optimal flavor development</p>
+                </div>
+                <div class="bg-gray-750 p-8 rounded-lg border-l-4 border-amber-600">
+                    <div class="text-4xl mb-4">🌡️</div>
+                    <h3 class="playfair text-xl font-bold mb-4 text-amber-400">Testing</h3>
+                    <p class="text-gray-300">Rigorous quality control at every stage</p>
+                </div>
+                <div class="bg-gray-750 p-8 rounded-lg border-l-4 border-amber-600">
+                    <div class="text-4xl mb-4">☕</div>
+                    <h3 class="playfair text-xl font-bold mb-4 text-amber-400">Delivery</h3>
+                    <p class="text-gray-300">Fresh roasted delivered within 48 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialty Beans -->
+    <section class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-amber-400">Specialty Collections</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gray-800 p-10 rounded-lg border-t-2 border-amber-600 hover:shadow-xl transition">
+                    <h3 class="playfair text-2xl font-bold mb-3 text-amber-400">Light Roast</h3>
+                    <p class="text-gray-300 mb-4">Bright acidity, complex flavors with fruity notes</p>
+                    <div class="space-y-2 text-gray-400 text-sm mb-4">
+                        <p>Origin: Single origin</p>
+                        <p>Roast Level: City</p>
+                        <p>Notes: Floral, Fruity, Crisp</p>
+                    </div>
+                    <p class="text-amber-400 font-bold text-lg">$16/lb</p>
+                </div>
+
+                <div class="bg-gray-800 p-10 rounded-lg border-t-2 border-amber-600 hover:shadow-xl transition">
+                    <h3 class="playfair text-2xl font-bold mb-3 text-amber-400">Medium Roast</h3>
+                    <p class="text-gray-300 mb-4">Balanced profile with rich body and caramel sweetness</p>
+                    <div class="space-y-2 text-gray-400 text-sm mb-4">
+                        <p>Origin: Blend</p>
+                        <p>Roast Level: Full City</p>
+                        <p>Notes: Caramel, Nuts, Smooth</p>
+                    </div>
+                    <p class="text-amber-400 font-bold text-lg">$15/lb</p>
+                </div>
+
+                <div class="bg-gray-800 p-10 rounded-lg border-t-2 border-amber-600 hover:shadow-xl transition">
+                    <h3 class="playfair text-2xl font-bold mb-3 text-amber-400">Dark Roast</h3>
+                    <p class="text-gray-300 mb-4">Bold, smoky with chocolate and spice undertones</p>
+                    <div class="space-y-2 text-gray-400 text-sm mb-4">
+                        <p>Origin: Premium Blend</p>
+                        <p>Roast Level: French</p>
+                        <p>Notes: Chocolate, Spice, Bold</p>
+                    </div>
+                    <p class="text-amber-400 font-bold text-lg">$16/lb</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-amber-400">Commitment to Excellence</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">🌍</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-amber-400">Global Sourcing</h3>
+                            <p class="text-gray-300">Direct relationships with ethical coffee producers</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">⚖️</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-amber-400">Fair Trade</h3>
+                            <p class="text-gray-300">100% fair trade certified beans supporting farmers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">🎓</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-amber-400">Expertise</h3>
+                            <p class="text-gray-300">Q-graded cupping specialists and master roasters</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">♻️</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-amber-400">Sustainability</h3>
+                            <p class="text-gray-300">Eco-friendly practices and compostable packaging</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-16 border-t border-amber-700">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-amber-400">Artisan Roastery</h3>
+                    <p class="text-gray-500">Small-batch specialty coffee roasted to perfection.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-300">Shop</h4>
+                    <p class="text-gray-500">Browse Our Beans</p>
+                    <p class="text-gray-500">Brewing Guides</p>
+                    <p class="text-gray-500">Subscriptions</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-300">Connect</h4>
+                    <p class="text-gray-500">📍 Craft District</p>
+                    <p class="text-gray-500">📞 (555) 345-6789</p>
+                    <p class="text-gray-500">📧 hello@artisanroastery.com</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-300">Follow</h4>
+                    <p class="text-gray-500">Instagram: @ArtisanRoastery</p>
+                    <p class="text-gray-500">Twitter: @RoastCoffee</p>
+                    <p class="text-gray-500">YouTube: Roasting Videos</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-600">
+                <p>&copy; 2024 Artisan Roastery. Specialty Coffee Since 2010.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavors Restaurant v3 - Gourmet Dining</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(120, 53, 15, 0.95) 0%, rgba(217, 119, 6, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255, 255, 255, 0.05)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(217, 119, 6, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white font-montserrat">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="text-3xl">🍽️</div>
+                        <span class="playfair text-2xl font-bold text-amber-900">FLAVORS V3</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#" class="text-amber-900 hover:text-amber-600 transition font-semibold text-sm">HOME</a>
+                    <a href="#" class="text-amber-900 hover:text-amber-600 transition font-semibold text-sm">MENU</a>
+                    <a href="#" class="text-amber-900 hover:text-amber-600 transition font-semibold text-sm">ABOUT</a>
+                    <a href="#" class="text-amber-900 hover:text-amber-600 transition font-semibold text-sm">CONTACT</a>
+                    <button class="bg-gradient-to-r from-amber-700 to-amber-600 text-white px-6 py-2 rounded-full font-bold hover:shadow-lg">Reserve</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gradient pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-xl text-amber-200 mb-4 font-montserrat">Welcome to Luxury Dining</p>
+            <h1 class="playfair text-8xl font-bold mb-6">FLAVORS</h1>
+            <p class="text-2xl mb-10 text-gray-100 max-w-2xl mx-auto">Experience the art of gastronomy with our carefully curated dishes and exceptional service</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-amber-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-amber-50">Explore Menu</button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-amber-900">Book a Table</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culinary Experience -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-4 text-amber-900">Our Culinary Philosophy</h2>
+            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-16 text-lg">Each dish is a masterpiece crafted with passion, using only the finest ingredients sourced globally</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white p-10 rounded-lg shadow-lg card-hover">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h3 class="playfair text-3xl font-bold mb-4 text-amber-900">Artistic Presentation</h3>
+                    <p class="text-gray-700 mb-4">Every plate is a canvas where flavors and aesthetics unite in perfect harmony</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Visual storytelling on every dish</li>
+                        <li>✓ Modern plating techniques</li>
+                        <li>✓ Seasonal ingredient creativity</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-10 rounded-lg shadow-lg card-hover">
+                    <div class="text-5xl mb-4">👨‍🍳</div>
+                    <h3 class="playfair text-3xl font-bold mb-4 text-amber-900">Master Chefs</h3>
+                    <p class="text-gray-700 mb-4">Our award-winning chefs bring decades of international culinary expertise</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Michelin-trained professionals</li>
+                        <li>✓ Continuous innovation</li>
+                        <li>✓ Passion for perfection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Dishes -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-amber-900">Signature Creations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gradient-to-br from-amber-50 to-white p-8 rounded-lg shadow-lg card-hover border-l-4 border-amber-600">
+                    <div class="text-4xl mb-4">🐟</div>
+                    <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Saffron Crusted Halibut</h3>
+                    <p class="text-gray-600 mb-4">Pan-seared with golden crust, served with micro vegetables and lemon foam</p>
+                    <p class="text-amber-700 font-bold text-xl">$42</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-amber-50 to-white p-8 rounded-lg shadow-lg card-hover border-l-4 border-amber-600">
+                    <div class="text-4xl mb-4">🥩</div>
+                    <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Prime Wagyu Selection</h3>
+                    <p class="text-gray-600 mb-4">Japanese A5 beef with seasonal mushrooms and truffle jus reduction</p>
+                    <p class="text-amber-700 font-bold text-xl">$58</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-amber-50 to-white p-8 rounded-lg shadow-lg card-hover border-l-4 border-amber-600">
+                    <div class="text-4xl mb-4">🦞</div>
+                    <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Lobster Thermidor</h3>
+                    <p class="text-gray-600 mb-4">Classic preparation with cream, mustard, and cavity seafood stuffing</p>
+                    <p class="text-amber-700 font-bold text-xl">$52</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="py-24 bg-amber-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="playfair text-6xl font-bold mb-8">A Dining Experience Like No Other</h2>
+            <p class="text-xl mb-12 text-amber-100 max-w-2xl mx-auto">Impeccable service, elegant ambiance, and unforgettable flavors await you</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-5xl mb-4">⭐</div>
+                    <h3 class="playfair text-2xl font-bold mb-2">Award Winning</h3>
+                    <p class="text-amber-100">Recognized internationally for culinary excellence</p>
+                </div>
+                <div>
+                    <div class="text-5xl mb-4">👥</div>
+                    <h3 class="playfair text-2xl font-bold mb-2">Expert Staff</h3>
+                    <p class="text-amber-100">Trained professionals dedicated to your satisfaction</p>
+                </div>
+                <div>
+                    <div class="text-5xl mb-4">🌟</div>
+                    <h3 class="playfair text-2xl font-bold mb-2">Premium Service</h3>
+                    <p class="text-amber-100">Attention to every detail for perfect dining</p>
+                </div>
+            </div>
+            <button class="mt-12 bg-white text-amber-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-amber-50">Reserve Your Table</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-amber-400">FLAVORS V3</h3>
+                    <p class="text-gray-400">Premium gastronomic experience featuring world-class cuisine.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-gray-400">Lunch: 12 PM - 3 PM</p>
+                    <p class="text-gray-400">Dinner: 6 PM - 11 PM</p>
+                    <p class="text-gray-400">Closed Mondays</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📍 Fine Dining District</p>
+                    <p class="text-gray-400">📞 (555) 987-6543</p>
+                    <p class="text-gray-400">📧 reservations@flavorsv3.com</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <p class="text-gray-400">Instagram: @FlavorsV3</p>
+                    <p class="text-gray-400">Facebook: Flavors Fine Dining</p>
+                    <p class="text-gray-400">Guide: Michelin & Award-winning</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Flavors V3. Culinary Excellence Since 1998.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

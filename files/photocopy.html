@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPrint Services - Professional Printing & Copying</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-print {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255, 255, 255, 0.1)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-white font-inter">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold text-blue-600">📋 ProPrint</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Pricing</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-print pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <h1 class="playfair text-7xl font-bold mb-6">Professional Printing Solutions</h1>
+            <p class="text-2xl mb-10 text-blue-100">Quality copying and printing for all your business needs</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-50">Get Started</button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">📄</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Document Copying</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ Black & white copying</li>
+                        <li>✓ Color copies</li>
+                        <li>✓ High-volume discounts</li>
+                        <li>✓ Same-day service</li>
+                    </ul>
+                    <p class="text-blue-600 font-bold">Starting at $0.05/page</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-blue-600">
+                    <div class="text-4xl mb-4">🖨️</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Professional Printing</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ Brochures & flyers</li>
+                        <li>✓ Business cards</li>
+                        <li>✓ Posters & banners</li>
+                        <li>✓ Custom designs available</li>
+                    </ul>
+                    <p class="text-blue-600 font-bold">Custom Quote</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">📑</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Document Binding</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ Spiral binding</li>
+                        <li>✓ Comb binding</li>
+                        <li>✓ Thermal binding</li>
+                        <li>✓ Collation & stapling</li>
+                    </ul>
+                    <p class="text-blue-600 font-bold">Starting at $1.50</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">Why ProPrint?</h2>
+                    <p class="text-lg text-gray-700 mb-6">With over 15 years serving businesses and organizations, we deliver professional-quality documents on time and within budget.</p>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">⚡</span>
+                            <p class="text-gray-700">Fast turnaround times</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">💰</span>
+                            <p class="text-gray-700">Competitive pricing</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">✅</span>
+                            <p class="text-gray-700">Quality guaranteed</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-blue-600">15+</p>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-blue-600">8K+</p>
+                            <p class="text-gray-600">Happy Clients</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-blue-600">⭐⭐⭐</p>
+                            <p class="text-gray-600">5-Star Rated</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-600 to-blue-700 h-96 rounded-lg flex items-center justify-center">
+                    <span class="text-7xl">🖨️📄</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Flexible Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Small Office</h3>
+                    <p class="text-gray-600 mb-6">Up to 1,000 pages/month</p>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ B&W copies: $0.05</li>
+                        <li>✓ Color copies: $0.35</li>
+                        <li>✓ Free delivery</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Choose</button>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-blue-600">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Growing Business</h3>
+                    <p class="text-gray-600 mb-6">1,000-5,000 pages/month</p>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ B&W copies: $0.04</li>
+                        <li>✓ Color copies: $0.30</li>
+                        <li>✓ Binding included</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Choose</button>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Enterprise</h3>
+                    <p class="text-gray-600 mb-6">5,000+ pages/month</p>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ Custom rates</li>
+                        <li>✓ Priority service</li>
+                        <li>✓ Dedicated support</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-400">ProPrint</h3>
+                    <p class="text-gray-400">Professional printing and copying services for businesses.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <p class="text-gray-400">Copying</p>
+                    <p class="text-gray-400">Printing</p>
+                    <p class="text-gray-400">Binding</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-gray-400">Mon-Fri: 8 AM - 6 PM</p>
+                    <p class="text-gray-400">Sat: 9 AM - 2 PM</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📍 Business District</p>
+                    <p class="text-gray-400">📞 (555) 234-5678</p>
+                    <p class="text-gray-400">📧 info@proprint.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ProPrint Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavors Restaurant v2 - Culinary Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-dark {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(40, 40, 40, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(220, 38, 38, 0.1)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-white font-lato">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900 shadow-lg z-50 top-0 border-b-2 border-red-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold text-red-600">FLAVORS V2</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#" class="text-white hover:text-red-600 transition font-semibold">Home</a>
+                    <a href="#" class="text-white hover:text-red-600 transition font-semibold">Menu</a>
+                    <a href="#" class="text-white hover:text-red-600 transition font-semibold">Events</a>
+                    <a href="#" class="text-white hover:text-red-600 transition font-semibold">Reservations</a>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700">Book Table</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-dark pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <h1 class="playfair text-7xl font-bold mb-6">Culinary Artistry</h1>
+            <p class="text-2xl mb-8 text-gray-300">Modern cuisine meets timeless elegance</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700">Reserve Now</button>
+                <button class="border-2 border-red-600 text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-600 hover:text-white">View Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Dishes -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Chef's Signature Collection</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="playfair text-2xl font-bold mb-4">Pan-Seared Salmon</h3>
+                    <p class="text-gray-600 mb-4">Wild-caught salmon with seasonal vegetables and lemon butter sauce</p>
+                    <p class="text-red-600 font-bold text-lg">$32</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="playfair text-2xl font-bold mb-4">Wagyu Ribeye</h3>
+                    <p class="text-gray-600 mb-4">Prime Japanese beef with truffle mashed potatoes and asparagus</p>
+                    <p class="text-red-600 font-bold text-lg">$48</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="playfair text-2xl font-bold mb-4">Lobster Risotto</h3>
+                    <p class="text-gray-600 mb-4">Creamy arborio rice with fresh lobster and saffron infusion</p>
+                    <p class="text-red-600 font-bold text-lg">$38</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6">Chef's Story</h2>
+                    <p class="text-lg text-gray-700 mb-4">With 25 years of culinary experience across Michelin-starred restaurants, our chef brings world-class cuisine to your table.</p>
+                    <div class="grid grid-cols-3 gap-6 mt-8">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-red-600">25+</p>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-red-600">5K+</p>
+                            <p class="text-gray-600">Happy Diners</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-red-600">⭐⭐⭐</p>
+                            <p class="text-gray-600">5-Star Rated</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-red-600 to-red-700 h-96 rounded-lg flex items-center justify-center">
+                    <span class="text-7xl">👨‍🍳</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16">Upcoming Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="playfair text-2xl font-bold mb-2">Wine Pairing Dinner</h3>
+                    <p class="text-gray-600 mb-4">Experience our 7-course menu with curated wine selections</p>
+                    <p class="text-red-600 font-bold">Feb 14 @ 7 PM</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="playfair text-2xl font-bold mb-2">Chef's Table Experience</h3>
+                    <p class="text-gray-600 mb-4">Exclusive seating with chef interaction and personalized menu</p>
+                    <p class="text-red-600 font-bold">Feb 20 @ 6:30 PM</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="playfair text-2xl font-bold mb-2">Sunday Brunch Celebration</h3>
+                    <p class="text-gray-600 mb-4">Unlimited mimosas and champagne with gourmet brunch selections</p>
+                    <p class="text-red-600 font-bold">Every Sunday @ 11 AM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-red-600">FLAVORS V2</h3>
+                    <p class="text-gray-400">Premium dining experience with world-class cuisine and impeccable service.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-gray-400">Mon-Thu: 5 PM - 11 PM</p>
+                    <p class="text-gray-400">Fri-Sat: 5 PM - 12 AM</p>
+                    <p class="text-gray-400">Sun: 5 PM - 10 PM</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Location</h4>
+                    <p class="text-gray-400">📍 Downtown District</p>
+                    <p class="text-gray-400">📞 (555) 123-4567</p>
+                    <p class="text-gray-400">📧 info@flavorsv2.com</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow</h4>
+                    <p class="text-gray-400">🍴 Instagram</p>
+                    <p class="text-gray-400">🍷 Facebook</p>
+                    <p class="text-gray-400">⭐ TripAdvisor</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Flavors Restaurant V2. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

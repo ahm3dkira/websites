@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrintHub Industries v3 - Large Scale Printing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Rubik:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-industrial {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(55, 65, 81, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(59, 130, 246, 0.1)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-rubik">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900 shadow-2xl z-50 top-0 border-b border-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold text-blue-500">🏭 PrintHub Industries</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition">HOME</a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition">SOLUTIONS</a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition">CAPACITY</a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition">INDUSTRIES</a>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700">Get Quote</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-industrial pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <p class="text-blue-400 text-xl mb-4">INDUSTRIAL-SCALE PRINTING</p>
+            <h1 class="playfair text-7xl font-bold mb-6">PrintHub Industries</h1>
+            <p class="text-2xl mb-10 text-gray-300">Large-volume production printing for enterprise clients</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700">Request Consultation</button>
+                <button class="border-2 border-blue-500 text-blue-400 px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-600 hover:text-white">View Capabilities</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Capacity -->
+    <section class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-4 text-blue-400">Production Excellence</h2>
+            <p class="text-center text-gray-400 mb-16">State-of-the-art facility handling millions of impressions daily</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-gray-800 p-8 rounded-lg border-l-2 border-blue-600">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-blue-400">Daily Output</h3>
+                    <p class="text-gray-300">5 Million+ impressions/day</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg border-l-2 border-blue-600">
+                    <div class="text-5xl mb-4">🖨️</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-blue-400">Equipment</h3>
+                    <p class="text-gray-300">24 Industrial presses operational</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg border-l-2 border-blue-600">
+                    <div class="text-5xl mb-4">⏱️</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-blue-400">Turnaround</h3>
+                    <p class="text-gray-300">48-72 hour production typically</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg border-l-2 border-blue-600">
+                    <div class="text-5xl mb-4">✅</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-blue-400">Quality</h3>
+                    <p class="text-gray-300">ISO 9001 certified processes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-24 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-blue-400">Industrial Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gray-800 p-10 rounded-lg border-t-2 border-blue-600">
+                    <div class="text-5xl mb-4">📦</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-400">Packaging Printing</h3>
+                    <p class="text-gray-300 mb-6">Boxes, bags, labels with full color capability</p>
+                    <ul class="space-y-2 text-gray-400 text-sm mb-6">
+                        <li>✓ Custom die-cutting</li>
+                        <li>✓ High-volume runs</li>
+                        <li>✓ Sustainable materials</li>
+                        <li>✓ Rush orders accepted</li>
+                    </ul>
+                    <p class="text-blue-400 font-bold text-lg">Custom Quote</p>
+                </div>
+
+                <div class="bg-gray-800 p-10 rounded-lg border-t-2 border-blue-600">
+                    <div class="text-5xl mb-4">📑</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-400">Publication Printing</h3>
+                    <p class="text-gray-300 mb-6">Magazines, catalogs, booklets, annual reports</p>
+                    <ul class="space-y-2 text-gray-400 text-sm mb-6">
+                        <li>✓ Multi-color printing</li>
+                        <li>✓ Binding services</li>
+                        <li>✓ Folding options</li>
+                        <li>✓ Distribution logistics</li>
+                    </ul>
+                    <p class="text-blue-400 font-bold text-lg">Custom Quote</p>
+                </div>
+
+                <div class="bg-gray-800 p-10 rounded-lg border-t-2 border-blue-600">
+                    <div class="text-5xl mb-4">🖼️</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-400">Specialty Printing</h3>
+                    <p class="text-gray-300 mb-6">Promotional items, signage, direct mail</p>
+                    <ul class="space-y-2 text-gray-400 text-sm mb-6">
+                        <li>✓ Variable data printing</li>
+                        <li>✓ Specialty finishes</li>
+                        <li>✓ Custom sizes</li>
+                        <li>✓ Design services available</li>
+                    </ul>
+                    <p class="text-blue-400 font-bold text-lg">Custom Quote</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-blue-400">Industries We Serve</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-gray-800 p-8 rounded-lg text-center hover:border-t-2 hover:border-blue-600 transition">
+                    <div class="text-5xl mb-4">🏢</div>
+                    <h3 class="playfair text-xl font-bold mb-2 text-blue-400">Corporate</h3>
+                    <p class="text-gray-400">Annual reports, marketing collateral</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg text-center hover:border-t-2 hover:border-blue-600 transition">
+                    <div class="text-5xl mb-4">🛍️</div>
+                    <h3 class="playfair text-xl font-bold mb-2 text-blue-400">Retail</h3>
+                    <p class="text-gray-400">Packaging, point-of-sale materials</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg text-center hover:border-t-2 hover:border-blue-600 transition">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="playfair text-xl font-bold mb-2 text-blue-400">Education</h3>
+                    <p class="text-gray-400">Textbooks, course materials</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg text-center hover:border-t-2 hover:border-blue-600 transition">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="playfair text-xl font-bold mb-2 text-blue-400">Publishing</h3>
+                    <p class="text-gray-400">Books, magazines, catalogs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose PrintHub -->
+    <section class="py-24 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-blue-400">Why PrintHub Industries</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">⚙️</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-blue-400">Advanced Technology</h3>
+                            <p class="text-gray-300">Latest digital and offset printing equipment</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">💼</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-blue-400">Dedicated Account Management</h3>
+                            <p class="text-gray-300">Personal attention for enterprise clients</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">🌱</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-blue-400">Sustainable Practices</h3>
+                            <p class="text-gray-300">Eco-friendly materials and carbon offset programs</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">🚚</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-blue-400">Distribution Services</h3>
+                            <p class="text-gray-300">Warehousing and nationwide fulfillment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-16 border-t border-blue-600">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-400">PrintHub Industries</h3>
+                    <p class="text-gray-500">Large-scale production printing and publishing services.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-300">Solutions</h4>
+                    <p class="text-gray-500">Packaging Printing</p>
+                    <p class="text-gray-500">Publications</p>
+                    <p class="text-gray-500">Direct Mail</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-300">Operations</h4>
+                    <p class="text-gray-500">24/7 Production</p>
+                    <p class="text-gray-500">In-house Binding</p>
+                    <p class="text-gray-500">Rush Capability</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-300">Contact</h4>
+                    <p class="text-gray-500">📍 Industrial Park</p>
+                    <p class="text-gray-500">📞 (555) 987-6543</p>
+                    <p class="text-gray-500">📧 sales@printhubind.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-600">
+                <p>&copy; 2024 PrintHub Industries. Enterprise Printing Solutions Since 2005.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

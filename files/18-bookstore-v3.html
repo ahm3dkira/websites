@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antiquarian Library v3 - Rare Books Collector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-antique {
+            background: linear-gradient(135deg, rgba(78, 35, 15, 0.95) 0%, rgba(120, 53, 15, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(217, 119, 6, 0.15)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 font-lora">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0 border-b-2 border-amber-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold text-amber-900">📖 Antiquarian Library</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-amber-900 hover:text-amber-600 transition">Home</a>
+                    <a href="#" class="text-amber-900 hover:text-amber-600 transition">Collections</a>
+                    <a href="#" class="text-amber-900 hover:text-amber-600 transition">Acquisitions</a>
+                    <a href="#" class="text-amber-900 hover:text-amber-600 transition">Appraisals</a>
+                    <button class="bg-amber-900 text-white px-6 py-2 rounded-lg hover:bg-amber-800">Contact</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-antique pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <h1 class="playfair text-7xl font-bold mb-6">Antiquarian Library</h1>
+            <p class="text-2xl mb-10 text-amber-100">Rare Books, First Editions & Literary Treasures</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-amber-900 px-8 py-3 rounded-lg font-bold text-lg hover:bg-amber-50">Browse Collection</button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-amber-900">Get Appraisal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-4 text-amber-900">Our Collections</h2>
+            <p class="text-center text-gray-700 mb-16">Curated selections of the world's most precious and valuable books</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-amber-50 p-10 rounded-lg border-l-4 border-amber-900 hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">📚</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-amber-900">Classic First Editions</h3>
+                    <p class="text-gray-700 mb-4">Rare first printings of literary classics from 1800s-1950s</p>
+                    <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p>✓ Signed copies available</p>
+                        <p>✓ Authenticated and appraised</p>
+                        <p>✓ 450+ titles in stock</p>
+                    </div>
+                    <p class="text-amber-900 font-bold">$500 - $8,500</p>
+                </div>
+
+                <div class="bg-amber-50 p-10 rounded-lg border-l-4 border-amber-900 hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-amber-900">Fine Leather Bindings</h3>
+                    <p class="text-gray-700 mb-4">Exquisitely bound volumes with hand-tooled leather covers</p>
+                    <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p>✓ 18th & 19th century</p>
+                        <p>✓ Exceptional condition</p>
+                        <p>✓ 280+ collections</p>
+                    </div>
+                    <p class="text-amber-900 font-bold">$1,200 - $6,000</p>
+                </div>
+
+                <div class="bg-amber-50 p-10 rounded-lg border-l-4 border-amber-900 hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">⚱️</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-amber-900">Historical Documents</h3>
+                    <p class="text-gray-700 mb-4">Original manuscripts and signed letters from notable authors</p>
+                    <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p>✓ Certified authenticity</p>
+                        <p>✓ Historical provenance</p>
+                        <p>✓ Exhibition quality</p>
+                    </div>
+                    <p class="text-amber-900 font-bold">$2,000 - $15,000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Our Expertise -->
+    <section class="py-24 bg-amber-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-amber-900">Book Collecting Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">🔍</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Expert Authentication</h3>
+                            <p class="text-gray-700">Thorough examination and certification of every book</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">💎</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Rare Acquisitions</h3>
+                            <p class="text-gray-700">Direct access to estate sales and private collections</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">📜</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Professional Appraisals</h3>
+                            <p class="text-gray-700">Certified valuations for insurance and investment</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="text-4xl flex-shrink-0">🛡️</div>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Preservation Services</h3>
+                            <p class="text-gray-700">Expert restoration and archival storage solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-amber-900">Collector Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-amber-50 p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🏛️</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-amber-900">Library Cataloging</h3>
+                    <p class="text-gray-700 text-sm">Professional cataloging and organization of your collection</p>
+                </div>
+                <div class="bg-amber-50 p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-amber-900">Market Valuations</h3>
+                    <p class="text-gray-700 text-sm">Current market analysis for investment purposes</p>
+                </div>
+                <div class="bg-amber-50 p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🔐</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-amber-900">Acquisition Support</h3>
+                    <p class="text-gray-700 text-sm">Find specific editions and complete your collection</p>
+                </div>
+                <div class="bg-amber-50 p-8 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🚚</div>
+                    <h3 class="playfair text-xl font-bold mb-3 text-amber-900">Safe Transport</h3>
+                    <p class="text-gray-700 text-sm">Insured shipping and handling for valuable books</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notable Acquisitions -->
+    <section class="py-24 bg-amber-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-6xl font-bold text-center mb-16 text-amber-900">Recent Acquisitions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-2 border-amber-900">
+                    <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Pride and Prejudice</h3>
+                    <p class="text-gray-700 text-sm mb-4">Jane Austen, 1st Edition (1813), Signed</p>
+                    <p class="text-amber-900 font-bold">$4,250</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-2 border-amber-900">
+                    <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Great Gatsby</h3>
+                    <p class="text-gray-700 text-sm mb-4">F. Scott Fitzgerald, 1st Edition (1925), Fine Leather</p>
+                    <p class="text-amber-900 font-bold">$3,800</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-2 border-amber-900">
+                    <h3 class="playfair text-2xl font-bold mb-2 text-amber-900">Wuthering Heights</h3>
+                    <p class="text-gray-700 text-sm mb-4">Emily Brontë, 1st Edition (1847), Collector's Edition</p>
+                    <p class="text-amber-900 font-bold">$5,600</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4">Antiquarian Library</h3>
+                    <p class="text-amber-100">Premier collector of rare and valuable books since 1998.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Collections</h4>
+                    <p class="text-amber-100">First Editions</p>
+                    <p class="text-amber-100">Fine Bindings</p>
+                    <p class="text-amber-100">Historical Documents</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-amber-100">By Appointment</p>
+                    <p class="text-amber-100">Mon-Sat: 10 AM - 5 PM</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-amber-100">📍 Historic District</p>
+                    <p class="text-amber-100">📞 (555) 789-0123</p>
+                    <p class="text-amber-100">📧 rare@antiquarian.com</p>
+                </div>
+            </div>
+            <div class="border-t border-amber-800 pt-8 text-center text-amber-100">
+                <p>&copy; 2024 Antiquarian Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

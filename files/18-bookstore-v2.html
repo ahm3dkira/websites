@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHaven Online v2 - Digital Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-digital {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95) 0%, rgba(139, 92, 246, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255, 255, 255, 0.1)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-white font-lora">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold text-blue-600">📚 BookHaven</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Shop</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Categories</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">🛒 Cart</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-digital pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <h1 class="playfair text-7xl font-bold mb-6">Your Digital Library</h1>
+            <p class="text-2xl mb-10 text-blue-100">Millions of eBooks at your fingertips</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-50">Start Browsing</button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600">Get Subscription</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Popular Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+                    <div class="text-5xl mb-4">📖</div>
+                    <h3 class="playfair text-2xl font-bold mb-3 text-blue-600">Fiction</h3>
+                    <p class="text-gray-700 mb-4">123,456 titles including bestsellers and classics</p>
+                    <p class="text-blue-600 font-bold">Browse Collection →</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+                    <div class="text-5xl mb-4">🔬</div>
+                    <h3 class="playfair text-2xl font-bold mb-3 text-blue-600">Non-Fiction</h3>
+                    <p class="text-gray-700 mb-4">98,765 titles across science, history, and more</p>
+                    <p class="text-blue-600 font-bold">Browse Collection →</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="playfair text-2xl font-bold mb-3 text-blue-600">Academic</h3>
+                    <p class="text-gray-700 mb-4">54,321 scholarly works and research papers</p>
+                    <p class="text-blue-600 font-bold">Browse Collection →</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why BookHaven -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Why BookHaven Online?</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <span class="text-4xl flex-shrink-0">⚡</span>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-blue-600">Instant Access</h3>
+                            <p class="text-gray-700">Download your eBooks instantly upon purchase</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-4xl flex-shrink-0">🌍</span>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-blue-600">Global Selection</h3>
+                            <p class="text-gray-700">Access books from around the world</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <span class="text-4xl flex-shrink-0">💰</span>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-blue-600">Best Prices</h3>
+                            <p class="text-gray-700">Competitive pricing with regular discounts</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-4xl flex-shrink-0">📱</span>
+                        <div>
+                            <h3 class="playfair text-2xl font-bold mb-2 text-blue-600">Multi-Device</h3>
+                            <p class="text-gray-700">Read on phone, tablet, or desktop</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Plans -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Subscription Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Monthly</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-4">$9.99<span class="text-lg text-gray-600">/month</span></p>
+                    <ul class="space-y-3 mb-6 text-gray-700">
+                        <li>✓ 5 books per month</li>
+                        <li>✓ Cancel anytime</li>
+                        <li>✓ Access to new releases</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Choose Plan</button>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-blue-600">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Annual</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-4">$89.99<span class="text-lg text-gray-600">/year</span></p>
+                    <ul class="space-y-3 mb-6 text-gray-700">
+                        <li>✓ Unlimited books</li>
+                        <li>✓ Save 25%</li>
+                        <li>✓ Exclusive member events</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Choose Plan</button>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-600">Premium</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-4">$14.99<span class="text-lg text-gray-600">/month</span></p>
+                    <ul class="space-y-3 mb-6 text-gray-700">
+                        <li>✓ Unlimited books</li>
+                        <li>✓ Early access</li>
+                        <li>✓ Priority support</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">What Readers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <p class="text-yellow-400 mb-4">⭐⭐⭐⭐⭐</p>
+                    <p class="text-gray-700 mb-4">"BookHaven Online has changed how I read. The selection is amazing!"</p>
+                    <p class="font-bold text-gray-900">Sarah M.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <p class="text-yellow-400 mb-4">⭐⭐⭐⭐⭐</p>
+                    <p class="text-gray-700 mb-4">"Instant access is incredible. Perfect for my busy schedule."</p>
+                    <p class="font-bold text-gray-900">John K.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <p class="text-yellow-400 mb-4">⭐⭐⭐⭐⭐</p>
+                    <p class="text-gray-700 mb-4">"Best eBook platform I've used. Highly recommended!"</p>
+                    <p class="font-bold text-gray-900">Emma T.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-blue-400">BookHaven Online</h3>
+                    <p class="text-gray-400">Your digital library with millions of eBooks.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Browse</h4>
+                    <p class="text-gray-400">New Releases</p>
+                    <p class="text-gray-400">Categories</p>
+                    <p class="text-gray-400">Bestsellers</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Account</h4>
+                    <p class="text-gray-400">My Library</p>
+                    <p class="text-gray-400">Subscriptions</p>
+                    <p class="text-gray-400">Wishlist</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <p class="text-gray-400">📧 support@bookhaven.com</p>
+                    <p class="text-gray-400">📞 (555) 678-9012</p>
+                    <p class="text-gray-400">Help Center</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 BookHaven Online. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

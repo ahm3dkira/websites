@@ -3,320 +3,418 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Index</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 600px;
-            width: 100%;
-        }
-        
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 2.5em;
-        }
-        
-        .file-list {
-            list-style: none;
-        }
-        
-        .file-item {
-            margin-bottom: 15px;
-        }
-        
-        .file-link {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-            border-left: 4px solid #667eea;
-        }
-        
-        .file-link:hover {
-            background: #e9ecef;
-            transform: translateX(5px);
-            border-left-color: #764ba2;
-        }
-        
-        .file-icon {
-            margin-right: 15px;
-            font-size: 1.5em;
-        }
-        
-        .file-name {
-            font-weight: 600;
-            color: #667eea;
-        }
-        
-        .json-section {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px solid #e9ecef;
-        }
-        
-        .json-section h2 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        
-        .json-output {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 15px;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            line-height: 1.6;
-            color: #333;
-            white-space: pre-wrap;
-            word-break: break-word;
-        }
-    </style>
+    <title>Premium Website Portfolio - Complete Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>📑 Project Files</h1>
-        <ul class="file-list">
-           
-        </ul>
+<body class="bg-gradient-to-br from-blue-500 via-purple-500 to-purple-700 min-h-screen px-4 py-10">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="bg-white rounded-2xl p-8 md:p-12 mb-10 shadow-2xl text-center">
+            <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                🎨 Premium Website Portfolio
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-600 mb-8">
+                Complete Collection of Professional Business Websites
+            </p>
+            
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="🔍 Search websites by name or type..." 
+                class="w-full px-5 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-4 focus:ring-blue-200 transition-all text-base md:text-lg outline-none"
+                aria-label="Search websites"
+            />
+          
+        </div>
+        
+       
+        
+        <!-- Primary Websites -->
+        <div class="mb-12" id="primarySection">
+            <div class="text-3xl md:text-4xl text-white mb-8 flex items-center gap-3">
+                <span class="text-4xl">🌟</span>
+                Primary Websites
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="primaryGrid"></div>
+        </div>
+        
+        <!-- Variants -->
+        <div class="mb-12" id="variantsSection" style="display:none;">
+            <div class="text-3xl md:text-4xl text-white mb-8 flex items-center gap-3">
+                <span class="text-4xl">🎯</span>
+                Design Variants
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="variantsGrid"></div>
+        </div>
+        
+        <!-- Bonus Websites -->
+        <div class="mb-12" id="bonusSection" style="display:none;">
+            <div class="text-3xl md:text-4xl text-white mb-8 flex items-center gap-3">
+                <span class="text-4xl">✨</span>
+                Bonus Websites
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="bonusGrid"></div>
+        </div>
+        
+        <!-- No Results -->
+        <div id="noResults" class="bg-white p-10 rounded-xl text-center text-gray-600 text-lg shadow-lg" style="display:none;">
+            ❌ No websites found matching your search.
+        </div>
     </div>
 
-  
+
 
     <script type="application/json" id="filesData">
     {
       "project": "Premium Website Collection",
-      "description": "20 Premium Business Websites + 3 Bonus",
+      "description": "20 Premium Business Websites + 3 Bonus + 11 Design Variants",
       "files": [
         {
           "name": "1-restaurant.html",
           "path": "files/1-restaurant.html",
           "type": "HTML",
           "icon": "🍽️",
-          "description": "Premium Restaurant Website"
+          "description": "Premium Restaurant Website",
+          "category": "primary"
+        },
+        {
+          "name": "1-restaurant-v2.html",
+          "path": "files/1-restaurant-v2.html",
+          "type": "HTML",
+          "icon": "🍽️",
+          "description": "Restaurant v2 - Dark Modern Theme",
+          "category": "variant"
+        },
+        {
+          "name": "1-restaurant-v3.html",
+          "path": "files/1-restaurant-v3.html",
+          "type": "HTML",
+          "icon": "🍽️",
+          "description": "Restaurant v3 - Luxury Gold & Brown Theme",
+          "category": "variant"
         },
         {
           "name": "2-coffee-shop.html",
           "path": "files/2-coffee-shop.html",
           "type": "HTML",
           "icon": "☕",
-          "description": "Premium Coffee Shop Website"
+          "description": "Premium Coffee Shop Website",
+          "category": "primary"
+        },
+        {
+          "name": "2-coffee-shop-v2.html",
+          "path": "files/2-coffee-shop-v2.html",
+          "type": "HTML",
+          "icon": "☕",
+          "description": "Coffee Shop v2 - Café Lounge Theme",
+          "category": "variant"
+        },
+        {
+          "name": "2-coffee-shop-v3.html",
+          "path": "files/2-coffee-shop-v3.html",
+          "type": "HTML",
+          "icon": "☕",
+          "description": "Coffee Shop v3 - Artisan Roastery Dark Theme",
+          "category": "variant"
         },
         {
           "name": "3-fitness-gym.html",
           "path": "files/3-fitness-gym.html",
           "type": "HTML",
           "icon": "💪",
-          "description": "Premium Fitness Gym Website"
+          "description": "Premium Fitness Gym Website",
+          "category": "primary"
         },
         {
           "name": "4-salon.html",
           "path": "files/4-salon.html",
           "type": "HTML",
           "icon": "💇",
-          "description": "Premium Hair Salon Website"
+          "description": "Premium Hair Salon Website",
+          "category": "primary"
         },
         {
           "name": "5-plumbing.html",
           "path": "files/5-plumbing.html",
           "type": "HTML",
           "icon": "🔧",
-          "description": "Premium Plumbing Service Website"
+          "description": "Premium Plumbing Service Website",
+          "category": "primary"
         },
         {
           "name": "6-real-estate.html",
           "path": "files/6-real-estate.html",
           "type": "HTML",
           "icon": "🏠",
-          "description": "Premium Real Estate Website"
+          "description": "Premium Real Estate Website",
+          "category": "primary"
         },
         {
           "name": "7-photography.html",
           "path": "files/7-photography.html",
           "type": "HTML",
           "icon": "📸",
-          "description": "Premium Photography Studio Website"
+          "description": "Premium Photography Studio Website",
+          "category": "primary"
         },
         {
           "name": "8-dental.html",
           "path": "files/8-dental.html",
           "type": "HTML",
           "icon": "🦷",
-          "description": "Premium Dental Practice Website"
+          "description": "Premium Dental Practice Website",
+          "category": "primary"
         },
         {
           "name": "9-law-firm.html",
           "path": "files/9-law-firm.html",
           "type": "HTML",
           "icon": "⚖️",
-          "description": "Premium Law Firm Website"
+          "description": "Premium Law Firm Website",
+          "category": "primary"
         },
         {
           "name": "10-marketing-agency.html",
           "path": "files/10-marketing-agency.html",
           "type": "HTML",
           "icon": "📢",
-          "description": "Premium Marketing Agency Website"
+          "description": "Premium Marketing Agency Website",
+          "category": "primary"
         },
         {
           "name": "11-ecommerce.html",
           "path": "files/11-ecommerce.html",
           "type": "HTML",
           "icon": "🛍️",
-          "description": "Premium E-commerce Store Website"
+          "description": "Premium E-commerce Store Website",
+          "category": "primary"
         },
         {
           "name": "12-hotel.html",
           "path": "files/12-hotel.html",
           "type": "HTML",
           "icon": "🏨",
-          "description": "Premium Hotel Website"
+          "description": "Premium Hotel Website",
+          "category": "primary"
         },
         {
           "name": "13-car-rental.html",
           "path": "files/13-car-rental.html",
           "type": "HTML",
           "icon": "🚗",
-          "description": "Premium Car Rental Website"
+          "description": "Premium Car Rental Website",
+          "category": "primary"
         },
         {
           "name": "14-consulting.html",
           "path": "files/14-consulting.html",
           "type": "HTML",
           "icon": "💼",
-          "description": "Premium Consulting Firm Website"
+          "description": "Premium Consulting Firm Website",
+          "category": "primary"
         },
         {
           "name": "15-freelancer-portfolio.html",
           "path": "files/15-freelancer-portfolio.html",
           "type": "HTML",
           "icon": "👨‍💻",
-          "description": "Premium Freelancer Portfolio Website"
+          "description": "Premium Freelancer Portfolio Website",
+          "category": "primary"
         },
         {
           "name": "16-wedding-planner.html",
           "path": "files/16-wedding-planner.html",
           "type": "HTML",
           "icon": "💒",
-          "description": "Premium Wedding Planner Website"
+          "description": "Premium Wedding Planner Website",
+          "category": "primary"
         },
         {
           "name": "17-pet-grooming.html",
           "path": "files/17-pet-grooming.html",
           "type": "HTML",
           "icon": "🐾",
-          "description": "Premium Pet Grooming Website"
+          "description": "Premium Pet Grooming Website",
+          "category": "primary"
         },
         {
           "name": "18-bookstore.html",
           "path": "files/18-bookstore.html",
           "type": "HTML",
           "icon": "📚",
-          "description": "Premium Bookstore Website"
+          "description": "Premium Bookstore Website",
+          "category": "primary"
+        },
+        {
+          "name": "18-bookstore-v2.html",
+          "path": "files/18-bookstore-v2.html",
+          "type": "HTML",
+          "icon": "📚",
+          "description": "Bookstore v2 - BookHaven Online (E-commerce)",
+          "category": "variant"
+        },
+        {
+          "name": "18-bookstore-v3.html",
+          "path": "files/18-bookstore-v3.html",
+          "type": "HTML",
+          "icon": "📚",
+          "description": "Bookstore v3 - Antiquarian Library Rare Books",
+          "category": "variant"
         },
         {
           "name": "19-insurance.html",
           "path": "files/19-insurance.html",
           "type": "HTML",
           "icon": "🛡️",
-          "description": "Premium Insurance Agency Website"
+          "description": "Premium Insurance Agency Website",
+          "category": "primary"
         },
         {
           "name": "20-auto-repair.html",
           "path": "files/20-auto-repair.html",
           "type": "HTML",
           "icon": "🔧",
-          "description": "Premium Auto Repair Website"
+          "description": "Premium Auto Repair Website",
+          "category": "primary"
         },
         {
           "name": "car-wash-tailwind.html",
           "path": "files/car-wash-tailwind.html",
           "type": "HTML",
           "icon": "🚿",
-          "description": "Premium Car Wash (Arabic/Bilingual)"
+          "description": "Premium Car Wash (Arabic/Bilingual)",
+          "category": "bonus"
+        },
+        {
+          "name": "car-wash-v2.html",
+          "path": "files/car-wash-v2.html",
+          "type": "HTML",
+          "icon": "🚿",
+          "description": "Car Wash v2 - CleanSpa Professional Theme",
+          "category": "variant"
+        },
+        {
+          "name": "car-wash-v3.html",
+          "path": "files/car-wash-v3.html",
+          "type": "HTML",
+          "icon": "🚿",
+          "description": "Car Wash v3 - Luxury Auto Spa Premium Theme",
+          "category": "variant"
         },
         {
           "name": "construction-website.html",
           "path": "files/construction-website.html",
           "type": "HTML",
           "icon": "🏗️",
-          "description": "Premium Construction Company Website"
+          "description": "Premium Construction Company Website",
+          "category": "bonus"
         },
         {
           "name": "construction-website-arabic.html",
           "path": "files/construction-website-arabic.html",
           "type": "HTML",
           "icon": "🏗️",
-          "description": "Premium Construction Company (Arabic)"
+          "description": "Premium Construction Company (Arabic)",
+          "category": "bonus"
+        },
+        {
+          "name": "photocopy.html",
+          "path": "files/photocopy.html",
+          "type": "HTML",
+          "icon": "📋",
+          "description": "ProPrint Professional Printing Services",
+          "category": "primary"
+        },
+        {
+          "name": "photocopy-v2.html",
+          "path": "files/photocopy-v2.html",
+          "type": "HTML",
+          "icon": "📋",
+          "description": "Photocopy v2 - FastCopy Express (Speed Focus)",
+          "category": "variant"
+        },
+        {
+          "name": "photocopy-v3.html",
+          "path": "files/photocopy-v3.html",
+          "type": "HTML",
+          "icon": "📋",
+          "description": "Photocopy v3 - PrintHub Industries (Large Scale)",
+          "category": "variant"
         }
       ],
-      "totalFiles": 23,
+      "totalFiles": 34,
       "primaryWebsites": 20,
-      "bonusWebsites": 3
+      "bonusWebsites": 3,
+      "variantWebsites": 11
     }
     </script>
-	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			const fileList = document.querySelector('.file-list');
-			const filesDataScript = document.getElementById('filesData');
-			const filesData = JSON.parse(filesDataScript.textContent).files;
-			
-			// Populate file list
-			filesData.forEach(file => {
-				const listItem = document.createElement('li');
-				listItem.className = 'file-item';
 
-				const link = document.createElement('a');
-				link.href = file.path;
-				link.className = 'file-link';
-
-				const iconSpan = document.createElement('span');
-				iconSpan.className = 'file-icon';
-				iconSpan.textContent = file.icon;
-
-				const nameSpan = document.createElement('span');
-				nameSpan.className = 'file-name';
-				nameSpan.textContent = file.name;
-
-				link.appendChild(iconSpan);
-				link.appendChild(nameSpan);
-				listItem.appendChild(link);
-				fileList.appendChild(listItem);
-			});
-			
-			// Display JSON data
-			const jsonDisplay = document.getElementById('jsonDisplay');
-			const allData = JSON.parse(filesDataScript.textContent);
-			jsonDisplay.textContent = JSON.stringify(allData, null, 2);
-		});
-	</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const filesDataScript = document.getElementById('filesData');
+            const filesData = JSON.parse(filesDataScript.textContent);
+            const files = filesData.files;
+            
+            // Organize files by category
+            const primaryFiles = files;
+            // const variantFiles = files.filter(f => f.category === 'variant');
+            // const bonusFiles = files.filter(f => f.category === 'bonus');
+            
+            // Render functions
+            function renderCard(file) {
+                const borderClass = file.category === 'variant' ? 'border-l-emerald-500' : 
+                                   file.category === 'bonus' ? 'border-l-amber-500' : 'border-l-blue-500';
+                const badgeClass = file.category === 'variant' ? 'bg-emerald-100 text-emerald-700' : 
+                                  file.category === 'bonus' ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-600';
+                const badgeText = file.category === 'variant' ? 'Design Variant' : 
+                                 file.category === 'bonus' ? 'Bonus' : 'Primary';
+                
+                return `
+                    <a href="${file.path}" class="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all border-l-4 ${borderClass} no-underline text-inherit flex flex-col" title="${file.description}">
+                        <div class="text-5xl mb-4">${file.icon}</div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">${file.name}</div>
+                        <div class="text-sm text-gray-600 mb-4 flex-grow">${file.description}</div>
+                        <div class="text-xs text-gray-500 font-mono bg-gray-100 p-2 rounded overflow-x-auto">${file.path}</div>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mt-3 w-fit ${badgeClass}">${badgeText}</span>
+                    </a>
+                `;
+            }
+            
+            function renderGrid(files, gridId) {
+                const grid = document.getElementById(gridId);
+                grid.innerHTML = files.map(renderCard).join('');
+            }
+            
+            // Initial render
+            renderGrid(primaryFiles, 'primaryGrid');
+           
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                let hasResults = false;
+                
+                // Filter primary
+                const filteredPrimary = primaryFiles.filter(f => 
+                    f.name.toLowerCase().includes(query) || 
+                    f.description.toLowerCase().includes(query)
+                );
+                const primarySection = document.getElementById('primarySection');
+                if (filteredPrimary.length > 0) {
+                    renderGrid(filteredPrimary, 'primaryGrid');
+                    primarySection.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    primarySection.style.display = 'none';
+                }
+                
+              
+                
+                // Show/hide no results message
+                document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastCopy Express v2 - Quick Printing Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap');
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-fast {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.95) 0%, rgba(239, 68, 68, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255, 255, 255, 0.1)" fill-opacity="1" d="M0,96L120,112C240,128,480,160,720,160C960,160,1200,128,1320,112L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-white font-open-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="playfair text-3xl font-bold text-red-600">⚡ FastCopy</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-red-600 transition">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600 transition">Express Services</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600 transition">Pricing</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600 transition">Contact</a>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-fast pt-32 pb-20 text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center w-full">
+            <h1 class="playfair text-7xl font-bold mb-6">Express Printing, Done Fast</h1>
+            <p class="text-2xl mb-10 text-red-100">Same-day copying and printing services you can count on</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-red-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-50">Order Now</button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-red-600">Quick Quote</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Services -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Lightning-Fast Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">⏱️</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-red-600">Express Copies</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ 10-minute service*</li>
+                        <li>✓ Up to 100 pages</li>
+                        <li>✓ B&W & color</li>
+                        <li>✓ Walk-in ready</li>
+                    </ul>
+                    <p class="text-red-600 font-bold">$0.07/page</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-red-600">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-red-600">Quick Prints</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ 30-minute print jobs</li>
+                        <li>✓ Flyers & postcards</li>
+                        <li>✓ Digital submission</li>
+                        <li>✓ No design fee</li>
+                    </ul>
+                    <p class="text-red-600 font-bold">Starting at $15</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">✂️</div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-red-600">Instant Binding</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li>✓ 15-minute binding</li>
+                        <li>✓ Multiple styles</li>
+                        <li>✓ While you wait</li>
+                        <li>✓ Affordable pricing</li>
+                    </ul>
+                    <p class="text-red-600 font-bold">Starting at $2</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-8 text-sm">*For orders under 100 pages</p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="playfair text-5xl font-bold text-center mb-16 text-gray-900">Simple & Fast</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="playfair text-2xl font-bold mb-2 text-gray-900">Drop Off</h3>
+                    <p class="text-gray-700">Bring your documents or upload files</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="playfair text-2xl font-bold mb-2 text-gray-900">Quick Process</h3>
+                    <p class="text-gray-700">We process your job immediately</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="playfair text-2xl font-bold mb-2 text-gray-900">Quality Check</h3>
+                    <p class="text-gray-700">We verify perfect quality</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="playfair text-2xl font-bold mb-2 text-gray-900">Pick Up</h3>
+                    <p class="text-gray-700">Get your finished order ready!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About FastCopy -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-gradient-to-br from-red-600 to-red-700 h-96 rounded-lg flex items-center justify-center">
+                    <span class="text-7xl">⚡🖨️</span>
+                </div>
+                <div>
+                    <h2 class="playfair text-5xl font-bold mb-6 text-gray-900">Built for Speed</h2>
+                    <p class="text-lg text-gray-700 mb-6">FastCopy Express specializes in quick turnarounds without compromising quality. Perfect for busy professionals who need solutions yesterday.</p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-red-600">10+</p>
+                            <p class="text-gray-600">Years Fast Service</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-red-600">12K+</p>
+                            <p class="text-gray-600">Orders Fulfilled</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-red-600">⭐⭐⭐</p>
+                            <p class="text-gray-600">5-Star Rated</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-4 text-red-400">FastCopy Express</h3>
+                    <p class="text-gray-400">Express printing and copying services for busy professionals.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <p class="text-gray-400">Express Copies</p>
+                    <p class="text-gray-400">Quick Prints</p>
+                    <p class="text-gray-400">Fast Binding</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Hours</h4>
+                    <p class="text-gray-400">Mon-Fri: 7 AM - 7 PM</p>
+                    <p class="text-gray-400">Sat: 9 AM - 5 PM</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">📍 Downtown Express</p>
+                    <p class="text-gray-400">📞 (555) 234-9876</p>
+                    <p class="text-gray-400">📧 fast@fastcopy.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 FastCopy Express. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
