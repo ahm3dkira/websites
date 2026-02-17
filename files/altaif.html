@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Taif Administrative Services</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cairo:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --maroon: #7a1030;
+    --gold: #c9953a;
+    --cream: #fdf6ee;
+    --dark: #1a0a0e;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: 'Barlow', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+  .hero-bg {
+    background: linear-gradient(135deg, #7a1030 0%, #4a0820 50%, #1a0a0e 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(201,149,58,0.04) 30px, rgba(201,149,58,0.04) 31px);
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,149,58,0.12) 0%, transparent 70%);
+    top: -200px; right: -100px;
+    pointer-events: none;
+  }
+
+  .gold-line { height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  .service-card {
+    border: 1px solid rgba(201,149,58,0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(122,16,48,0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(122,16,48,0.15); border-color: var(--gold); }
+  .service-card:hover::before { opacity: 1; }
+
+  .icon-circle {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--maroon), #a01840);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(122,16,48,0.3);
+  }
+
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  .contact-card {
+    background: linear-gradient(135deg, var(--maroon), #4a0820);
+    color: white;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(201,149,58,0.08);
+    bottom: -100px; right: -80px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .arabic-accent { font-family: 'Cairo', sans-serif; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.8s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; opacity: 0; }
+  .delay-2 { animation-delay: 0.3s; opacity: 0; }
+  .delay-3 { animation-delay: 0.45s; opacity: 0; }
+  .delay-4 { animation-delay: 0.6s; opacity: 0; }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--gold);
+  }
+
+  .section-title { font-family: 'Playfair Display', serif; }
+  .divider-ornament { color: var(--gold); font-size: 1.5rem; letter-spacing: 0.3em; }
+
+  .partner-logo {
+    border: 1px solid rgba(201,149,58,0.15);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, background 0.3s;
+    background: white;
+    height: 80px;
+  }
+  .partner-logo:hover { border-color: var(--gold); background: rgba(201,149,58,0.04); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), #e8b040);
+    color: var(--dark);
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201,149,58,0.4); }
+
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.4);
+    color: white;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 8px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    background: #25d366;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+    z-index: 999;
+    transition: transform 0.3s;
+    text-decoration: none;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  .uae-flag-bar { height: 4px; background: linear-gradient(90deg, #00732f 33.3%, white 33.3% 66.6%, #ff0000 66.6%); }
+</style>
+</head>
+<body>
+
+<!-- UAE Flag Bar -->
+<div class="uae-flag-bar"></div>
+
+<!-- Navigation -->
+<nav class="bg-white border-b border-gray-100 sticky top-0 z-50" style="box-shadow: 0 2px 20px rgba(0,0,0,0.06);">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--maroon), #a01840);">
+        <span class="text-white font-bold text-sm arabic-accent">ط</span>
+      </div>
+      <div>
+        <div class="font-bold text-sm tracking-wide" style="color: var(--maroon);">AL TAIF</div>
+        <div class="text-xs text-gray-400 tracking-wider">ADMINISTRATIVE SERVICES</div>
+      </div>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors pb-1">Services</a>
+      <a href="#about" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors pb-1">About</a>
+      <a href="#partners" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors pb-1">Partners</a>
+      <a href="#contact" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors pb-1">Contact</a>
+    </div>
+    <a href="tel:067445537" class="btn-primary text-sm hidden md:inline-block">Call Now</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-bg min-h-screen flex items-center py-24 px-6">
+  <div class="max-w-7xl mx-auto w-full">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative z-10">
+        <div class="fade-up mb-6">
+          <span class="badge">Serving the UAE Since Years</span>
+        </div>
+        <h1 class="fade-up delay-1 text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight" style="font-family: 'Playfair Display', serif;">
+          Al Taif<br>
+          <span style="color: var(--gold);">Administrative</span><br>
+          Services
+        </h1>
+        <p class="fade-up delay-2 mt-6 text-lg text-white/70 leading-relaxed max-w-lg">
+          Complete business and personal administrative solutions for businessmen across the UAE. Typing, documentation, and government transactions — all under one roof.
+        </p>
+        <div class="fade-up delay-2 mt-4 arabic-accent text-white/50 text-base">
+          الطيف للخدمات الإدارية لرجال الأعمال
+        </div>
+        <div class="fade-up delay-3 mt-10 flex flex-wrap gap-4">
+          <a href="#services" class="btn-primary">Explore Services</a>
+          <a href="https://wa.me/971506045537" class="btn-outline">WhatsApp Us</a>
+        </div>
+        <div class="fade-up delay-4 mt-14 grid grid-cols-3 gap-6">
+          <div>
+            <div class="stat-number">10+</div>
+            <div class="text-white/50 text-sm mt-1">Years Experience</div>
+          </div>
+          <div>
+            <div class="stat-number">50+</div>
+            <div class="text-white/50 text-sm mt-1">Services Offered</div>
+          </div>
+          <div>
+            <div class="stat-number">5K+</div>
+            <div class="text-white/50 text-sm mt-1">Satisfied Clients</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative z-10 hidden lg:block">
+        <div class="relative">
+          <!-- Decorative frame -->
+          <div class="absolute -inset-4 border border-white/10 rounded-2xl"></div>
+          <div class="absolute -inset-8 border border-white/5 rounded-2xl"></div>
+          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+            <div class="text-white/40 text-xs tracking-widest uppercase mb-4">Quick Contact</div>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 bg-white/5 rounded-xl p-4">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(201,149,58,0.2);">
+                  <svg class="w-5 h-5" fill="none" stroke="#c9953a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <div class="text-white/40 text-xs">Telephone</div>
+                  <div class="text-white font-semibold">06 7445537</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-white/5 rounded-xl p-4">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(37,211,102,0.15);">
+                  <svg class="w-5 h-5" fill="#25d366" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.849L.057 23.535a.75.75 0 00.916.916l5.688-1.474A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.69 9.69 0 01-5.012-1.394l-.36-.213-3.72.964.985-3.617-.234-.372A9.71 9.71 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+                </div>
+                <div>
+                  <div class="text-white/40 text-xs">WhatsApp / Mobile</div>
+                  <div class="text-white font-semibold">050 6045537</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-white/5 rounded-xl p-4">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(201,149,58,0.2);">
+                  <svg class="w-5 h-5" fill="none" stroke="#c9953a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <div class="text-white/40 text-xs">Email</div>
+                  <div class="text-white font-semibold text-sm">altaifbms@gmail.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gold Line -->
+<div class="gold-line"></div>
+
+<!-- Services -->
+<section id="services" class="py-24 px-6" style="background: var(--cream);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="divider-ornament mb-4">✦ ✦ ✦</div>
+      <h2 class="section-title text-4xl md:text-5xl font-bold" style="color: var(--dark);">Our Services</h2>
+      <p class="mt-4 text-gray-500 max-w-xl mx-auto">Comprehensive administrative and business services to meet all your official requirements in the UAE.</p>
+      <div class="mt-4 arabic-accent text-gray-400">خدماتنا</div>
+    </div>
+    <!-- Emirates of Dubai badge -->
+    <div class="flex justify-center mb-8">
+      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium" style="background: rgba(122,16,48,0.07); color: var(--maroon); border: 1px solid rgba(122,16,48,0.15);">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        All services processed for <strong>Dubai</strong> — إمارة دبي
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Residence Renewal -->
+      <div class="service-card bg-white rounded-2xl p-7">
+        <div class="icon-circle mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2" style="color: var(--dark);">Residence Renewal</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Renew your UAE residence visa quickly and accurately without the hassle.</p>
+        <div class="mt-4 text-sm font-semibold arabic-accent" style="color: var(--gold);">تجديد اقامة</div>
+      </div>
+
+      <!-- New Residence -->
+      <div class="service-card bg-white rounded-2xl p-7">
+        <div class="icon-circle mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2" style="color: var(--dark);">New Residence Visa</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">New residence visa applications for employees, families, and dependents.</p>
+        <div class="mt-4 text-sm font-semibold arabic-accent" style="color: var(--gold);">اقامة جديدة</div>
+      </div>
+
+      <!-- Newborn Residence -->
+      <div class="service-card bg-white rounded-2xl p-7">
+        <div class="icon-circle mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2" style="color: var(--dark);">Newborn Residence</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Register a new baby's residency under the family sponsorship in Dubai.</p>
+        <div class="mt-4 text-sm font-semibold arabic-accent" style="color: var(--gold);">اقامة مولود جديد</div>
+      </div>
+
+      <!-- Residence Entry Permit -->
+      <div class="service-card bg-white rounded-2xl p-7">
+        <div class="icon-circle mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2" style="color: var(--dark);">Residence Entry Permit</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Apply for an entry permit to initiate a new UAE residence visa process.</p>
+        <div class="mt-4 text-sm font-semibold arabic-accent" style="color: var(--gold);">اذن دخول اقامة</div>
+      </div>
+
+      <!-- Visit Visa -->
+      <div class="service-card bg-white rounded-2xl p-7">
+        <div class="icon-circle mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2" style="color: var(--dark);">Visit Visa</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Sponsor and process visit visas for family members and guests to the UAE.</p>
+        <div class="mt-4 text-sm font-semibold arabic-accent" style="color: var(--gold);">زيارة</div>
+      </div>
+
+      <!-- Residence Cancellation -->
+      <div class="service-card bg-white rounded-2xl p-7">
+        <div class="icon-circle mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2" style="color: var(--dark);">Residence Cancellation</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Cancel an existing UAE residence visa properly through official channels.</p>
+        <div class="mt-4 text-sm font-semibold arabic-accent" style="color: var(--gold);">الغاء اقامة</div>
+      </div>
+
+      <!-- Health Insurance -->
+      <div class="service-card bg-white rounded-2xl p-7">
+        <div class="icon-circle mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2" style="color: var(--dark);">Health Insurance</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Register and process mandatory health insurance for employees and dependents.</p>
+        <div class="mt-4 text-sm font-semibold arabic-accent" style="color: var(--gold);">التامين الصحي</div>
+      </div>
+
+      <!-- Medical Fitness -->
+      <div class="service-card bg-white rounded-2xl p-7">
+        <div class="icon-circle mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2" style="color: var(--dark);">Medical Fitness Test</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Typing and processing for mandatory medical fitness examinations required for residency.</p>
+        <div class="mt-4 text-sm font-semibold arabic-accent" style="color: var(--gold);">فحص طبي</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- About / Features -->
+<section id="about" style="background: #1a0a0e;" class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="badge mb-6" style="border-color: rgba(201,149,58,0.4); color: var(--gold);">Why Choose Al Taif</div>
+        <h2 class="section-title text-4xl md:text-5xl font-bold text-white mt-4 leading-tight">
+          Trusted by Thousands<br>Across the UAE
+        </h2>
+        <p class="mt-6 text-white/60 leading-relaxed">
+          Al Taif Administrative Services has been a cornerstone of the UAE's business community, providing reliable, fast, and accurate administrative solutions for individuals and corporations alike.
+        </p>
+        <div class="mt-10 space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(201,149,58,0.15);">
+              <svg class="w-3.5 h-3.5" fill="var(--gold)" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-white">Fast & Accurate Processing</div>
+              <div class="text-white/50 text-sm mt-1">We ensure your documents are processed correctly the first time, saving you time and effort.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(201,149,58,0.15);">
+              <svg class="w-3.5 h-3.5" fill="var(--gold)" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-white">Bilingual Team</div>
+              <div class="text-white/50 text-sm mt-1">Our staff communicates fluently in Arabic and English to serve all clients effectively.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(201,149,58,0.15);">
+              <svg class="w-3.5 h-3.5" fill="var(--gold)" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-white">Authorized & Registered</div>
+              <div class="text-white/50 text-sm mt-1">Fully authorized to process transactions with all major UAE government entities.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(201,149,58,0.15);">
+              <svg class="w-3.5 h-3.5" fill="var(--gold)" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-white">One-Stop Solution</div>
+              <div class="text-white/50 text-sm mt-1">From Emirates ID to residency visas — everything handled under one roof.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="rounded-2xl p-8 text-center" style="background: rgba(201,149,58,0.06); border: 1px solid rgba(201,149,58,0.15);">
+          <div class="stat-number" style="font-size: 2.5rem;">5K+</div>
+          <div class="text-white/40 text-sm mt-2">Documents Processed</div>
+        </div>
+        <div class="rounded-2xl p-8 text-center mt-8" style="background: rgba(122,16,48,0.3); border: 1px solid rgba(122,16,48,0.4);">
+          <div class="stat-number" style="font-size: 2.5rem;">10+</div>
+          <div class="text-white/40 text-sm mt-2">Years of Service</div>
+        </div>
+        <div class="rounded-2xl p-8 text-center" style="background: rgba(122,16,48,0.3); border: 1px solid rgba(122,16,48,0.4);">
+          <div class="stat-number" style="font-size: 2.5rem;">15+</div>
+          <div class="text-white/40 text-sm mt-2">Gov't Partners</div>
+        </div>
+        <div class="rounded-2xl p-8 text-center mt-8" style="background: rgba(201,149,58,0.06); border: 1px solid rgba(201,149,58,0.15);">
+          <div class="stat-number" style="font-size: 2.5rem;">24h</div>
+          <div class="text-white/40 text-sm mt-2">Fast Turnaround</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section id="partners" class="py-24 px-6" style="background: var(--cream);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <div class="divider-ornament mb-4">✦ ✦ ✦</div>
+      <h2 class="section-title text-4xl font-bold" style="color: var(--dark);">Authorized Partners</h2>
+      <p class="mt-4 text-gray-500">We process transactions with all major UAE government entities</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="partner-logo flex-col gap-1">
+        <div class="text-xs font-bold text-center" style="color: var(--maroon);">Emirates ID</div>
+        <div class="text-xs text-gray-400 text-center">Authority</div>
+      </div>
+      <div class="partner-logo flex-col gap-1">
+        <div class="text-xs font-bold text-center" style="color: var(--maroon);">Ministry of Interior</div>
+        <div class="text-xs text-gray-400 text-center">وزارة الداخلية</div>
+      </div>
+      <div class="partner-logo flex-col gap-1">
+        <div class="text-xs font-bold text-center" style="color: var(--maroon);">Ajman Sewerage</div>
+        <div class="text-xs text-gray-400 text-center">عجمان الصرف الصحي</div>
+      </div>
+      <div class="partner-logo flex-col gap-1">
+        <div class="text-xs font-bold text-center" style="color: var(--maroon);">Etihad Water</div>
+        <div class="text-xs text-gray-400 text-center">& Electricity</div>
+      </div>
+      <div class="partner-logo flex-col gap-1">
+        <div class="text-xs font-bold text-center" style="color: var(--maroon);">Tas-heel</div>
+        <div class="text-xs text-gray-400 text-center">تسهيل</div>
+      </div>
+      <div class="partner-logo flex-col gap-1">
+        <div class="text-xs font-bold text-center" style="color: var(--maroon);">e-Dirham</div>
+        <div class="text-xs text-gray-400 text-center">الدرهم الإلكتروني</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 px-6" style="background: linear-gradient(135deg, #fdf6ee 0%, #f5e8d4 100%);">
+  <div class="max-w-5xl mx-auto">
+    <div class="contact-card p-10 md:p-16">
+      <div class="relative z-10">
+        <div class="text-center mb-12">
+          <div class="divider-ornament mb-4" style="color: rgba(201,149,58,0.6);">✦ ✦ ✦</div>
+          <h2 class="section-title text-4xl md:text-5xl font-bold text-white">Get In Touch</h2>
+          <p class="text-white/50 mt-4 arabic-accent">تواصل معنا</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="tel:067445537" class="flex flex-col items-center text-center bg-white/5 hover:bg-white/10 transition-all rounded-2xl p-6 cursor-pointer border border-white/10 hover:border-white/20">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background: rgba(201,149,58,0.15);">
+              <svg class="w-6 h-6" fill="none" stroke="#c9953a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div class="text-white/40 text-xs tracking-wider uppercase mb-1">Telephone</div>
+            <div class="text-white font-semibold">06 7445537</div>
+          </a>
+          <a href="https://wa.me/971506045537" class="flex flex-col items-center text-center bg-white/5 hover:bg-white/10 transition-all rounded-2xl p-6 cursor-pointer border border-white/10 hover:border-white/20">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background: rgba(37,211,102,0.1);">
+              <svg class="w-6 h-6" fill="#25d366" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.849L.057 23.535a.75.75 0 00.916.916l5.688-1.474A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.69 9.69 0 01-5.012-1.394l-.36-.213-3.72.964.985-3.617-.234-.372A9.71 9.71 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            </div>
+            <div class="text-white/40 text-xs tracking-wider uppercase mb-1">WhatsApp</div>
+            <div class="text-white font-semibold">050 6045537</div>
+          </a>
+          <a href="mailto:altaifbms@gmail.com" class="flex flex-col items-center text-center bg-white/5 hover:bg-white/10 transition-all rounded-2xl p-6 cursor-pointer border border-white/10 hover:border-white/20">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background: rgba(201,149,58,0.15);">
+              <svg class="w-6 h-6" fill="none" stroke="#c9953a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="text-white/40 text-xs tracking-wider uppercase mb-1">Email</div>
+            <div class="text-white font-semibold text-sm">altaifbms@gmail.com</div>
+          </a>
+        </div>
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+          <div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-6 py-3 border border-white/10">
+            <svg class="w-4 h-4" fill="none" stroke="#c9953a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span class="text-white/60 text-sm">Behind Grand Mall — خلف Grand Mall</span>
+          </div>
+          <div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-6 py-3 border border-white/10">
+            <svg class="w-4 h-4" fill="none" stroke="#c9953a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-white/60 text-sm">Sat–Thu &nbsp;|&nbsp; 8AM–2PM &nbsp;&amp;&nbsp; 4PM–10PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background: #0d0508;" class="py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="gold-line mb-8"></div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: rgba(201,149,58,0.15);">
+          <span class="text-sm arabic-accent" style="color: var(--gold);">ط</span>
+        </div>
+        <div>
+          <div class="font-bold text-xs tracking-wider" style="color: var(--gold);">AL TAIF ADMINISTRATIVE SERVICES</div>
+          <div class="text-white/30 text-xs arabic-accent">الطيف للخدمات الإدارية</div>
+        </div>
+      </div>
+      <div class="text-white/30 text-xs text-center">
+        © 2024 Al Taif Administrative Services. All rights reserved.<br>
+        <span class="arabic-accent">جميع الحقوق محفوظة</span>
+      </div>
+      <div class="flex gap-3">
+        <a href="tel:067445537" class="w-9 h-9 rounded-full flex items-center justify-center border border-white/10 hover:border-white/30 transition-colors">
+          <svg class="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </a>
+        <a href="mailto:altaifbms@gmail.com" class="w-9 h-9 rounded-full flex items-center justify-center border border-white/10 hover:border-white/30 transition-colors">
+          <svg class="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/971506045537" class="whatsapp-float" title="Chat on WhatsApp">
+  <svg class="w-7 h-7" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.849L.057 23.535a.75.75 0 00.916.916l5.688-1.474A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.69 9.69 0 01-5.012-1.394l-.36-.213-3.72.964.985-3.617-.234-.372A9.71 9.71 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+</body>
+</html>

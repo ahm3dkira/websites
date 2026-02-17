@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al Jannah Cafeteria – Rashidya 3, Ajman</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Nastaliq+Urdu&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --crimson:  #C0392B;
+      --deep:     #7B1C10;
+      --gold:     #E8B84B;
+      --amber:    #D4860B;
+      --cream:    #FAF3E0;
+      --dark:     #1A0A05;
+      --smoke:    #F5ECE0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'Josefin Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: .35;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: linear-gradient(to bottom, rgba(26,10,5,.95) 0%, rgba(26,10,5,0) 100%);
+      backdrop-filter: blur(2px);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      letter-spacing: .06em;
+      color: var(--gold);
+    }
+    .nav-logo span { color: var(--cream); }
+    .nav-links { display: flex; gap: 2.2rem; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--cream);
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .8;
+      transition: opacity .2s, color .2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(192,57,43,.35) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 80% at 20% 80%, rgba(212,134,11,.18) 0%, transparent 55%),
+        var(--dark);
+    }
+
+    /* decorative rings */
+    .hero-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(232,184,75,.12);
+      pointer-events: none;
+    }
+    .hero-ring:nth-child(1) { width: 700px; height: 700px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .hero-ring:nth-child(2) { width: 1000px; height: 1000px; top: 50%; left: 50%; transform: translate(-50%,-50%); border-color: rgba(232,184,75,.07); }
+    .hero-ring:nth-child(3) { width: 1300px; height: 1300px; top: 50%; left: 50%; transform: translate(-50%,-50%); border-color: rgba(232,184,75,.04); }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center; gap: .6rem;
+      border: 1px solid var(--gold);
+      border-radius: 100px;
+      padding: .38rem 1.2rem;
+      font-size: .7rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 900;
+      line-height: .95;
+      letter-spacing: -.01em;
+      opacity: 0;
+    }
+    .hero-title .line-gold { color: var(--gold); display: block; }
+    .hero-title .line-white { color: var(--cream); display: block; font-style: italic; }
+
+    .hero-arabic {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: var(--gold);
+      margin-top: 1rem;
+      opacity: 0;
+      direction: rtl;
+      letter-spacing: .05em;
+    }
+
+    .hero-sub {
+      margin-top: 1.8rem;
+      font-size: .85rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(250,243,224,.55);
+      opacity: 0;
+    }
+
+    .hero-cta {
+      margin-top: 3rem;
+      display: flex; gap: 1.2rem;
+      opacity: 0;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+      padding: .85rem 2.2rem;
+      border: none;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .78rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background .2s, transform .2s;
+    }
+    .btn-primary:hover { background: var(--amber); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      padding: .85rem 2.2rem;
+      border: 1px solid rgba(250,243,224,.35);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .78rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── OPENING BANNER ─── */
+    #opening {
+      background: linear-gradient(135deg, var(--crimson) 0%, var(--deep) 50%, #4A1007 100%);
+      padding: 4.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #opening::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(255,255,255,.025) 30px,
+        rgba(255,255,255,.025) 31px
+      );
+    }
+    .opening-label {
+      font-size: .72rem; letter-spacing: .35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .opening-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: .5rem;
+    }
+    .opening-title span { color: var(--gold); }
+    .opening-details {
+      font-size: .82rem; letter-spacing: .12em;
+      color: rgba(250,243,224,.75);
+      margin-bottom: 2rem;
+    }
+    .opening-free {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: .6rem 2rem;
+      font-weight: 600;
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 7rem 2rem; }
+    .section-label {
+      font-size: .68rem; letter-spacing: .4em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem; text-align: center;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      text-align: center;
+      color: var(--cream);
+      margin-bottom: 3.5rem;
+    }
+    .section-title em { color: var(--gold); font-style: italic; }
+    .divider {
+      width: 60px; height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 1rem auto 0;
+    }
+
+    /* ─── MENU GRID ─── */
+    #menu {
+      background:
+        radial-gradient(ellipse 70% 50% at 80% 50%, rgba(192,57,43,.12) 0%, transparent 60%),
+        linear-gradient(to bottom, var(--dark) 0%, #0D0603 100%);
+    }
+
+    .menu-categories {
+      display: flex; flex-wrap: wrap; gap: .7rem;
+      justify-content: center; margin-bottom: 3rem;
+    }
+    .cat-btn {
+      padding: .5rem 1.4rem;
+      border: 1px solid rgba(232,184,75,.3);
+      background: transparent;
+      color: rgba(250,243,224,.65);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      cursor: pointer; transition: all .2s;
+    }
+    .cat-btn.active, .cat-btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+      border-color: var(--gold);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .menu-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(232,184,75,.1);
+      padding: 1.5rem;
+      position: relative;
+      transition: transform .25s, border-color .25s, background .25s;
+      cursor: default;
+    }
+    .menu-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(232,184,75,.4);
+      background: rgba(232,184,75,.04);
+    }
+    .menu-card-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .menu-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--cream);
+      margin-bottom: .4rem;
+    }
+    .menu-card-desc {
+      font-size: .72rem;
+      letter-spacing: .08em;
+      color: rgba(250,243,224,.45);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .menu-card-price {
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: var(--gold);
+    }
+    .menu-card-tag {
+      position: absolute; top: 1rem; right: 1rem;
+      font-size: .6rem; letter-spacing: .18em; text-transform: uppercase;
+      padding: .2rem .6rem;
+      border: 1px solid rgba(232,184,75,.4);
+      color: var(--gold);
+    }
+
+    /* ─── SPECIALS STRIP ─── */
+    #specials {
+      background: linear-gradient(to right, #7B1C10, var(--crimson), #7B1C10);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+    .specials-row {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 3rem; max-width: 900px; margin: 0 auto;
+    }
+    .special-item { text-align: center; }
+    .special-item .big {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .special-item p {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(250,243,224,.75);
+      margin-top: .4rem;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+    }
+    @media (max-width: 820px) {
+      #about { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-box {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, rgba(192,57,43,.25), rgba(212,134,11,.1));
+      border: 1px solid rgba(232,184,75,.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-box::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent, transparent 60px,
+        rgba(232,184,75,.04) 60px, rgba(232,184,75,.04) 61px
+      );
+    }
+    .about-accent {
+      position: absolute;
+      bottom: -1.5rem; right: -1.5rem;
+      width: 140px; height: 140px;
+      border: 2px solid var(--gold);
+      z-index: -1;
+    }
+    .about-accent2 {
+      position: absolute;
+      top: -1.5rem; left: -1.5rem;
+      width: 80px; height: 80px;
+      border: 1px solid rgba(232,184,75,.35);
+    }
+    .about-text .section-label { text-align: left; }
+    .about-text .section-title { text-align: left; }
+    .about-text p {
+      font-size: .88rem;
+      line-height: 1.85;
+      color: rgba(250,243,224,.65);
+      margin-bottom: 1.5rem;
+    }
+    .about-stat-row {
+      display: flex; gap: 2.5rem; margin-top: 2.5rem;
+    }
+    .about-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .about-stat p {
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(250,243,224,.5);
+      margin: 0;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background:
+        radial-gradient(ellipse 60% 60% at 50% 0%, rgba(192,57,43,.18) 0%, transparent 55%),
+        #0D0603;
+      padding: 7rem 2rem;
+      text-align: center;
+    }
+    .contact-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255,255,255,.028);
+      border: 1px solid rgba(232,184,75,.15);
+      padding: 4rem 3.5rem;
+      position: relative;
+    }
+    .contact-card::before, .contact-card::after {
+      content: '';
+      position: absolute;
+      width: 40px; height: 40px;
+      border: 2px solid var(--gold);
+    }
+    .contact-card::before { top: -8px; left: -8px; border-right: none; border-bottom: none; }
+    .contact-card::after { bottom: -8px; right: -8px; border-left: none; border-top: none; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.5rem; }
+    .contact-row {
+      display: flex; align-items: center; justify-content: center; gap: 1rem;
+      font-size: .85rem; color: rgba(250,243,224,.75); letter-spacing: .07em;
+    }
+    .contact-icon {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(232,184,75,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-row a { color: var(--gold); text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080302;
+      border-top: 1px solid rgba(232,184,75,.1);
+      padding: 2.5rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+    .footer-copy {
+      font-size: .68rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(250,243,224,.3);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); }
+
+    /* ─── TICKER ─── */
+    .ticker-wrap {
+      background: var(--gold);
+      overflow: hidden;
+      padding: .65rem 0;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 20s linear infinite;
+    }
+    .ticker-inner span {
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--dark);
+      font-weight: 600;
+      margin: 0 2.5rem;
+    }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ─── RESPONSIVE NAV ─── */
+    @media (max-width: 680px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero-cta { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Al <span>Jannah</span> Cafeteria</div>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+
+    <div class="hero-badge">Now Open · Rashidya 3, Ajman</div>
+
+    <h1 class="hero-title">
+      <span class="line-gold">Al Jannah</span>
+      <span class="line-white">Cafeteria</span>
+    </h1>
+
+    <p class="hero-arabic">كافتيريا الجنة</p>
+
+    <p class="hero-sub">Authentic Pakistani &amp; South Asian Cuisine</p>
+
+    <div class="hero-cta">
+      <a href="#menu" class="btn-primary">Explore Menu</a>
+      <a href="#contact" class="btn-outline">Find Us</a>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span>🍛 Biryani</span>
+      <span>🫕 Haleem</span>
+      <span>🥘 Qorma</span>
+      <span>🫓 Paratha</span>
+      <span>🥗 Dahi Bhally</span>
+      <span>🍔 Zinger Burger</span>
+      <span>🌯 Shawarma</span>
+      <span>🍮 Jalebi</span>
+      <span>🍵 Karak Chai</span>
+      <span>🍛 Biryani</span>
+      <span>🫕 Haleem</span>
+      <span>🥘 Qorma</span>
+      <span>🫓 Paratha</span>
+      <span>🥗 Dahi Bhally</span>
+      <span>🍔 Zinger Burger</span>
+      <span>🌯 Shawarma</span>
+      <span>🍮 Jalebi</span>
+      <span>🍵 Karak Chai</span>
+    </div>
+  </div>
+
+  <!-- OPENING CEREMONY BANNER -->
+  <div id="opening">
+    <p class="opening-label reveal">Grand Opening</p>
+    <h2 class="opening-title reveal"><span>10 Feb 2026</span> · 5 PM</h2>
+    <p class="opening-details reveal">Come celebrate with us at Rashidya 3, Ajman</p>
+    <div class="opening-free reveal">🎉 Free Biryani &amp; Tea for All Guests</div>
+  </div>
+
+  <!-- SPECIALS STRIP -->
+  <div id="specials">
+    <div class="specials-row">
+      <div class="special-item reveal">
+        <div class="big">1<small style="font-size:1.2rem">₴</small></div>
+        <p>Karak Chai</p>
+      </div>
+      <div class="special-item reveal">
+        <div class="big">2<small style="font-size:1.2rem">₴</small></div>
+        <p>Fresh Milk Tea</p>
+      </div>
+      <div class="special-item reveal">
+        <div class="big">1.5<small style="font-size:1.2rem">₴</small></div>
+        <p>Samosa</p>
+      </div>
+      <div class="special-item reveal">
+        <div class="big">3<small style="font-size:1.2rem">₴</small></div>
+        <p>Kheer</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU SECTION -->
+  <section id="menu">
+    <p class="section-label reveal">What We Serve</p>
+    <h2 class="section-title reveal">Our <em>Menu</em><div class="divider"></div></h2>
+
+    <div class="menu-categories reveal">
+      <button class="cat-btn active" onclick="filterMenu('all', this)">All</button>
+      <button class="cat-btn" onclick="filterMenu('mains', this)">Mains</button>
+      <button class="cat-btn" onclick="filterMenu('snacks', this)">Snacks & Chaat</button>
+      <button class="cat-btn" onclick="filterMenu('burgers', this)">Burgers & Wraps</button>
+      <button class="cat-btn" onclick="filterMenu('sweets', this)">Sweets</button>
+      <button class="cat-btn" onclick="filterMenu('drinks', this)">Drinks</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <div style="background:var(--dark)">
+    <div id="about">
+      <div class="about-visual">
+        <div class="about-accent"></div>
+        <div class="about-accent2"></div>
+        <div class="about-box">🍛</div>
+      </div>
+      <div class="about-text">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title" style="text-align:left">Taste of <em>Home,</em><br>Heart of Ajman<div class="divider" style="margin-left:0"></div></h2>
+        <p>Al Jannah Cafeteria brings the warmth and authenticity of traditional Pakistani home cooking to the heart of Rashidya, Ajman. Every dish is crafted with carefully sourced spices and time-honoured recipes passed down through generations.</p>
+        <p>Whether you crave a hearty Biryani, a comforting bowl of Haleem, crispy Samosa Chaat, or a simple paratha with chai — we've got you covered at prices everyone can enjoy.</p>
+        <div class="about-stat-row">
+          <div class="about-stat reveal">
+            <div class="num">25+</div>
+            <p>Menu Items</p>
+          </div>
+          <div class="about-stat reveal">
+            <div class="num">2026</div>
+            <p>Est. Ajman</p>
+          </div>
+          <div class="about-stat reveal">
+            <div class="num">100%</div>
+            <p>Halal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label reveal">Visit Us</p>
+    <h2 class="section-title reveal">Find <em>Al Jannah</em><div class="divider"></div></h2>
+    <div class="contact-card reveal">
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <span>Rashidya 3, Ajman, United Arab Emirates</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <span><a href="tel:0501402003">050-140 2003</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="tel:0508481820">050-848 1820</a></span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">💬</div>
+          <span>WhatsApp available on both numbers</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🕌</div>
+          <span>100% Halal · Dine-In &amp; Takeaway</span>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem">
+        <a href="tel:0501402003" class="btn-primary" style="display:inline-block">Call to Order</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Al Jannah Cafeteria</div>
+    <div class="footer-copy">© 2026 Al Jannah Cafeteria · Rashidya 3, Ajman, UAE</div>
+  </footer>
+
+  <script>
+    // ─── MENU DATA ───────────────────────────────────────────────────────────────
+    const menuItems = [
+      // Mains
+      { name: 'Paya', emoji: '🍲', price: '5/8 AED', desc: 'Slow-cooked trotters in rich aromatic broth', category: 'mains' },
+      { name: 'Chana', emoji: '🫘', price: '4/6 AED', desc: 'Spiced chickpea curry, two serving sizes', category: 'mains' },
+      { name: 'Qeema', emoji: '🥘', price: '5/8 AED', desc: 'Minced meat curry with green peas and tomatoes', category: 'mains' },
+      { name: 'Biryani', emoji: '🍛', price: '7/10 AED', desc: 'Fragrant basmati rice layered with tender chicken', category: 'mains', tag: 'Popular' },
+      { name: 'Sabzi', emoji: '🥦', price: '4/6 AED', desc: 'Seasonal vegetables stir-fried with spices', category: 'mains' },
+      { name: 'Qorma C/M', emoji: '🍗', price: '5/8 AED', desc: 'Classic chicken or mutton korma in creamy sauce', category: 'mains' },
+      { name: 'Pulao', emoji: '🍚', price: '7/8 AED', desc: 'Delicately spiced rice dish with tender meat', category: 'mains' },
+      { name: 'Haleem', emoji: '🫕', price: '4/7 AED', desc: 'Slow-cooked lentils and wheat with shredded meat', category: 'mains', tag: 'Special' },
+      { name: 'Dal Chawal', emoji: '🍲', price: '7 AED', desc: 'Comforting lentil soup served with steamed rice', category: 'mains' },
+      { name: 'Paratha', emoji: '🫓', price: '1 AED', desc: 'Flaky layered whole-wheat flatbread', category: 'mains' },
+
+      // Snacks & Chaat
+      { name: 'Samosa', emoji: '🥟', price: '1.5 AED', desc: 'Crisp pastry filled with spiced potato and peas', category: 'snacks' },
+      { name: 'Samosa Chaat', emoji: '🥗', price: '4/7 AED', desc: 'Crushed samosa topped with chutneys and yogurt', category: 'snacks' },
+      { name: 'Papri Chaat', emoji: '🥙', price: '5 AED', desc: 'Crispy wafers, yogurt, and tangy tamarind chutney', category: 'snacks' },
+      { name: 'Dahi Bhally', emoji: '🫙', price: '7 AED', desc: 'Soft lentil dumplings in chilled seasoned yogurt', category: 'snacks' },
+      { name: 'Shami Kebab', emoji: '🍢', price: '2 AED', desc: 'Minced meat and lentil patties, pan-fried to perfection', category: 'snacks' },
+      { name: 'Cream Chaat', emoji: '🍧', price: '4/7 AED', desc: 'Fruit and cream chaat, sweet and tangy delight', category: 'snacks' },
+
+      // Burgers & Wraps
+      { name: 'Zinger Burger', emoji: '🍔', price: '10/15 AED', desc: 'Crispy spiced chicken fillet in a sesame bun', category: 'burgers', tag: 'Hot' },
+      { name: 'Chicken Burger', emoji: '🍔', price: '7 AED', desc: 'Grilled chicken patty with fresh veggies', category: 'burgers' },
+      { name: 'Anda Shami Burger', emoji: '🫔', price: '7 AED', desc: 'Egg and shami kebab stacked burger', category: 'burgers' },
+      { name: 'Shawarma', emoji: '🌯', price: '6 AED', desc: 'Seasoned chicken wrapped in soft flatbread', category: 'burgers', tag: 'Popular' },
+      { name: 'Chicken Chilli Paratha', emoji: '🫓', price: '6 AED', desc: 'Spicy chicken filling folded into a crispy paratha', category: 'burgers' },
+
+      // Sweets
+      { name: 'Jalebi', emoji: '🍩', price: 'Bulk available', desc: 'Crispy spiral sweets soaked in sugar syrup', category: 'sweets' },
+      { name: 'Gulab Jamun', emoji: '🍮', price: 'Bulk available', desc: 'Soft milk-solid dumplings in rose-flavoured syrup', category: 'sweets' },
+      { name: 'Kheer', emoji: '🍚', price: '3 AED', desc: 'Creamy rice pudding with cardamom and nuts', category: 'sweets' },
+
+      // Drinks
+      { name: 'Karak Chai', emoji: '☕', price: '1 AED', desc: 'Strong spiced milk tea, made the traditional way', category: 'drinks', tag: 'Bestseller' },
+      { name: 'Fresh Milk Tea', emoji: '🍵', price: '2 AED', desc: 'Light and fresh full-cream milk tea', category: 'drinks' },
+    ];
+
+    let activeCategory = 'all';
+
+    function renderMenu(category) {
+      const grid = document.getElementById('menuGrid');
+      const filtered = category === 'all' ? menuItems : menuItems.filter(i => i.category === category);
+      grid.innerHTML = filtered.map(item => `
+        <div class="menu-card reveal">
+          ${item.tag ? `<span class="menu-card-tag">${item.tag}</span>` : ''}
+          <span class="menu-card-emoji">${item.emoji}</span>
+          <div class="menu-card-name">${item.name}</div>
+          <div class="menu-card-desc">${item.desc}</div>
+          <div class="menu-card-price">${item.price}</div>
+        </div>
+      `).join('');
+      // re-trigger reveal for new cards
+      document.querySelectorAll('.menu-card.reveal').forEach((el, i) => {
+        setTimeout(() => {
+          el.style.transition = 'opacity .45s ease, transform .45s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, i * 55);
+      });
+    }
+
+    function filterMenu(cat, btn) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderMenu(cat);
+    }
+
+    renderMenu('all');
+
+    // ─── HERO ANIMATION ───────────────────────────────────────────────────────────
+    window.addEventListener('load', () => {
+      const badge   = document.querySelector('.hero-badge');
+      const title   = document.querySelector('.hero-title');
+      const arabic  = document.querySelector('.hero-arabic');
+      const sub     = document.querySelector('.hero-sub');
+      const cta     = document.querySelector('.hero-cta');
+
+      [badge, title, arabic, sub, cta].forEach((el, i) => {
+        if (!el) return;
+        setTimeout(() => {
+          el.style.transition = 'opacity .7s ease, transform .7s ease';
+          el.style.opacity    = '1';
+          el.style.transform  = 'translateY(0)';
+        }, 200 + i * 200);
+      });
+
+      // Scroll reveal for .reveal elements (not hero-specific)
+      const revealEls = document.querySelectorAll('.reveal:not(.hero-badge):not(.hero-title):not(.hero-arabic):not(.hero-sub):not(.hero-cta)');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.transition = 'opacity .6s ease, transform .6s ease';
+            entry.target.style.opacity    = '1';
+            entry.target.style.transform  = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealEls.forEach(el => observer.observe(el));
+    });
+
+    // re-observe on category change
+    const menuObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transition = 'opacity .6s ease, transform .6s ease';
+          entry.target.style.opacity    = '1';
+          entry.target.style.transform  = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+  </script>
+</body>
+</html>
