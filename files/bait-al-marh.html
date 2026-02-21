@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bait Al Marh — بيت المرح · Kids Entertainment Ajman</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #E8392A;
+  --orange: #FF6B35;
+  --yellow: #FFCB47;
+  --teal: #00C9B1;
+  --navy: #12123A;
+  --cream: #FFF9F2;
+  --pink: #FF88A0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Baloo 2', cursive; }
+
+/* CURSOR */
+.cursor { width:16px;height:16px;background:var(--red);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;opacity:0.5;transition:transform 0.15s ease; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 1.5rem;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: white;
+  border-bottom: 3px solid var(--red);
+  box-shadow: 0 2px 16px rgba(18,18,58,0.10);
+  transition: box-shadow 0.3s;
+}
+.logo-icon {
+  width: 42px; height: 42px;
+  background: var(--red); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 3px 10px rgba(232,57,42,0.3);
+  transition: transform 0.3s; flex-shrink: 0;
+}
+.logo-icon:hover { transform: rotate(-10deg) scale(1.1); }
+.logo-name { font-size: 1.15rem; font-weight: 800; color: var(--red); font-family: 'Baloo 2', cursive; line-height: 1.1; }
+.logo-sub { font-size: 0.6rem; font-weight: 700; color: var(--teal); letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* Desktop nav links */
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-weight: 700; font-size: 0.88rem; color: var(--navy);
+  text-decoration: none; position: relative; padding-bottom: 3px;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 3px; border-radius: 2px;
+  background: var(--red); transition: width 0.25s;
+}
+.nav-links a:hover { color: var(--red); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  display: flex; align-items: center; gap: 7px;
+  padding: 9px 20px; border-radius: 50px;
+  background: var(--red); color: white;
+  font-weight: 800; font-size: 0.85rem;
+  box-shadow: 0 4px 14px rgba(232,57,42,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none; white-space: nowrap;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 7px 20px rgba(232,57,42,0.5); }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 40px; height: 40px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+  border-radius: 10px; transition: background 0.2s;
+}
+.hamburger:hover { background: rgba(232,57,42,0.08); }
+.hamburger span {
+  display: block; width: 22px; height: 2.5px;
+  background: var(--navy); border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s, width 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* Mobile drawer */
+.mobile-menu {
+  position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+  background: white;
+  border-bottom: 3px solid var(--red);
+  box-shadow: 0 8px 32px rgba(18,18,58,0.12);
+  padding: 20px 24px 28px;
+  flex-direction: column; gap: 4px;
+  /* Hidden by default — shown via JS adding .open */
+  display: none;
+}
+.mobile-menu.open {
+  display: flex;
+}
+.mobile-menu a {
+  font-weight: 700; font-size: 1rem; color: var(--navy);
+  text-decoration: none; padding: 13px 16px; border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+  display: flex; align-items: center; gap: 10px;
+}
+.mobile-menu a:hover { background: rgba(232,57,42,0.07); color: var(--red); }
+.mobile-menu .mob-cta {
+  margin-top: 12px;
+  background: var(--red); color: white !important;
+  justify-content: center; font-size: 1rem; font-weight: 800;
+  padding: 14px; border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(232,57,42,0.35);
+}
+.mobile-menu .mob-cta:hover { background: #c92e1e; }
+.mobile-divider { height: 1px; background: rgba(18,18,58,0.07); margin: 8px 0; }
+
+/* HERO */
+.hero { min-height:100vh;display:grid;place-items:center;position:relative;overflow:hidden;padding:100px 2rem 60px;background:linear-gradient(160deg,#fff5ee 0%,#fff9f2 60%,#e8f9f7 100%); }
+.hero-circle { position:absolute;border-radius:50%;animation:rotate-slow 25s linear infinite; }
+@keyframes rotate-slow { 100%{transform:rotate(360deg);} }
+.sticker { position:absolute;font-size:2.8rem;animation:sticker-float 4s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));z-index:3; }
+@keyframes sticker-float { 0%,100%{transform:translateY(0) rotate(var(--r,0deg));}50%{transform:translateY(-14px) rotate(calc(var(--r,0deg) + 5deg));} }
+.hero-content { position:relative;z-index:2;text-align:center;max-width:860px; }
+.hero-badge { display:inline-flex;align-items:center;gap:8px;background:white;border:2px solid var(--yellow);padding:8px 20px;border-radius:50px;font-weight:700;font-size:0.85rem;color:var(--navy);box-shadow:0 4px 20px rgba(0,0,0,0.06);margin-bottom:28px; }
+.badge-dot { width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse-dot 2s ease infinite; }
+@keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.5);opacity:0.6;} }
+.hero-title { font-size:clamp(3.5rem,8vw,7rem);font-weight:800;line-height:1.05;margin-bottom:14px;color:var(--navy); }
+.line-red { color:var(--red);display:block; }
+.line-yellow { background:linear-gradient(90deg,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block; }
+.hero-arabic { font-family:'Tajawal',sans-serif;font-size:1.5rem;font-weight:700;color:var(--teal);margin-bottom:20px;direction:rtl; }
+.hero-desc { font-size:1.1rem;font-weight:600;color:#5a5a7a;line-height:1.7;max-width:560px;margin:0 auto 40px; }
+.hero-actions { display:flex;gap:16px;justify-content:center;flex-wrap:wrap; }
+.btn-primary { display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:50px;background:var(--red);color:white;font-family:'Baloo 2',cursive;font-weight:700;font-size:1.1rem;text-decoration:none;box-shadow:0 6px 24px rgba(232,57,42,0.45);transition:transform 0.2s,box-shadow 0.2s;animation:call-pulse 3s ease infinite; }
+@keyframes call-pulse { 0%,100%{box-shadow:0 6px 24px rgba(232,57,42,0.45),0 0 0 0 rgba(232,57,42,0.3);}50%{box-shadow:0 6px 24px rgba(232,57,42,0.45),0 0 0 14px rgba(232,57,42,0);} }
+.btn-primary:hover { transform:translateY(-3px); }
+.btn-secondary { display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:50px;background:white;color:var(--navy);font-family:'Baloo 2',cursive;font-weight:700;font-size:1.1rem;text-decoration:none;border:3px solid var(--navy);transition:background 0.2s,color 0.2s,transform 0.2s; }
+.btn-secondary:hover { background:var(--navy);color:white;transform:translateY(-3px); }
+.hours-pill { display:inline-flex;align-items:center;gap:10px;margin-top:40px;padding:12px 28px;border-radius:50px;background:var(--navy);color:white;font-weight:700;font-size:0.9rem;box-shadow:0 8px 24px rgba(18,18,58,0.25); }
+
+/* STATS STRIP */
+.stats-strip { background:var(--red);overflow:hidden; }
+.stats-track { display:flex;animation:scroll-left 20s linear infinite;white-space:nowrap; }
+@keyframes scroll-left { 0%{transform:translateX(0);}100%{transform:translateX(-50%);} }
+.stat-item { display:flex;align-items:center;gap:14px;padding:18px 40px;border-right:1px solid rgba(255,255,255,0.2);flex-shrink:0; }
+.stat-num { font-family:'Baloo 2',cursive;font-weight:800;font-size:1.6rem;color:white; }
+.stat-lbl { font-weight:700;font-size:0.8rem;color:rgba(255,255,255,0.75);text-transform:uppercase;letter-spacing:0.05em; }
+.stat-sep { font-size:1.4rem;color:rgba(255,255,255,0.3);padding:18px 8px; }
+
+/* SECTIONS */
+section { padding:100px 2rem; }
+.container { max-width:1180px;margin:0 auto; }
+.section-label { display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px; }
+.section-title { font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;line-height:1.15;margin-bottom:14px; }
+.section-sub { font-size:1rem;font-weight:600;color:#6b6b8a;line-height:1.7;max-width:560px; }
+
+/* ABOUT */
+.about-section { background:white; }
+.about-grid { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center; }
+.card-stack { position:relative;width:340px;height:380px; }
+.card-back-2 { position:absolute;inset:0;border-radius:28px;background:var(--yellow);transform:rotate(8deg);opacity:0.4; }
+.card-back-1 { position:absolute;inset:0;border-radius:28px;background:var(--teal);transform:rotate(-5deg);opacity:0.35; }
+.card-main { position:absolute;inset:0;border-radius:28px;background:linear-gradient(145deg,var(--red),var(--orange));display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(232,57,42,0.35);color:white;font-size:6rem; }
+.float-badge { position:absolute;bottom:-20px;right:-20px;background:var(--yellow);color:var(--navy);padding:14px 22px;border-radius:20px;font-family:'Baloo 2',cursive;font-weight:800;font-size:1.1rem;line-height:1.2;box-shadow:0 8px 24px rgba(255,203,71,0.5);text-align:center; }
+.float-badge span { display:block;font-size:0.72rem;font-weight:600;opacity:0.75; }
+.highlights { display:flex;flex-direction:column;gap:14px;margin-top:32px; }
+.highlight { display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--cream);border-radius:16px; }
+.about-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px; }
+.astat { padding:20px 14px;border-radius:20px;text-align:center; }
+.astat .num { font-family:'Baloo 2',cursive;font-size:2rem;font-weight:800; }
+.astat .lbl { font-size:0.78rem;font-weight:700;opacity:0.65;margin-top:2px; }
+
+/* ACTIVITIES */
+.activities-section { background:linear-gradient(160deg,#12123A 0%,#1e1e5a 100%);position:relative;overflow:hidden; }
+.activities-section::before { content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:32px 32px; }
+.activities-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:60px; }
+.acard { border-radius:24px;padding:32px 26px;position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08); }
+.acard:hover { transform:translateY(-8px);box-shadow:0 24px 48px rgba(0,0,0,0.35);background:rgba(255,255,255,0.07); }
+.acard::before { content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:24px 24px 0 0; }
+.acard.featured { grid-column:span 2;display:flex;gap:28px;align-items:center; }
+.acard.featured .aicon { font-size:5rem;margin-bottom:0;flex-shrink:0; }
+.aicon { font-size:3.2rem;margin-bottom:18px;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); }
+.acard h3 { font-size:1.35rem;font-weight:800;color:white;margin-bottom:8px; }
+.acard p { font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.52);line-height:1.65; }
+.c-red::before{background:var(--red);}
+.c-yellow::before{background:var(--yellow);}
+.c-teal::before{background:var(--teal);}
+.c-pink::before{background:var(--pink);}
+.c-orange::before{background:var(--orange);}
+.c-purple::before{background:#9b8ff5;}
+
+/* GALLERY */
+.gallery-section { background:var(--cream); }
+.gallery-grid { display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,220px);gap:16px;margin-top:60px; }
+.gitem { border-radius:20px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.35s,box-shadow 0.35s; }
+.gitem:hover { transform:scale(1.03);box-shadow:0 16px 48px rgba(0,0,0,0.18);z-index:2; }
+.gitem:nth-child(1),.gitem:nth-child(4) { grid-column:span 2; }
+.gfill { width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative; }
+.goverlay { position:absolute;inset:0;display:flex;align-items:flex-end;padding:20px;background:linear-gradient(to top,rgba(18,18,58,0.75),transparent);opacity:0;transition:opacity 0.3s; }
+.gitem:hover .goverlay { opacity:1; }
+.goverlay span { color:white;font-weight:700;font-size:0.9rem; }
+
+/* CONTACT */
+.contact-section { background:white; }
+.contact-grid { display:grid;grid-template-columns:1fr 1.2fr;gap:40px;margin-top:60px;align-items:start; }
+.hours-card { border-radius:28px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.08); }
+.hours-header { padding:28px 32px;background:linear-gradient(135deg,var(--navy),#1e1e5a);color:white; }
+.hours-header h3 { font-size:1.5rem;font-weight:800; }
+.hours-header p { font-size:0.83rem;opacity:0.55;margin-top:4px; }
+.hours-body { padding:24px 32px;background:var(--cream); }
+.hrow { display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(0,0,0,0.06); }
+.hrow:last-child{border-bottom:none;}
+.hrow .day { font-weight:700;color:var(--navy); }
+.time { font-weight:800;font-size:0.83rem;padding:5px 14px;border-radius:50px; }
+.t-open { background:#d4f8f2;color:#00836e; }
+.t-closed { background:#f0f0f0;color:#aaa; }
+.info-cards { display:flex;flex-direction:column;gap:18px; }
+.icard { border-radius:22px;padding:26px 28px;background:var(--cream);border:2px solid rgba(0,0,0,0.06);display:flex;gap:18px;align-items:flex-start;transition:border-color 0.2s,transform 0.2s; }
+.icard:hover { border-color:var(--red);transform:translateX(6px); }
+.iicon { width:52px;height:52px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem; }
+.ititle { font-weight:800;font-size:0.95rem;color:var(--navy);margin-bottom:4px; }
+.ival { font-weight:600;color:#6b6b8a;font-size:0.88rem;line-height:1.5; }
+.ival a { color:var(--red);text-decoration:none;font-weight:700; }
+.ival a:hover { text-decoration:underline; }
+.ctabts { display:flex;flex-direction:column;gap:12px;margin-top:4px; }
+.cbtn { display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius:16px;font-family:'Baloo 2',cursive;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s; }
+.cbtn:hover { transform:translateY(-3px); }
+.cbtn-call { background:var(--red);color:white;box-shadow:0 6px 20px rgba(232,57,42,0.4); }
+.cbtn-wa { background:#25D366;color:white;box-shadow:0 6px 20px rgba(37,211,102,0.4); }
+.cbtn-call:hover{box-shadow:0 10px 28px rgba(232,57,42,0.5);}
+.cbtn-wa:hover{box-shadow:0 10px 28px rgba(37,211,102,0.5);}
+
+/* FOOTER */
+footer { background:var(--navy);padding:60px 2rem 36px;text-align:center; }
+.fnav { display:flex;justify-content:center;gap:32px;margin-bottom:32px;flex-wrap:wrap; }
+.fnav a { color:rgba(255,255,255,0.5);text-decoration:none;font-weight:600;font-size:0.88rem;transition:color 0.2s; }
+.fnav a:hover { color:white; }
+.fdivider { border:none;border-top:1px solid rgba(255,255,255,0.08);margin-bottom:24px; }
+.fbottom { color:rgba(255,255,255,0.28);font-size:0.78rem;font-weight:600; }
+
+/* REVEAL */
+.reveal { opacity:0;transform:translateY(40px);transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1;transform:none; }
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}.d5{transition-delay:0.5s;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .about-grid{grid-template-columns:1fr;}
+  .card-stack{display:none;}
+  .activities-grid{grid-template-columns:1fr;}
+  .acard.featured{grid-column:span 1;flex-direction:column;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .gitem:nth-child(1),.gitem:nth-child(4){grid-column:span 1;}
+  .contact-grid{grid-template-columns:1fr;}
+  .sticker { display: none; }
+  .hero-title { font-size: clamp(2.8rem, 10vw, 5rem); }
+  section { padding: 60px 1.25rem; }
+}
+@media(min-width:769px){
+  .hamburger { display: none; }
+  /* mobile-menu stays display:none unless .open is added — which JS won't add on desktop */
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <!-- Logo -->
+  <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <div class="logo-icon">🏰</div>
+    <div>
+      <div class="logo-name">Bait Al Marh</div>
+      <div class="logo-sub">Kids Entertainment · بيت المرح</div>
+    </div>
+  </a>
+
+  <!-- Desktop links -->
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#activities">Activities</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Desktop CTA -->
+  <a href="tel:0527811091" class="nav-cta">📞 052-781-1091</a>
+
+  <!-- Hamburger (mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mob-link">🏠 About Us</a>
+  <a href="#activities" class="mob-link">🎨 Activities</a>
+  <a href="#gallery" class="mob-link">📸 Gallery</a>
+  <a href="#contact" class="mob-link">📍 Contact</a>
+  <div class="mobile-divider"></div>
+  <a href="tel:0527811091" class="mob-cta">📞 Call Now — 052-781-1091</a>
+  <a href="https://wa.me/9710527811091" class="mob-link" style="background:#e9faf1;color:#00836e;justify-content:center;font-weight:800;border-radius:14px;padding:13px;">💬 WhatsApp Us</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-circle" style="width:700px;height:700px;background:radial-gradient(circle,rgba(255,203,71,0.18),transparent 70%);top:-200px;right:-200px;"></div>
+  <div class="hero-circle" style="width:500px;height:500px;background:radial-gradient(circle,rgba(0,201,177,0.12),transparent 70%);bottom:-100px;left:-150px;animation-direction:reverse;"></div>
+
+  <div class="sticker" style="top:19%;left:11%;--r:-12deg;animation-delay:0s">🎨</div>
+  <div class="sticker" style="top:22%;right:12%;--r:8deg;animation-delay:0.8s">⭐</div>
+  <div class="sticker" style="bottom:28%;left:8%;--r:5deg;animation-delay:1.4s">🎉</div>
+  <div class="sticker" style="bottom:22%;right:8%;--r:-10deg;animation-delay:0.4s">📚</div>
+  <div class="sticker" style="top:55%;left:4%;--r:15deg;animation-delay:2s;font-size:2rem">🌟</div>
+  <div class="sticker" style="top:58%;right:5%;--r:-8deg;animation-delay:1.2s;font-size:2rem">🎪</div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="badge-dot"></div>
+      ⭐ Al Rashidiya 3, Ajman &nbsp;·&nbsp; Open Now
+    </div>
+
+    <h1 class="hero-title">
+      <span>Where Every</span>
+      <span class="line-red">Child Shines</span>
+      <span class="line-yellow">&amp; Plays!</span>
+    </h1>
+
+    <p class="hero-arabic">بيت المرح لتسلية الأطفال — عالم من الفرح والإبداع</p>
+
+    <p class="hero-desc">Ajman's most beloved kids entertainment center — where play meets learning, creativity meets joy, and every child feels like a star.</p>
+
+    <div class="hero-actions">
+      <a href="tel:0527811091" class="btn-primary">📞 Call Us Now</a>
+      <a href="#activities" class="btn-secondary">Explore Activities ↓</a>
+    </div>
+
+    <div class="hours-pill">
+      <span style="width:8px;height:8px;border-radius:50%;background:#00C9B1;display:inline-block;animation:pulse-dot 2s ease infinite;"></span>
+      Open: Mon–Fri &nbsp;·&nbsp; 7:00 AM – 5:00 PM
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div style="overflow:hidden;">
+    <div class="stats-track">
+      <div class="stat-item"><span class="stat-num">500+</span><span class="stat-lbl">Happy Kids</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">5+</span><span class="stat-lbl">Years of Joy</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">10+</span><span class="stat-lbl">Activities</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">100%</span><span class="stat-lbl">Safe Space</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">Mon–Fri</span><span class="stat-lbl">7AM–5PM</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">Ajman</span><span class="stat-lbl">Al Rashidiya 3</span></div>
+      <div class="stat-sep">✦</div>
+      <!-- Duplicate for loop -->
+      <div class="stat-item"><span class="stat-num">500+</span><span class="stat-lbl">Happy Kids</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">5+</span><span class="stat-lbl">Years of Joy</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">10+</span><span class="stat-lbl">Activities</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">100%</span><span class="stat-lbl">Safe Space</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">Mon–Fri</span><span class="stat-lbl">7AM–5PM</span></div>
+      <div class="stat-sep">✦</div>
+      <div class="stat-item"><span class="stat-num">Ajman</span><span class="stat-lbl">Al Rashidiya 3</span></div>
+      <div class="stat-sep">✦</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div style="display:flex;justify-content:center;" class="reveal">
+        <div class="card-stack">
+          <div class="card-back-2"></div>
+          <div class="card-back-1"></div>
+          <div class="card-main">
+            🏰
+            <p style="font-size:1rem;font-weight:700;margin-top:10px;font-family:'Baloo 2',cursive;">Bait Al Marh</p>
+          </div>
+          <div class="float-badge">🌟 Est. 5+ Years<br><span>Trusted by Families</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="reveal">
+          <span class="section-label" style="background:#fff0ee;color:var(--red);">About Us · عن بيت المرح</span>
+          <h2 class="section-title">A Place Where Kids <span style="color:var(--red);">Belong</span></h2>
+          <p class="section-sub">Bait Al Marh is more than a kids center — it's a second home. We blend play-based education with creative experiences, cultural celebrations, and milestone events your child will cherish forever.</p>
+        </div>
+
+        <div class="about-stats reveal d2">
+          <div class="astat" style="background:#fff0ee;"><div class="num" style="color:var(--red);">500+</div><div class="lbl">Happy Kids</div></div>
+          <div class="astat" style="background:#fffae8;"><div class="num" style="color:#c9800a;">5+</div><div class="lbl">Years Active</div></div>
+          <div class="astat" style="background:#e8f9f7;"><div class="num" style="color:var(--teal);">10+</div><div class="lbl">Activities</div></div>
+        </div>
+
+        <div class="highlights reveal d3">
+          <div class="highlight" style="border-left:4px solid var(--red);"><span style="font-size:1.8rem;">🎓</span><div><p style="font-weight:800;font-size:0.95rem;">Graduation Ceremonies</p><p style="font-weight:600;font-size:0.82rem;color:#6b6b8a;">Celebrate your child's milestones in style</p></div></div>
+          <div class="highlight" style="border-left:4px solid var(--teal);"><span style="font-size:1.8rem;">🪔</span><div><p style="font-weight:800;font-size:0.95rem;">Cultural Heritage Activities</p><p style="font-weight:600;font-size:0.82rem;color:#6b6b8a;">Emirati traditions brought to life for young minds</p></div></div>
+          <div class="highlight" style="border-left:4px solid var(--yellow);"><span style="font-size:1.8rem;">🎨</span><div><p style="font-weight:800;font-size:0.95rem;">Arts &amp; Crafts Classes</p><p style="font-weight:600;font-size:0.82rem;color:#6b6b8a;">Nurturing creativity and fine motor development</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities" class="activities-section">
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label" style="background:rgba(255,203,71,0.15);color:var(--yellow);">What We Offer · أنشطتنا</span>
+      <h2 class="section-title" style="color:white;">Every Day is a <span style="color:var(--yellow);">New Adventure</span></h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);margin:0 auto;">Carefully crafted programs that entertain, educate, and inspire — for children of all ages.</p>
+    </div>
+
+    <div class="activities-grid">
+      <div class="acard featured c-red reveal d1">
+        <span class="aicon">🎓</span>
+        <div>
+          <h3>Graduation Celebrations</h3>
+          <p>Unforgettable milestone ceremonies with certificates, decorations, traditional costumes, and proud memories that will last a lifetime.</p>
+        </div>
+      </div>
+      <div class="acard c-teal reveal d2">
+        <span class="aicon">🎨</span>
+        <h3>Art &amp; Creativity</h3>
+        <p>Painting, drawing, and crafts that spark imagination and build fine motor skills in a fun open environment.</p>
+      </div>
+      <div class="acard c-yellow reveal d1">
+        <span class="aicon">📚</span>
+        <h3>Early Learning</h3>
+        <p>ABCs, numbers, colors, and days of the week — taught through play and interactive classroom activities.</p>
+      </div>
+      <div class="acard c-pink reveal d2">
+        <span class="aicon">🎉</span>
+        <h3>Birthday Parties</h3>
+        <p>Vibrant birthday celebrations with decorations and activities that make every child feel extra special.</p>
+      </div>
+      <div class="acard c-orange reveal d3">
+        <span class="aicon">🪔</span>
+        <h3>Cultural Programs</h3>
+        <p>Emirati traditional dress, heritage activities, and cultural celebrations connecting kids to their roots.</p>
+      </div>
+      <div class="acard c-purple reveal d4">
+        <span class="aicon">🧸</span>
+        <h3>Supervised Play</h3>
+        <p>Safe, colourful play zones where children develop social skills, make friends, and explore freely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label" style="background:#e8f9f7;color:var(--teal);">Gallery · معرض الصور</span>
+      <h2 class="section-title">Moments of <span style="color:var(--teal);">Pure Joy</span></h2>
+      <p class="section-sub" style="margin:0 auto;">A glimpse into the magic that happens at Bait Al Marh every single day.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gitem reveal d1">
+        <div class="gfill" style="background:linear-gradient(135deg,#FFB347,#FFCC02);"><span>🎓</span><div class="goverlay"><span>Graduation Day 🎓</span></div></div>
+      </div>
+      <div class="gitem reveal d2">
+        <div class="gfill" style="background:linear-gradient(135deg,#4ECDC4,#44A08D);"><span>👘</span><div class="goverlay"><span>Cultural Dress 👘</span></div></div>
+      </div>
+      <div class="gitem reveal d3">
+        <div class="gfill" style="background:linear-gradient(135deg,#ff9966,#ff5e62);"><span>🎨</span><div class="goverlay"><span>Art Time 🎨</span></div></div>
+      </div>
+      <div class="gitem reveal d1">
+        <div class="gfill" style="background:linear-gradient(135deg,#667eea,#764ba2);"><span>📚</span><div class="goverlay"><span>Classroom Fun 📚</span></div></div>
+      </div>
+      <div class="gitem reveal d2">
+        <div class="gfill" style="background:linear-gradient(135deg,#f093fb,#f5576c);"><span>🎉</span><div class="goverlay"><span>Celebrations 🎉</span></div></div>
+      </div>
+      <div class="gitem reveal d3">
+        <div class="gfill" style="background:linear-gradient(135deg,#0f3460,#16213e);"><span>🌟</span><div class="goverlay"><span>Every Child a Star 🌟</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label" style="background:#fff0ee;color:var(--red);">Contact · تواصل معنا</span>
+      <h2 class="section-title">Come <span style="color:var(--red);">Visit Us!</span></h2>
+      <p class="section-sub" style="margin:0 auto;">We'd love to welcome your little ones. Reach out or just drop by during our opening hours!</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="hours-card">
+          <div class="hours-header">
+            <h3>🕐 Opening Hours</h3>
+            <p>We're open most of the week, ready for your little ones!</p>
+          </div>
+          <div class="hours-body">
+            <div class="hrow"><span class="day">Monday</span><span class="time t-open">7:00 – 17:00</span></div>
+            <div class="hrow"><span class="day">Tuesday</span><span class="time t-open">7:00 – 17:00</span></div>
+            <div class="hrow"><span class="day">Wednesday</span><span class="time t-open">7:00 – 17:00</span></div>
+            <div class="hrow"><span class="day">Thursday</span><span class="time t-open">7:00 – 17:00</span></div>
+            <div class="hrow"><span class="day">Friday</span><span class="time t-open">7:00 – 17:00</span></div>
+            <div class="hrow"><span class="day">Saturday</span><span class="time t-closed">Closed</span></div>
+            <div class="hrow"><span class="day">Sunday</span><span class="time t-closed">Closed</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-cards">
+        <div class="icard reveal d1">
+          <div class="iicon" style="background:#fff0ee;">📍</div>
+          <div>
+            <p class="ititle">Location</p>
+            <p class="ival">Al Rashidiya 3, Ajman<br>United Arab Emirates</p>
+          </div>
+        </div>
+        <div class="icard reveal d2">
+          <div class="iicon" style="background:#e8f9f7;">📞</div>
+          <div>
+            <p class="ititle">Phone Numbers</p>
+            <p class="ival"><a href="tel:0527811091">052-781-1091</a> (Mobile)<br><a href="tel:0652270370">065-270-370</a> (Landline)</p>
+          </div>
+        </div>
+        <div class="icard reveal d3">
+          <div class="iicon" style="background:#fffae8;">🕐</div>
+          <div>
+            <p class="ititle">Today's Status</p>
+            <p class="ival" id="status-text">Checking hours…</p>
+          </div>
+        </div>
+        <div class="ctabts reveal d4">
+          <a href="tel:0527811091" class="cbtn cbtn-call">📞 Call Now — 052-781-1091</a>
+          <a href="https://wa.me/9710527811091" class="cbtn cbtn-wa">💬 Message on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:inline-flex;align-items:center;gap:14px;margin-bottom:24px;">
+    <div style="width:56px;height:56px;border-radius:18px;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:26px;">🏰</div>
+    <div style="text-align:left;">
+      <h2 style="font-size:1.5rem;font-weight:800;color:white;font-family:'Baloo 2',cursive;">Bait Al Marh</h2>
+      <p style="font-size:0.78rem;font-weight:600;color:var(--teal);">بيت المرح · Kids Entertainment</p>
+    </div>
+  </div>
+  <nav class="fnav">
+    <a href="#about">About</a>
+    <a href="#activities">Activities</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <hr class="fdivider">
+  <p class="fbottom">📍 Al Rashidiya 3, Ajman, UAE &nbsp;·&nbsp; 📞 052-781-1091 &nbsp;·&nbsp; © 2025 Bait Al Marh. All rights reserved.</p>
+</footer>
+
+<script>
+// Cursor
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX - 10 + 'px';
+  cursor.style.top = e.clientY - 10 + 'px';
+});
+document.addEventListener('mousedown', () => cursor.style.transform = 'scale(2.2)');
+document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+// Close on link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+// Close on outside click
+document.addEventListener('click', e => {
+  if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Nav shadow on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow = window.scrollY > 20
+    ? '0 4px 24px rgba(18,18,58,0.15)'
+    : '0 2px 16px rgba(18,18,58,0.10)';
+});
+
+// Live status
+const statusEl = document.getElementById('status-text');
+if (statusEl) {
+  const now = new Date();
+  const ajmanTime = new Date(now.getTime() + (4 * 60 + now.getTimezoneOffset()) * 60000);
+  const day = ajmanTime.getDay();
+  const hour = ajmanTime.getHours();
+  const open = [1,2,3,4,5].includes(day) && hour >= 7 && hour < 17;
+  statusEl.innerHTML = open
+    ? '<span style="color:#00836e;font-weight:800;">🟢 Open Now</span> · Closes at 5:00 PM'
+    : '<span style="color:#c00;font-weight:800;">🔴 Closed Now</span> · Opens Mon–Fri 7:00 AM';
+}
+</script>
+</body>
+</html>
